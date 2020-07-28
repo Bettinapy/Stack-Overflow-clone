@@ -1,4 +1,4 @@
-#### 5. Customize Error Messages
+#### 5. Errors
 
 ```ruby
 @users.errors:
@@ -33,13 +33,15 @@ en:
 ##### 5.2 customize error messages in user.rb 
 
 ```ruby
+# use Regex to define requirements
 PASSWORD_REQUIREMENTS = /\A
-        (?=.{8,})
-        (?=.*\d)
-        (?=.*[A-Za-z])
+        (?=.{8,}) # password length is >= 8
+        (?=.*\d) # password has at least 1 number
+        (?=.*[A-Za-z]) # password has at least 1 letter
     /x
     
     validates :email, :session_token, presence: true, uniqueness: true
+		# validate email format with customized message
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is not a valid email address.' }
     validates :display_name, :password_digest, presence: true
     validates :password, format: PASSWORD_REQUIREMENTS, allow_nil: true
@@ -55,6 +57,7 @@ def create
             render :show
         else
             errors = {}
+            # customize error messages by iterating through @user.errors
             @user.errors.each do |attribute, message|
                 if message == "is not a valid email address."
                     message = params[:user][:email] + ' ' + message
