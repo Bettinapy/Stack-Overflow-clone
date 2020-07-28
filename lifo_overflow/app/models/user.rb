@@ -6,7 +6,7 @@ class User < ApplicationRecord
     /x
     
     validates :email, :session_token, presence: true, uniqueness: true
-    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is not a valid email address.' }
     validates :display_name, :password_digest, presence: true
     validates :password, format: PASSWORD_REQUIREMENTS, allow_nil: true
 

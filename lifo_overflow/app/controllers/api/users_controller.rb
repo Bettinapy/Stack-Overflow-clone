@@ -5,13 +5,22 @@ class Api::UsersController < ApplicationController
     end
 
     def create
-    
         @user = User.new(user_params)
         if @user.save
             login!(@user)
             render :show
         else
-            render json: @user.errors.full_messages, status: 401
+            errors = {}
+            @user.errors.each do |attribute, message|
+                if message == "is not a valid email address."
+                    message = params[:user][:email] + ' ' + message
+                else  
+                    message = User.human_attribute_name(attribute) + ' ' + message
+                end
+                errors[attribute] = message
+            end
+            
+            render json: errors, status: 401
         end
     end
 
