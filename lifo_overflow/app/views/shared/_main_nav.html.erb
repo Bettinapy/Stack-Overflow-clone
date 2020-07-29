@@ -1,10 +1,11 @@
 <header class="main-nav">
 <div class="nav-container ai-center h100">
-    <nav class="left-nav">
+    <nav class="left-nav h100">
         <ul class="h100">
-            <li id="gear-dropdown-btn p0 ai-center jc-center"></li>
+            <li id="gear-dropdown-btn" class= "p0 ai-center jc-center">
                 <i class="fa fa-bars"></i>
                 <%= render partial: 'shared/gear_dropdown' %>
+            </li>
             <li>
                 <a href="#" class="logo"><span class="icon-logo"></span></a>
             </li>
@@ -13,19 +14,20 @@
     <nav class="middle-nav">
         <ul class="h100">
             <li>
-                <button class="menu-button"><a href="#" class="selected-bg">Products</a></button>
+                <a href="#" class="menu-button selected-bg">Products</a>
             </li>
             <li>
-                <button class="menu-button"><a href="#">Customers</a></button>
+                <a href="#" class="menu-button">Customers</a>
             </li>
             <li>
-                <button class="menu-button"><a href="#">Use cases</a></button>
+                <a href="#" class="menu-button">Use cases</a>
             </li>
         </ul>
     </nav>
     <div class="search-nav">
         <div class="ps-relative">
             <input class="search-bar" name="q" type="text" placeholder="Search…">
+            <i class="fa fa-search input-search" aria-hidden="true"></i>
         </div>
         
     </div>
