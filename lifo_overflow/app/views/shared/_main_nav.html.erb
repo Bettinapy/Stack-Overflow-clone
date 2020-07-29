@@ -1,0 +1,43 @@
+<header class="main-nav">
+<div class="nav-container ai-center h100">
+    <nav class="left-nav">
+        <ul class="h100">
+            <li id="gear-dropdown-btn p0 ai-center jc-center"></li>
+                <i class="fa fa-bars"></i>
+                <%= render partial: 'shared/gear_dropdown' %>
+            <li>
+                <a href="#" class="logo"><span class="icon-logo"></span></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="middle-nav">
+        <ul class="h100">
+            <li>
+                <button class="menu-button"><a href="#" class="selected-bg">Products</a></button>
+            </li>
+            <li>
+                <button class="menu-button"><a href="#">Customers</a></button>
+            </li>
+            <li>
+                <button class="menu-button"><a href="#">Use cases</a></button>
+            </li>
+        </ul>
+    </nav>
+    <div class="search-nav">
+        <div class="ps-relative">
+            <input class="search-bar" name="q" type="text" placeholder="Search…">
+        </div>
+        
+    </div>
+    <nav class="right-nav h100 grid">
+        <ul class="grid h100 ai-center">
+            <li>
+                <button class="s-btn-filled s-btn py8"><a href="#">Log in</a></button>
+            </li>
+            <li>
+                <button class="s-btn-primary s-btn py8"><a href="#">Sign up</a></button>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</header>
