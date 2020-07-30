@@ -1,0 +1,58 @@
+#content{
+    width: 100%;
+    max-width: 1264px;
+    margin: 0;
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+}
+
+.fs-headline1 {
+    font-size: 27px !important;
+}
+
+.fc-blue-500 {
+    color: var(--blue-500) !important;
+}
+
+.intro-container{
+    margin-top: 150px;
+}
+
+.session-container{
+    max-width: 50rem;
+}
+
+.s-label{
+    padding: 0 2px;
+    color: var(--fc-dark);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.s-input{
+    width: 100%;
+    margin: 0;
+    padding: .6em .7em;
+    border: 1px solid var(--black-200);
+    border-radius: 3px;
+    background-color: var(--white);
+    color: var(--fc-dark);
+    font-size: 13px;
+    font-family: inherit;
+    line-height: 1.15384615;
+}
+
+.s-input-message{
+    color: var(--red-500);
+    padding: 2px;
+    font-size: 12px;
+}
+
+.has-dname-error .s-input, 
+.has-email-error .s-input, 
+.has-password-error .s-input{
+    border-color: var(--red-400);
+}

@@ -4,7 +4,7 @@ import { signup } from '../../actions/session_actions';
 
 // get ownProps from Route in App.jsx
 const mapStateToProps = (state, ownProps) => {
-
+    debugger
     return {
         errors: state.errors.session.session_error,
         formType: 'signup',
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
    
     return {
-        processForm: (user) => dispatch(signup(user))
+        processForm: (user) => dispatch(signup(user)),
+     
     }
 };
 

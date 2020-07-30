@@ -1,20 +1,21 @@
 <header class="main-nav">
 <div class="nav-container ai-center h100">
     <nav class="left-nav h100">
+
         <ul class="h100">
             <li id="gear-dropdown-btn" class= "p0 ai-center jc-center">
                 <i class="fa fa-bars"></i>
                 <%= render partial: 'shared/gear_dropdown' %>
             </li>
             <li>
-                <a href="#" class="logo"><span class="icon-logo"></span></a>
+                <a href="#" class="logo"><img src='assets/lifooverflow-logo.png' alt="lifooverflow_logo"></a>
             </li>
         </ul>
     </nav>
     <nav class="middle-nav">
         <ul class="h100">
             <li>
-                <a href="#" class="menu-button selected-bg">Products</a>
+                <a href="#" class="menu-button">Products</a>
             </li>
             <li>
                 <a href="#" class="menu-button">Customers</a>
@@ -34,10 +35,10 @@
     <nav class="right-nav h100 grid">
         <ul class="grid h100 ai-center">
             <li>
-                <button class="s-btn-filled s-btn py8"><a href="#">Log in</a></button>
+                <button class="s-btn-filled s-btn py8"><a href="#/login">Log in</a></button>
             </li>
             <li>
-                <button class="s-btn-primary s-btn py8"><a href="#">Sign up</a></button>
+                <button class="s-btn-primary s-btn py8"><a href="#/signup" class="session-color">Sign up</a></button>
             </li>
         </ul>
     </nav>

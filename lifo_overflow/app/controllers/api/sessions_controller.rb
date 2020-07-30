@@ -13,7 +13,7 @@ class Api::SessionsController < ApplicationController
         else
             errors = {}
             message =''
-            debugger
+       
             if params[:user][:email].length == 0 || params[:user][:password].length == 0
                 if params[:user][:email].length == 0
                     message = 'Email cannot be empty.'

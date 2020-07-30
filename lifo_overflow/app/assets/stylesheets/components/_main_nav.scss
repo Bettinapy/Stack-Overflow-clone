@@ -68,16 +68,21 @@
     box-sizing: content-box;
     height: 100%;
     flex: 1 0 auto;
+    width: 150px;
+    height: auto;
     display: flex;
     align-items: center;
     background-color: transparent;
+    margin-top: -4px;
 }
 
-.icon-logo{
-    background-position: 0 -500px;
-    width: 150px;
-    height: 30px;
-    margin-top: -4px;
+.lifo-logo{
+    background: image-url("lifooverflow-logo.png");
+    // height: auto;
+    // width: auto;
+    // max-width: 150px;
+    
+    // margin-top: -4px;
     
 }
 
@@ -142,46 +147,67 @@
     height: 18;
 }
 
-.s-btn {
-    transition: background .1s ease-in-out;
-}
 
-.s-btn {
-    position: relative;
-    display: inline-block;
-    padding: .8em;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    background-color: transparent;
-    outline: none;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 1.15384615;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--blue-600);
-}
-
-.s-btn-filled {
-    color: var(--powder-700);
-    background-color: var(--powder-100);
-    border-color: var(--powder-500);
-    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.7);
-    margin-right: 3px;
-}
-
-.s-btn-filled:hover{
-    background-color: var(--powder-300);
-}
-
-.s-btn-primary{
+.session-color{
     color: #fff;
-    background-color: var(--blue-500);
-    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.4);
 }
 
-.s-btn-primary:hover{
-    background-color: var(--blue-600);
+.-secondary .-item {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.my-profile {
+    padding: 0 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100%;
+    font-size: 12px;
+    color: var(--black-700);
+    white-space: nowrap;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+[class*="gravatar-wrapper-"] img {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+}
+
+.bar-sm {
+    border-radius: 3px !important;
+}
+
+.v-visible-sr {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
+
+.-secondary .-link {
+    color: var(--black-400);
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+}
+
+.site-switcher-item .-link:hover{
+    color: var(--black-800);
+    background-color: var(--black-100);
+    text-decoration: none;
 }
