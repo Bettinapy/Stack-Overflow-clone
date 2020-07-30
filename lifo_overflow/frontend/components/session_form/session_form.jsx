@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
             display_name: "",
             email: "",
             password: "",
-            display_name_error: this.props.errors.display_name
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -30,13 +29,9 @@ class SessionForm extends React.Component {
     handleError(type) {
     }
 
-    shouldComponentUpdate(nextProps, nextState){
-        debugger
-        if(this.props.formType !== nextProps.formType){
-            this.setState({display_name_error:''})
-        };
-        return true;
-    }
+   componentWillUnmount(){
+       this.props.clearErrors();
+   }
 
     render() {
         const header = (this.props.formType === "signup" ? (
@@ -61,21 +56,21 @@ class SessionForm extends React.Component {
             </div>
             </>
         ) : (<> </>))
-        const displayNameError = (this.state.display_name_error ? (
-            <p className="grid--cell s-input-message js-error-message">{this.state.display_name_error}</p>
-        ) : (<></>));
-
-        const hasDNameError = (this.state.display_name_error ? (
-            "has-dname-error"
-        ) : (""));
-
-        // const displayNameError = (this.props.errors.display_name ? (
-        //     <p className="grid--cell s-input-message js-error-message">{this.props.errors.display_name}</p>
+        // const displayNameError = (this.state.display_name_error ? (
+        //     <p className="grid--cell s-input-message js-error-message">{this.state.display_name_error}</p>
         // ) : (<></>));
-        
-        // const hasDNameError = (this.props.errors.display_name ? (
-        //    "has-dname-error"
+
+        // const hasDNameError = (this.state.display_name_error ? (
+        //     "has-dname-error"
         // ) : (""));
+
+        const displayNameError = (this.props.errors.display_name ? (
+            <p className="grid--cell s-input-message js-error-message">{this.props.errors.display_name}</p>
+        ) : (<></>));
+        
+        const hasDNameError = (this.props.errors.display_name ? (
+           "has-dname-error"
+        ) : (""));
 
         const emailError = (this.props.errors.email ? (
             <p className="grid--cell s-input-message js-error-message">{this.props.errors.email}</p>

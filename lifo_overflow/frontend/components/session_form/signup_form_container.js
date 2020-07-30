@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { signup } from '../../actions/session_actions';
+import { signup, clearErrors } from '../../actions/session_actions';
 
 // get ownProps from Route in App.jsx
 const mapStateToProps = (state, ownProps) => {
@@ -12,10 +12,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-   
+   debugger
     return {
         processForm: (user) => dispatch(signup(user)),
-     
+        clearErrors: () => dispatch(clearErrors())
     }
 };
 

@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, login, logout, signup */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, login, logout, signup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,9 +98,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ERRORS", function() { return RECEIVE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_ERRORS", function() { return CLEAR_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
@@ -109,6 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_ERRORS = "RECEIVE_ERRORS";
+var CLEAR_ERRORS = "CLEAR_ERRORS";
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -124,6 +127,11 @@ var receiveErrors = function receiveErrors(errors) {
   return {
     type: RECEIVE_ERRORS,
     errors: errors
+  };
+};
+var clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
   };
 };
 var login = function login(user) {
@@ -248,25 +256,14 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Greeting, [{
+    key: "handleToggle",
+    value: function handleToggle(e) {
+      e.preventDefault();
+      document.getElementById("toggle-dropbtn").classList.toggle("show");
+    }
+  }, {
     key: "render",
     value: function render() {
-      // let greeting;
-      // if (this.props.currentUser) {    
-      //     greeting = (
-      //         <div>
-      //             <h2>{this.props.currentUser.display_name}</h2>
-      //             <button onClick={this.props.logout}>Log out</button>
-      //         </div>
-      //     );
-      // } else {
-      //     greeting = (
-      //         // get "signup" & "/login" from HashRouter in root.jsx
-      //         <div>
-      //             <Link to="/signup">Sign up</Link>
-      //             <Link to="/login">Log in</Link>
-      //         </div>
-      //     )
-      // }
       var leftDropDown = !this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "gear-dropdown-btn",
         className: "p0 ai-center jc-center"
@@ -300,10 +297,11 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "v-visible-sr"
       }, "Bettina Zhou"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "-item site-switcher-item"
+        className: "-item site-switcher-item top-dropdown-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        onClick: this.handleToggle.bind(this),
         href: "",
-        className: "-link js-site-switcher-button js-gps-track",
+        className: "-link top-dropdown js-site-switcher-button js-gps-track",
         "data-gps-track": "site_switcher.show",
         "aria-label": "Site switcher",
         title: "A list of all 177 Stack Exchange sites",
@@ -319,7 +317,46 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         viewBox: "0 0 18 18"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M15 1H3a2 2 0 00-2 2v2h16V3a2 2 0 00-2-2zM1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 002-2v-2H1v2zm16-7H1v4h16V6z"
-      }))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "top-dropbtn",
+        id: "toggle-dropbtn"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#"
+      }, "current community"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-content bg-powder-050"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "current-site"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "grid"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fl1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "current-site-link site-link js-gps-track grid gs8 gsx",
+        "data-id": "1",
+        "data-gps-track": "site_switcher.click({ item_type:3 })"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "favicon favicon-stackoverflow site-icon grid--cell",
+        title: "Stack Overflow"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "grid--cell fl1"
+      }, "LIFO Overflow"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "related-links"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "",
+        className: "js-gps-track",
+        "data-gps-track": "site_switcher.click({ item_type:14 })"
+      }, "help"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "",
+        className: "js-gps-track",
+        "data-gps-track": "site_switcher.click({ item_type:6 })"
+      }, "chat"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        onClick: this.props.logout,
+        className: "js-gps-track",
+        "data-gps-track": "site_switcher.click({ item_type:8 })"
+      }, "log out")))))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "right-nav h100 grid"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "grid h100 ai-center"
@@ -471,6 +508,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
     }
   };
 };
@@ -532,8 +572,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       display_name: "",
       email: "",
-      password: "",
-      display_name_error: _this.props.errors.display_name
+      password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -574,18 +613,9 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     key: "handleError",
     value: function handleError(type) {}
   }, {
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps, nextState) {
-      debugger;
-
-      if (this.props.formType !== nextProps.formType) {
-        this.setState({
-          display_name_error: ''
-        });
-      }
-
-      ;
-      return true;
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
     }
   }, {
     key: "render",
@@ -618,17 +648,17 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         type: "text",
         onChange: this.handleInput("display_name"),
         value: this.state.display_name
-      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ");
-      var displayNameError = this.state.display_name_error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "grid--cell s-input-message js-error-message"
-      }, this.state.display_name_error) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-      var hasDNameError = this.state.display_name_error ? "has-dname-error" : ""; // const displayNameError = (this.props.errors.display_name ? (
-      //     <p className="grid--cell s-input-message js-error-message">{this.props.errors.display_name}</p>
+      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " "); // const displayNameError = (this.state.display_name_error ? (
+      //     <p className="grid--cell s-input-message js-error-message">{this.state.display_name_error}</p>
       // ) : (<></>));
-      // const hasDNameError = (this.props.errors.display_name ? (
-      //    "has-dname-error"
+      // const hasDNameError = (this.state.display_name_error ? (
+      //     "has-dname-error"
       // ) : (""));
 
+      var displayNameError = this.props.errors.display_name ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "grid--cell s-input-message js-error-message"
+      }, this.props.errors.display_name) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      var hasDNameError = this.props.errors.display_name ? "has-dname-error" : "";
       var emailError = this.props.errors.email ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "grid--cell s-input-message js-error-message"
       }, this.props.errors.email) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
@@ -785,9 +815,13 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
     }
   };
 };
@@ -936,7 +970,6 @@ var defaultErrors = {
 var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultErrors;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  debugger;
   Object.freeze(state);
 
   switch (action.type) {
@@ -945,7 +978,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
         session_error: action.errors
       });
 
-    case react_router_redux__WEBPACK_IMPORTED_MODULE_1__["LOCATION_CHANGE"]:
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
       return defaultErrors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:

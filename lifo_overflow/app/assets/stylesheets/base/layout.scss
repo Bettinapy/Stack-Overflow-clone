@@ -99,6 +99,10 @@
     color: var(--fc-light) !important;
 }
 
+.fl1 {
+    flex: 1 auto !important;
+}
+
 .fl-shrink0 {
     flex-shrink: 0;
 }
@@ -140,6 +144,10 @@
     margin-left: auto !important;
 }
 
+.gs8 {
+    margin: -4px;
+}
+
 .gs12 {
     margin: -6px;
 }
@@ -157,6 +165,10 @@
     margin: 2px;
 }
 
+.gs8>.grid, .gs8>.grid--cell {
+    margin: 4px;
+}
+
 .svg-icon {
     vertical-align: bottom;
 }
@@ -167,6 +179,10 @@
 
 .bg-white {
     background-color: var(--white) !important;
+}
+
+.bg-powder-050, .h\:bg-powder-050:hover, .f\:bg-powder-050:focus {
+    background-color: var(--powder-050) !important;
 }
 
 .bar-lg {

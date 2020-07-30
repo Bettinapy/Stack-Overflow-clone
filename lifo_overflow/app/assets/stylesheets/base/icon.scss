@@ -7,3 +7,12 @@
   
 }
 
+[class*="favicon-"] {
+  display: inline-block;
+  background: image-url("favicons.png");
+  background-size: 16px 6858px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  
+}
+
