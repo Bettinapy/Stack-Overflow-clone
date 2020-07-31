@@ -7,25 +7,75 @@
     border-right: 0;
 }
 
-.fs-headline1 {
-    font-size: 27px !important;
-}
-
-.fc-blue-500 {
-    color: var(--blue-500) !important;
-}
 
 .intro-container{
-    margin-top: 150px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    margin-right: 48px;
+    max-width: 410px !important;
+    font-size: 15px;
+}
+
+.intro-header{
+    margin-bottom: 32px;
+    font-size: 26px;
+    line-height: 1;
+    
+}
+
+.join-container{
+    margin-bottom: 24px;
+}
+
+.intro-icon-container{
+    margin-right: 8px;
+}
+
+.intro-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.icon-color-blue{
+    filter: invert(41%) sepia(73%) saturate(2754%) hue-rotate(184deg) brightness(102%) contrast(106%);
 }
 
 .session-container{
     max-width: 50rem;
 }
 
+.small-logo-container{
+    margin-bottom: 24px !important;
+    display: flex;
+    align-items: center;
+}
+
+.small-logo{
+    width: 36px;
+    height: 40px;
+}
+
+.form-container{
+    max-width: 316px;
+    padding: 24px;
+    margin-bottom: 24px;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05),
+}
+
+.session-form{
+    flex-direction: column
+}
+
+.session-col{
+    flex-direction: column;
+    margin: 6px;
+}
+
 .s-label{
     padding: 0 2px;
-    color: var(--fc-dark);
+    color: #0c0d0e;
     font-family: inherit;
     font-size: 15px;
     font-weight: 700;
@@ -36,23 +86,37 @@
     width: 100%;
     margin: 0;
     padding: .6em .7em;
-    border: 1px solid var(--black-200);
+    border: 1px solid #bbc0c4;
     border-radius: 3px;
-    background-color: var(--white);
-    color: var(--fc-dark);
+    background-color: #fff;
+    color: #0c0d0e;
     font-size: 13px;
     font-family: inherit;
     line-height: 1.15384615;
 }
 
-.s-input-message{
-    color: var(--red-500);
+.s-input-error-message{
+    color: #d1383d;
     padding: 2px;
     font-size: 12px;
+}
+
+.main-session-button-container{
+    margin: 6px;
+}
+
+.main-session-button{
+    width: 100%;
+    margin: 2px;
+}
+
+.password-hint{
+    margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 .has-dname-error .s-input, 
 .has-email-error .s-input, 
 .has-password-error .s-input{
-    border-color: var(--red-400);
+    border-color: #de535e;
 }
