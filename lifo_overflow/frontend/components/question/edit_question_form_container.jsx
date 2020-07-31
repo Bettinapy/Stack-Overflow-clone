@@ -6,6 +6,7 @@ import {requestQuestion, updateQuestion} from '../../actions/question_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
         question: state.questions[ownProps.match.params.questionId] || { title: '', body: '', author_id: 0 },
+        errors: state.errors.session.session_error,
         formType: 'Update Question'
     }
 }

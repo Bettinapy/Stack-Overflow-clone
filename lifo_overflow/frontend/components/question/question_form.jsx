@@ -23,7 +23,10 @@ class QuestionForm extends React.Component{
             <h1 className="question-form-header">Ask a public question</h1>
         ):(<></>))
 
+        // const titleErrors = ()
+        
         return(
+            
             <form>
                 <div className="question-form-col">
                     <label className="q-label" htmlFor="title">Title</label>
@@ -33,7 +36,7 @@ class QuestionForm extends React.Component{
                     <label className="q-label" htmlFor="body">Body</label>
                     <input className="q-input" type="text" value={this.state.body} onChange={this.handleChange('body')}/>
                 </div>
-                <button className="button">Post your question</button>
+                <button className="button" onClick={this.handleSubmit}>Post your question</button>
             </form>
         )
     }

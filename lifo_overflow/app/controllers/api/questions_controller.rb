@@ -15,6 +15,7 @@ class Api::QuestionsController < ApplicationController
                 debugger
                 errors[attribute] = message
             end
+            debugger
             render json: errors, status: 401
         end
     end
