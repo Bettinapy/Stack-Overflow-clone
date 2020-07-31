@@ -77,8 +77,8 @@
     background: image-url("lifooverflow-logo.png");
 }
 
-.icon-logo:hover{
-
+.left-nav ul li:hover{
+    background-color: #e4e6e8 ;
 }
 
 
@@ -184,7 +184,7 @@
     position: relative;
 }
 
-.top-dropdown :hover{
+.top-dropdown:hover{
     color: #242729;
     background-color: #d6d9dc;
     text-decoration: none;

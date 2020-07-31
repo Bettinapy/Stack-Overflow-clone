@@ -84,10 +84,10 @@ class Greeting extends React.Component {
                 <div className="nav-container align-center full-height">
                     <nav className="left-nav full-height">
 
-                        <ul className="full-height">
+                        <ul className="full-height ">
                             {leftDropDown}
-                            <li>
-                                <a href="#" className="logo"><img src={window.lifooverflow} alt="lifooverflow_logo" /></a>
+                            <li className="full-height">
+                                <a href="#" className="logo full-height margin-auto"><img src={window.lifooverflow} alt="lifooverflow_logo" /></a>
                             </li>
                         </ul>
                     </nav>
