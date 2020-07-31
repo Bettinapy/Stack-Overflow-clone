@@ -3,7 +3,7 @@ class User < ApplicationRecord
         (?=.{8,})
         (?=.*\d)
         (?=.*[A-Za-z])
-    /x
+    /x 
     
     validates :email, :session_token, presence: true, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is not a valid email address.' }
@@ -11,6 +11,9 @@ class User < ApplicationRecord
     validates :password, format: PASSWORD_REQUIREMENTS, allow_nil: true
 
     after_initialize :ensure_session_token
+
+    has_many :questions
+    
     attr_reader :password
 
     def self.find_by_credentials(email, password)
