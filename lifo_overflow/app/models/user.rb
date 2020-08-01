@@ -12,7 +12,9 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :questions
+    has_many :questions, 
+        class_name: :Question,
+        foreign_key: :author_id
     
     attr_reader :password
 

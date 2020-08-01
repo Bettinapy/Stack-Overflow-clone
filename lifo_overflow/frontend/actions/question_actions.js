@@ -28,12 +28,14 @@ export const removeQuestion = (questionId) => {
 }
 
 export const requestQuestions = () => {
+    
     return dispatch => {
         return QuestionAPIUtil.fetchQuestions()
-            .then((events) => dispatch(receiveQuestions(events)))
+            .then((questions) => dispatch(receiveQuestions(questions)))
     }
 }
 export const requestQuestion = (questionId) => {
+    debugger
     return dispatch => {
         return QuestionAPIUtil.fetchQuestion(questionId)
             .then((question) => dispatch(receiveQuestion(question)))

@@ -33,12 +33,21 @@ en:
   hello: "Hello world"
   activerecord:
     attributes:
+      question:
+        title: "Title"
+        body: "Body"
       user:
         display_name: "Display name"
         email: "Email"
         password: "Password"
     errors:
       models:
+        question:
+          attributes:
+            title:
+              blank: "is missing"
+            body:
+              blank: "is missing"
         user:
           attributes:
             display_name:

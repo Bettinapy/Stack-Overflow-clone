@@ -120,3 +120,22 @@
 .has-password-error .s-input{
     border-color: #de535e;
 }
+
+.q-warning-msg{
+    background-color: #fdf7e3;
+    margin: 24px;
+    padding: 32px;
+    max-width: 640px;
+    border: 1px solid #ddb624;
+    color: #242729;
+    text-align: center;
+}
+
+.main-warning-msg{
+    margin-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 12px;
+}

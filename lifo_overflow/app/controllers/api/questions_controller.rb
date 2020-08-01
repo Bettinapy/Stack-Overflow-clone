@@ -6,16 +6,19 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create 
+        debugger
         @question = current_user.questions.new(question_params)
         if @question.save 
             render :show
         else
             errors ={}
             @question.errors.each do |attribute, message|
-                debugger
-                errors[attribute] = message
+                if !errors[attribute]
+                    message = Question.human_attribute_name(attribute) + ' ' + message
+                    errors[attribute] = message
+                end
             end
-            debugger
+
             render json: errors, status: 401
         end
     end

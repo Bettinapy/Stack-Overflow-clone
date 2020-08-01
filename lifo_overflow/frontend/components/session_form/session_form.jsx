@@ -125,11 +125,19 @@ class SessionForm extends React.Component {
                 </div>
             </div>
         ) : (<> </>))
+
+        const questionAuthWarning = (this.props.location.search === "?question" ? (
+            <div className="q-warning-msg">
+                <p className="main-warning-msg">You must be logged in to ask a question on LIFO Overflow</p>
+                <p>Log in below or <Link to='/signup'>Sign up</Link></p>
+            </div>
+        ):(<></>));
         
         return (
             <div className="session-container grid align-center">
                 {introStack}
                 <div className="zero-shrink">
+                    {questionAuthWarning}
                     {headerLogo}
                 <div className="form-container form-shadow auto-margin">
                     <form className="session-form grid">
