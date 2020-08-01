@@ -6,23 +6,30 @@ class QuestionForm extends React.Component{
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+  
     handleSubmit(e) {
         e.preventDefault();
-        this.props.submitQuestion(this.state);
+        debugger
+        this.props.submitQuestion(this.state)
+            .then((action)=>{
+                return(this.props.history.push(`/questions/${action.question.id}`))
+                });
     }
     handleChange(type) {
         return (e) => {
             this.setState({ [type]: e.target.value })
         }
     }
+    
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
 
     render(){
-
+        debugger
         const createQuestionTitle = (this.props.formType==='Create Question' ? (
             <h1 className="question-form-header">Ask a public question</h1>
         ):(<></>))
-    
         const titleErrors = (this.props.errors.title ? (
             <p className="q-input-error-message ">{this.props.errors.title}</p>
         ) : (<></>));

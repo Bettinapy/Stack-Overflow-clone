@@ -120,6 +120,7 @@ var receiveQuestions = function receiveQuestions(questions) {
   };
 };
 var receiveQuestion = function receiveQuestion(question) {
+  debugger;
   return {
     type: RECEIVE_QUESTION,
     question: question
@@ -139,8 +140,8 @@ var requestQuestions = function requestQuestions() {
   };
 };
 var requestQuestion = function requestQuestion(questionId) {
-  debugger;
   return function (dispatch) {
+    debugger;
     return _utils_question_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchQuestion"](questionId).then(function (question) {
       return dispatch(receiveQuestion(question));
     });
@@ -538,19 +539,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_question_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/question_actions */ "./frontend/actions/question_actions.js");
 /* harmony import */ var _question_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./question_form */ "./frontend/components/question/question_form.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
-    question: {
+    question: state.entities.questions[ownProps.match.params.questionId] || {
       title: '',
       body: '',
       author_id: state.session.id
     },
-    errors: state.errors.session.session_error,
+    errors: state.errors.session.session_error || {
+      title: '',
+      body: ''
+    },
     formType: 'Create Question'
   };
 };
@@ -559,6 +564,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     submitQuestion: function submitQuestion(question) {
       return dispatch(Object(_actions_question_actions__WEBPACK_IMPORTED_MODULE_1__["createQuestion"])(question));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
 };
@@ -581,6 +589,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _question_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./question_form */ "./frontend/components/question/question_form.jsx");
 /* harmony import */ var _actions_question_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/question_actions */ "./frontend/actions/question_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -608,14 +617,14 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    question: state.questions[ownProps.match.params.questionId] || {
+    question: state.entities.questions[ownProps.match.params.questionId],
+    errors: state.errors.session.session_error || {
       title: '',
-      body: '',
-      author_id: state.session.id
+      body: ''
     },
-    errors: state.errors.session.session_error,
     formType: 'Update Question'
   };
 };
@@ -627,6 +636,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     submitQuestion: function submitQuestion(question) {
       return dispatch(Object(_actions_question_actions__WEBPACK_IMPORTED_MODULE_3__["updateQuestion"])(question));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["clearErrors"])());
     }
   };
 };
@@ -645,20 +657,28 @@ var EditQuestionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(EditQuestionForm, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestQuestion(this.props.match.params.questionId);
+      return this.props.requestQuestion(this.props.match.params.questionId);
     }
   }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
+          history = _this$props.history,
+          match = _this$props.match,
           question = _this$props.question,
+          errors = _this$props.errors,
           formType = _this$props.formType,
-          submitQuestion = _this$props.submitQuestion;
+          submitQuestion = _this$props.submitQuestion,
+          clearErrors = _this$props.clearErrors;
       if (!question) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_question_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        errors: errors,
         question: question,
         formType: formType,
-        submitQuestion: submitQuestion
+        history: history,
+        match: match,
+        submitQuestion: submitQuestion,
+        clearErrors: clearErrors
       });
     }
   }]);
@@ -726,21 +746,32 @@ var QuestionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(QuestionForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.submitQuestion(this.state);
+      debugger;
+      this.props.submitQuestion(this.state).then(function (action) {
+        return _this2.props.history.push("/questions/".concat(action.question.id));
+      });
     }
   }, {
     key: "handleChange",
     value: function handleChange(type) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, type, e.target.value));
+        _this3.setState(_defineProperty({}, type, e.target.value));
       };
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
     }
   }, {
     key: "render",
     value: function render() {
+      debugger;
       var createQuestionTitle = this.props.formType === 'Create Question' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "question-form-header"
       }, "Ask a public question") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
@@ -830,26 +861,48 @@ var QuestionShow = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(QuestionShow);
 
-  function QuestionShow() {
+  function QuestionShow(props) {
+    var _this;
+
     _classCallCheck(this, QuestionShow);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = _this.props.question;
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(QuestionShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestQuestion(this.props.match.params.questionId);
+      this.props.requestQuestion(this.props.match.params.questionId); // this.setState({ title: this.props.question.title });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.deleteQuestion(this.props.match.params.questionId).then(function () {
+        return _this2.props.history.push('/');
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var userAuth = this.props.loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: ""
+        to: "/questions/".concat(this.props.match.params.questionId, "/edit")
       }, "Edit Question")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.props.deleteQuestion(this.props.match.params.questionId)
-      }, "Delete Question")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.question.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.handleDelete
+      }, ">Delete Question")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: this.props.question
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.question.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "question-body"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.question.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userAuth));
     }
@@ -874,26 +927,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _question_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./question_show */ "./frontend/components/question/question_show.jsx");
 /* harmony import */ var _actions_question_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/question_actions */ "./frontend/actions/question_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
-    question: state.entities.questions[ownProps.match.params.questionId],
+    question: state.entities.questions[ownProps.match.params.questionId] || {
+      title: '',
+      body: ''
+    },
     loggedIn: Boolean(state.session.id)
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     requestQuestion: function requestQuestion(questionId) {
       return dispatch(Object(_actions_question_actions__WEBPACK_IMPORTED_MODULE_2__["requestQuestion"])(questionId));
     },
     deleteQuestion: function deleteQuestion(questionId) {
       return dispatch(Object(_actions_question_actions__WEBPACK_IMPORTED_MODULE_2__["deleteQuestion"])(questionId));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
 };
@@ -949,7 +1008,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     errors: state.errors.session.session_error,
     formType: 'login'
@@ -1360,17 +1418,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var QuestionsReducer = function QuestionsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  debugger;
   Object.freeze(state);
+  var newState = {};
 
   switch (action.type) {
     case _actions_question_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_QUESTIONS"]:
       return action.questions;
 
     case _actions_question_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_QUESTION"]:
-      return Object.assign({}, state, _defineProperty({}, action.question.id, action.question));
+      newState = Object.assign({}, state, _defineProperty({}, action.question.id, action.question));
+      debugger;
+      return newState;
 
     case _actions_question_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_QUESTION"]:
-      var newState = {};
+      newState = Object.assign({}, state);
       delete newState[action.questionId];
       return newState;
 
@@ -1600,6 +1662,7 @@ var fetchQuestions = function fetchQuestions() {
   });
 };
 var fetchQuestion = function fetchQuestion(questionId) {
+  debugger;
   return $.ajax({
     method: 'GET',
     url: "/api/questions/".concat(questionId)
@@ -1657,6 +1720,7 @@ var QuestionAuth = function QuestionAuth(_ref) {
       path = _ref.path,
       loggedIn = _ref.loggedIn,
       exact = _ref.exact;
+  debugger;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     exact: exact,
@@ -1677,7 +1741,7 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var QuestionAuthRoute = Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps)(QuestionAuth));
+var QuestionAuthRoute = Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, null)(QuestionAuth));
 
 /***/ }),
 

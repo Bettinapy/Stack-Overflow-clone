@@ -2,11 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import QuestionForm from './question_form';
 import {requestQuestion, updateQuestion} from '../../actions/question_actions';
+import { clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    
     return {
-        question: state.questions[ownProps.match.params.questionId] || { title: '', body: '', author_id: state.session.id },
-        errors: state.errors.session.session_error,
+        question: state.entities.questions[ownProps.match.params.questionId],
+        errors: state.errors.session.session_error || {title:'', body:''},
         formType: 'Update Question'
     }
 }
@@ -14,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         requestQuestion: (questionId) => dispatch(requestQuestion(questionId)),
-        submitQuestion: (question) => dispatch(updateQuestion(question))
+        submitQuestion: (question) => dispatch(updateQuestion(question)),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 
@@ -23,17 +26,24 @@ const mapDispatchToProps = (dispatch) => {
 class EditQuestionForm extends React.Component {
 
     componentDidMount() {
-        this.props.requestQuestion(this.props.match.params.questionId)
+        
+        return(this.props.requestQuestion(this.props.match.params.questionId));
     }
     render() {
-        const { question, formType, submitQuestion } = this.props;
+        
+        const { history, match, question, errors, formType, submitQuestion, clearErrors } = this.props;
 
         if (!question) return null;
+        
         return (
             <QuestionForm
+                errors={errors}
                 question={question}
                 formType={formType}
-                submitQuestion={submitQuestion} />
+                history={history}
+                match={match}
+                submitQuestion={submitQuestion}
+                clearErrors={clearErrors} />
         );
     }
 }

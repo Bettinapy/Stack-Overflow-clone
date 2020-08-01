@@ -14,6 +14,7 @@ export const receiveQuestions = (questions) => {
 }
 
 export const receiveQuestion = (question) => {
+    debugger
     return {
         type: RECEIVE_QUESTION,
         question
@@ -35,8 +36,9 @@ export const requestQuestions = () => {
     }
 }
 export const requestQuestion = (questionId) => {
-    debugger
+    
     return dispatch => {
+        debugger
         return QuestionAPIUtil.fetchQuestion(questionId)
             .then((question) => dispatch(receiveQuestion(question)))
     }

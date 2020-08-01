@@ -6,7 +6,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create 
-        debugger
+        
         @question = current_user.questions.new(question_params)
         if @question.save 
             render :show
@@ -24,14 +24,28 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show
+        
         @question = Question.find(params[:id]) 
+        
     end
 
     def update
+       
         @question = Question.find(params[:id])
         if @question
-            @question.update(question_params)
-            render :show
+            
+            if @question.update(question_params)
+                render :show
+            else
+                errors ={}
+                @question.errors.each do |attribute, message|
+                if !errors[attribute]
+                    message = Question.human_attribute_name(attribute) + ' ' + message
+                    errors[attribute] = message
+                end
+            end
+                render json: errors, status: 401  
+            end
         else
             render json: ['not found'], status: 404
         end
