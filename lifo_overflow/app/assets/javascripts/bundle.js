@@ -119,11 +119,14 @@ var receiveQuestions = function receiveQuestions(questions) {
     questions: questions
   };
 };
-var receiveQuestion = function receiveQuestion(question) {
+var receiveQuestion = function receiveQuestion(_ref) {
+  var question = _ref.question,
+      user = _ref.user;
   debugger;
   return {
     type: RECEIVE_QUESTION,
-    question: question
+    question: question,
+    user: user
   };
 };
 var removeQuestion = function removeQuestion(questionId) {
@@ -142,8 +145,8 @@ var requestQuestions = function requestQuestions() {
 var requestQuestion = function requestQuestion(questionId) {
   return function (dispatch) {
     debugger;
-    return _utils_question_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchQuestion"](questionId).then(function (question) {
-      return dispatch(receiveQuestion(question));
+    return _utils_question_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchQuestion"](questionId).then(function (payload) {
+      return dispatch(receiveQuestion(payload));
     });
   };
 };
@@ -749,7 +752,6 @@ var QuestionForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      debugger;
       this.props.submitQuestion(this.state).then(function (action) {
         return _this2.props.history.push("/questions/".concat(action.question.id));
       });
@@ -1418,7 +1420,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var QuestionsReducer = function QuestionsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  debugger;
   Object.freeze(state);
   var newState = {};
 
@@ -1428,7 +1429,6 @@ var QuestionsReducer = function QuestionsReducer() {
 
     case _actions_question_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_QUESTION"]:
       newState = Object.assign({}, state, _defineProperty({}, action.question.id, action.question));
-      debugger;
       return newState;
 
     case _actions_question_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_QUESTION"]:
@@ -1563,21 +1563,23 @@ var sessionReducer = function sessionReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_question_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/question_actions */ "./frontend/actions/question_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-var defaultState = {
-  user_id: null
-};
+
 
 var usersReducer = function usersReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+
+    case _actions_question_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_QUESTION"]:
+      return Object.assign({}, state, _defineProperty({}, action.user.id, action.user));
 
     default:
       return state;

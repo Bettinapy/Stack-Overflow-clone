@@ -9,7 +9,6 @@ class QuestionForm extends React.Component{
   
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.submitQuestion(this.state)
             .then((action)=>{
                 return(this.props.history.push(`/questions/${action.question.id}`))

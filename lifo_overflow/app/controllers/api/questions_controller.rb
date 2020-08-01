@@ -9,6 +9,7 @@ class Api::QuestionsController < ApplicationController
         
         @question = current_user.questions.new(question_params)
         if @question.save 
+            
             render :show
         else
             errors ={}
@@ -25,7 +26,8 @@ class Api::QuestionsController < ApplicationController
 
     def show
         
-        @question = Question.find(params[:id]) 
+        @question = Question.find(params[:id])
+        @user = @question.user 
         
     end
 
