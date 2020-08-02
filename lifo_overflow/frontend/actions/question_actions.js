@@ -6,10 +6,12 @@ export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 
 
-export const receiveQuestions = (questions) => {
+export const receiveQuestions = ({questions, users}) => {
+    debugger
     return {
         type: RECEIVE_QUESTIONS,
-        questions
+        questions,
+        users
     }
 }
 
@@ -33,7 +35,7 @@ export const requestQuestions = () => {
     
     return dispatch => {
         return QuestionAPIUtil.fetchQuestions()
-            .then((questions) => dispatch(receiveQuestions(questions)))
+            .then((payload) => dispatch(receiveQuestions(payload)))
     }
 }
 export const requestQuestion = (questionId) => {

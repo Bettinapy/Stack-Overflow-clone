@@ -5,6 +5,7 @@ import { requestQuestions } from '../../actions/question_actions';
 
 const mapStateToProps = state => ({
     questions: Object.values(state.entities.questions),
+    users: state.entities.users,
     errors: state.errors.session.session_error
 });
 
