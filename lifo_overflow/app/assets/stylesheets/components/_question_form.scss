@@ -1,5 +1,6 @@
 .question-form-container{
     width: 100%;
+    padding: 24px;
 }
 
 
@@ -67,4 +68,14 @@
 .has-title-error .q-input, 
 .has-body-error .q-input{
     border-color: #de535e;
+}
+
+.cancel-link{
+    padding: 10px;
+    margin-left: 8px;
+    border-radius: 3px;
+}
+.question-btn-container .cancel-link:hover{
+    background-color: #e1ecf4;
+    
 }

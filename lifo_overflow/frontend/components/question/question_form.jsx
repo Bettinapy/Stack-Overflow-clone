@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class QuestionForm extends React.Component{
     constructor(props){
         super(props);
@@ -54,7 +54,10 @@ class QuestionForm extends React.Component{
         const submitBtn = (this.props.formType==='Create Question' ? (
             <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Post your question</button>
         ):(
-            <button className="button" onClick={this.handleSubmit}>Save Edits</button>
+            <>
+            <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Save Edits</button>
+            <Link className="cancel-link" to={`/questions/${this.props.question.id}`}>Cancel</Link>
+            </>
         ))
         
         return(
