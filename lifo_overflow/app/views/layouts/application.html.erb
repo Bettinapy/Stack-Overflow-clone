@@ -16,7 +16,24 @@
       window.icon_tag= "<%= image_url('tag.png') %>";
       window.icon_up_and_down= "<%= image_url('up_and_down.png') %>";
       //handle window click
-      
+      window.onclick = function(event) {
+          if ((!event.target.matches('.search-bar')) && (!event.target.matches('.search-hints-box'))) {
+            var dropdowns = document.getElementsByClassName("nav-search-box");
+            var searchHint = document.getElementById("search-input");
+            
+            if (searchHint.classList.contains('input-border')){
+              searchHint.classList.remove('input-border');
+            }
+            
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
 
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">

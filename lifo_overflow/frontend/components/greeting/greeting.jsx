@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
     handleToggle(e){
-        e.preventDefault();
+        e.preventDefault();    
         document.getElementById("toggle-dropbtn").classList.toggle("show")
+    }
+
+    handleSearch(e) {
+        e.preventDefault();
+        document.getElementById("nav-search-hints").classList.add("show")
+        document.getElementById("search-input").classList.add("input-border")
     }
     render() {
         
@@ -84,7 +90,7 @@ class Greeting extends React.Component {
                 <div className="nav-container align-center full-height">
                     <nav className="left-nav full-height">
 
-                        <ul className="full-height ">
+                        <ul className="full-height "> 
                             {leftDropDown}
                             <li className="full-height">
                                 <a href="#" className="logo full-height margin-auto"><img src={window.lifooverflow} alt="lifooverflow_logo" /></a>
@@ -101,8 +107,16 @@ class Greeting extends React.Component {
                             </ul>
                         </nav>
                         <div className="search-nav">
-                                <input className="search-bar" name="search" type="text" placeholder="Search…" />
-                                <i className="fa fa-search input-search" aria-hidden="true"></i>
+                            <input onClick={this.handleSearch.bind(this)} id="search-input" autoComplete="off" className="search-bar" name="search" type="text" placeholder="Search…" />
+                            <i className="fa fa-search input-search" aria-hidden="true"></i>
+                            <div id="nav-search-hints" className="nav-search-box">
+                                <div class="search-hints-box grid align-center">
+                    
+                                    <button className="small-btn session-btn-light button-default">
+                                        <Link to="/questions/ask">Ask a question</Link>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         {greeting}
                         </div>

@@ -384,6 +384,13 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       document.getElementById("toggle-dropbtn").classList.toggle("show");
     }
   }, {
+    key: "handleSearch",
+    value: function handleSearch(e) {
+      e.preventDefault();
+      document.getElementById("nav-search-hints").classList.add("show");
+      document.getElementById("search-input").classList.add("input-border");
+    }
+  }, {
     key: "render",
     value: function render() {
       var leftDropDown = !this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -486,6 +493,9 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       }, "Products")), otherMenuList)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-nav"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.handleSearch.bind(this),
+        id: "search-input",
+        autoComplete: "off",
         className: "search-bar",
         name: "search",
         type: "text",
@@ -493,7 +503,16 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-search input-search",
         "aria-hidden": "true"
-      })), greeting));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "nav-search-hints",
+        className: "nav-search-box"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "search-hints-box grid align-center"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "small-btn session-btn-light button-default"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/questions/ask"
+      }, "Ask a question"))))), greeting));
     }
   }]);
 
