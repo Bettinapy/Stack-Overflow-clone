@@ -103,6 +103,12 @@
     color: #6a737c;
     font-size: 13px !important;
 }
+
+.input-border{
+    border-color: #6cbbf7 !important;
+    box-shadow: 0 0 0 4px #0095ff26 !important; 
+}
+
 #root{
     max-width: 100%;
     justify-content: center;
@@ -159,4 +165,8 @@ h1, h2, h3 {
 svg {
     width: 26;
     height: 26;
+}
+
+textarea{
+    resize: vertical;
 }

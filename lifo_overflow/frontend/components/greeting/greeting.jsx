@@ -107,7 +107,7 @@ class Greeting extends React.Component {
                             </ul>
                         </nav>
                         <div className="search-nav">
-                            <input onClick={this.handleSearch.bind(this)} id="search-input" autoComplete="off" className="search-bar" name="search" type="text" placeholder="Search…" />
+                            <input onClick={this.handleSearch.bind(this)} id="search-input" autoComplete="off" className="search-bar input-default" name="search" type="text" placeholder="Search…" />
                             <i className="fa fa-search input-search" aria-hidden="true"></i>
                             <div id="nav-search-hints" className="nav-search-box">
                                 <div class="search-hints-box grid align-center">

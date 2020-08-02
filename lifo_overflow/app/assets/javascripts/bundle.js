@@ -496,7 +496,7 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleSearch.bind(this),
         id: "search-input",
         autoComplete: "off",
-        className: "search-bar",
+        className: "search-bar input-default",
         name: "search",
         type: "text",
         placeholder: "Search\u2026"
@@ -776,6 +776,11 @@ var QuestionForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(QuestionForm, [{
+    key: "handleInput",
+    value: function handleInput(id) {
+      document.getElementById(id).classList.add("input-border");
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -802,44 +807,62 @@ var QuestionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
-      var createQuestionTitle = this.props.formType === 'Create Question' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      var createQuestionTitle = this.props.formType === 'Create Question' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-form-header-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "question-form-header"
-      }, "Ask a public question") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      }, "Ask a public question")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
       var titleErrors = this.props.errors.title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "q-input-error-message "
       }, this.props.errors.title) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      var hasTitleError = this.props.errors.title ? "has-title-error" : "";
       var bodyErrors = this.props.errors.body ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "q-input-error-message "
       }, this.props.errors.body) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      var hasBodyError = this.props.errors.body ? "has-body-error" : "";
       var submitBtn = this.props.formType === 'Create Question' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "button",
+        className: "button session-btn-heavy button-default",
         onClick: this.handleSubmit
       }, "Post your question") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "button",
         onClick: this.handleSubmit
       }, "Save Edits");
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, createQuestionTitle, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "question-form-col"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-form-container"
+      }, createQuestionTitle, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-form-box"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-form-col grid ".concat(hasTitleError)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "q-label",
         htmlFor: "title"
-      }, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "q-input",
+      }, "Title", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "q-label-description"
+      }, "Be specific and imagine you\u2019re asking a question to another person")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "q-title",
+        onClick: this.handleInput.bind(this, "q-title"),
+        className: "q-input input-default",
+        placeholder: "e.g. How to reset the state of a Redux store?",
         type: "text",
         value: this.state.title,
         onChange: this.handleChange('title')
       }), titleErrors), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "question-form-col"
+        className: "question-form-col grid ".concat(hasBodyError)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "q-label",
         htmlFor: "body"
-      }, "Body"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        className: "q-input",
+      }, "Body", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "q-label-description"
+      }, "Include all the information someone would need to answer your question")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        id: "q-body",
+        onClick: this.handleInput.bind(this, "q-body"),
+        className: "q-input q-input-textarea input-default",
         type: "text",
         value: this.state.body,
         onChange: this.handleChange('body')
-      }), bodyErrors), submitBtn));
+      }), bodyErrors)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-btn-container"
+      }, submitBtn)));
     }
   }]);
 

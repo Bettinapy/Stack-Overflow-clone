@@ -17,12 +17,16 @@
       window.icon_up_and_down= "<%= image_url('up_and_down.png') %>";
       //handle window click
       window.onclick = function(event) {
-          if ((!event.target.matches('.search-bar')) && (!event.target.matches('.search-hints-box'))) {
+          if ((!event.target.matches('.search-bar')) && (!event.target.matches('.search-hints-box')) && (!event.target.matches('.q-input'))) {
             var dropdowns = document.getElementsByClassName("nav-search-box");
-            var searchHint = document.getElementById("search-input");
+            var inputs = document.getElementsByClassName("input-default");
             
-            if (searchHint.classList.contains('input-border')){
-              searchHint.classList.remove('input-border');
+            var j;
+            for (j = 0; j < inputs.length; j++) {
+              var inputBorder = inputs[j];
+              if (inputBorder.classList.contains('input-border')) {
+                inputBorder.classList.remove('input-border');
+              }
             }
             
             var i;

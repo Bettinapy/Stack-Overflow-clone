@@ -6,7 +6,11 @@ class QuestionForm extends React.Component{
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
+    
+    handleInput(id) {   
+        document.getElementById(id).classList.add("input-border")
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.submitQuestion(this.state)
@@ -25,39 +29,59 @@ class QuestionForm extends React.Component{
     }
 
     render(){
-        debugger
+
         const createQuestionTitle = (this.props.formType==='Create Question' ? (
-            <h1 className="question-form-header">Ask a public question</h1>
+            <div className="question-form-header-container">
+                <h1 className="question-form-header">Ask a public question</h1>
+            </div>
         ):(<></>))
         const titleErrors = (this.props.errors.title ? (
             <p className="q-input-error-message ">{this.props.errors.title}</p>
         ) : (<></>));
 
+        const hasTitleError = (this.props.errors.title ? (
+            "has-title-error"
+        ) : (""));
+
         const bodyErrors = (this.props.errors.body ? (
             <p className="q-input-error-message ">{this.props.errors.body}</p>
         ) : (<></>));
 
+        const hasBodyError = (this.props.errors.body ? (
+            "has-body-error"
+        ) : (""));
+
         const submitBtn = (this.props.formType==='Create Question' ? (
-            <button className="button" onClick={this.handleSubmit}>Post your question</button>
+            <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Post your question</button>
         ):(
             <button className="button" onClick={this.handleSubmit}>Save Edits</button>
         ))
         
         return(
-            <div>
+            <div className="question-form-container">
                 {createQuestionTitle}
                 <form>
-                    <div className="question-form-col">
-                        <label className="q-label" htmlFor="title">Title</label>
-                        <input className="q-input" type="text" value={this.state.title} onChange={this.handleChange('title')}/>
+                <div className="question-form-box">
+                        <div className={`question-form-col grid ${hasTitleError}`}>
+                        <label className="q-label" htmlFor="title">
+                                Title
+                            <p class="q-label-description">Be specific and imagine you’re asking a question to another person</p>
+                        </label>
+                        <input id="q-title" onClick={this.handleInput.bind(this,"q-title")} className="q-input input-default" placeholder="e.g. How to reset the state of a Redux store?" type="text" value={this.state.title} onChange={this.handleChange('title')}/>
                         {titleErrors}
                     </div>
-                    <div className="question-form-col">
-                        <label className="q-label" htmlFor="body">Body</label>
-                        <textarea className="q-input" type="text" value={this.state.body} onChange={this.handleChange('body')}/>
+                    <div className={`question-form-col grid ${hasBodyError}`}>
+                        <label className="q-label" htmlFor="body">
+                                Body
+                            <p class="q-label-description">Include all the information someone would need to answer your question</p>
+                        </label>
+                            <textarea id="q-body" onClick={this.handleInput.bind(this,"q-body")} className="q-input q-input-textarea input-default" type="text" value={this.state.body} onChange={this.handleChange('body')}/>
                         {bodyErrors}
                     </div>
+                </div>
+                <div className="question-btn-container">
                     {submitBtn}
+                </div>
                 </form>
             </div>
         )
