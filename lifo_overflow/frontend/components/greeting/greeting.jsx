@@ -20,13 +20,13 @@ class Greeting extends React.Component {
     }
 
     componentWillUnmount() {
-        debugger
+   
         document.getElementById("nav-search-hints").classList.remove("show");
         document.getElementById("gear-dropdown-m").classList.remove("show");
     }
 
     render() {
-        debugger
+   
         const leftDropDown = (!this.props.currentUser.id ? (
             <>
                 <li onClick={this.handleToggle.bind(this, "gear-dropdown-m")} id="gear-dropdown-btn" className="zero-padding align-center justify-center">

@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => {
 
     // const userId = state.session.id;
     // const currentUser = state.entities.users[userId];
-    debugger
+  
     return {
         currentUser: state.session,
     }

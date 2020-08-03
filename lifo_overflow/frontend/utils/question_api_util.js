@@ -5,7 +5,7 @@ export const fetchQuestions = () => {
     })
 }
 export const fetchQuestion = (questionId) => {
-    debugger
+
     return $.ajax({
         method: 'GET',
         url: `/api/questions/${questionId}`,

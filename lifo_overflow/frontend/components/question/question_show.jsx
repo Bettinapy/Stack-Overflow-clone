@@ -30,7 +30,7 @@ class QuestionShow extends React.Component{
         
     }
     render(){
-        debugger
+  
         const userAuth = (this.props.currentUserId === this.props.user.id ? (
             <>
                 <button><Link to={`/questions/${this.props.match.params.questionId}/edit`} className="small-link">edit</Link></button>

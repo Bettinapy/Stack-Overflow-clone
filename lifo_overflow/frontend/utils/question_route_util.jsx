@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const QuestionAuth = ({ component: Component, path, loggedIn, exact }) => {
-    debugger
+=
     return (
         <Route
             path={path}
