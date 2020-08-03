@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionListItem from './question_list_item';
 import { Link } from 'react-router-dom';
+import SideMenu from '../side_menu';
 
 class QuestionList extends React.Component {
     componentDidMount() {
@@ -36,6 +37,8 @@ class QuestionList extends React.Component {
         ):(<></>))
 
         return (
+            <div className="whole-container grid">
+                <SideMenu />
             <div className="question-list-container">
                 <div className="question-list-box">
                     <div className="question-list-header-box grid">
@@ -55,6 +58,7 @@ class QuestionList extends React.Component {
                     </ul>
                     
                 </div>
+            </div>
             </div>
         );
     }

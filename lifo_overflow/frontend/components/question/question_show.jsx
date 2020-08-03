@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SideMenu from '../side_menu';
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -36,9 +37,12 @@ class QuestionShow extends React.Component{
                 <button onClick={this.handleDelete}><a className="small-link">delete</a></button>
             </>
         ):(<></>))
-        debugger
+       
         return(
+            <div className="whole-container grid">
+            <SideMenu />
             <div className="question-show-container" key={this.props.question}>
+                
                 <div className="question-show-box">
                     <div className="question-show-header-box grid">
                         <h1 className="question-form-header">{this.props.question.title}</h1>
@@ -67,6 +71,7 @@ class QuestionShow extends React.Component{
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

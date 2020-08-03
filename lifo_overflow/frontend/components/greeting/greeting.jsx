@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
-    handleToggle(e){
-        e.preventDefault();    
-        document.getElementById("toggle-dropbtn").classList.toggle("show")
+    handleToggle(id){
+         
+        document.getElementById(id).classList.toggle("show")
     }
 
     handleSearch(e) {
@@ -12,14 +12,54 @@ class Greeting extends React.Component {
         document.getElementById("nav-search-hints").classList.add("show")
         document.getElementById("search-input").classList.add("input-border")
     }
+
+    handleMenu(id){
+        const items = document.getElementsByClassName('menu-item-effect');
+        items[0].classList.remove("menu-item-effect");
+        document.getElementById(id).classList.add("menu-item-effect");
+    }
+
+    componentWillUnmount() {
+        debugger
+        document.getElementById("nav-search-hints").classList.remove("show");
+        document.getElementById("gear-dropdown-m").classList.remove("show");
+    }
+
     render() {
-        
+        debugger
         const leftDropDown = (!this.props.currentUser.id ? (
-            <li id="gear-dropdown-btn" className="zero-padding align-center justify-center">
+            <>
+                <li onClick={this.handleToggle.bind(this, "gear-dropdown-m")} id="gear-dropdown-btn" className="zero-padding align-center justify-center">
                 <i className="fa fa-bars fa-lg"></i>
             </li>
+            <div id="gear-dropdown-m" className="gear-dropdown-menu-container">
+                <ul className="gear-dropdown-menu-top">
+                    <li className="menu-home">
+                            <Link id="menu-home" to="/" onClick={this.handleMenu.bind(this, "menu-home")} className="item-format list-item-format menu-item-effect">Home</Link>
+                    </li>
+                    <li>
+                        <ul className="gear-dropdown-menu-bottom">
+                            <li className="menu-title">
+                                    Public
+                            </li>
+                            <li>
+                                <Link id="menu-lifo" to="/questions" onClick={this.handleMenu.bind(this, "menu-lifo")} className="list-item-format item-format-lifo grid">
+                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <span>LIFO Overflow</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link id="menu-general" to="" onClick={this.handleMenu.bind(this, "menu-general")} className="list-item-format item-format-general grid">
+                                    Users
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </>
         ) : (<></>));
-        debugger
+      
         const otherMenuList = (!this.props.currentUser.id ? (
             <>
             <li>
@@ -40,13 +80,13 @@ class Greeting extends React.Component {
                 </div>
 
                 <div className="function top-dropdown-container">
-                    <a onClick={this.handleToggle.bind(this)} href="" className="top-dropdown" title="More settings">
+                    <a onClick={this.handleToggle.bind(this, "toggle-dropbtn")} className="top-dropdown" title="More settings">
                         <i className="fa fa-bars fa-2x" ></i>
                     </a>
                     <div className="top-dropbtn" id="toggle-dropbtn">
                         <div className="dropdown-header">
                             <h3>
-                                <a href="#">current community</a>
+                                <a href="/">current community</a>
                             </h3>
                         </div>
                         <div className="dropdown-content">
@@ -54,7 +94,6 @@ class Greeting extends React.Component {
                                 <li className="grid">
                                     <div className="flex-all-auto">
                                         <a href="#" className="lifo-local-link grid">
-                                            {/* <div className="favicon favicon-stackoverflow site-icon grid--cell"></div> */}
                                             <span className="flex-all-auto">
                                                 LIFO Overflow
                                             </span>
