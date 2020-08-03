@@ -2175,9 +2175,47 @@ var deleteQuestion = function deleteQuestion(questionId) {
   !*** ./frontend/utils/question_route_util.jsx ***!
   \************************************************/
 /*! exports provided: QuestionAuthRoute */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/frontend/utils/question_route_util.jsx: Unexpected token (7:0)\n\n\u001b[0m \u001b[90m  5 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  6 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mQuestionAuth\u001b[39m \u001b[33m=\u001b[39m ({ component\u001b[33m:\u001b[39m \u001b[33mComponent\u001b[39m\u001b[33m,\u001b[39m path\u001b[33m,\u001b[39m loggedIn\u001b[33m,\u001b[39m exact }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 | \u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m    \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m            path\u001b[33m=\u001b[39m{path}\u001b[0m\n    at Object._raise (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:757:17)\n    at Object.raiseWithData (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:750:17)\n    at Object.raise (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:744:17)\n    at Object.unexpected (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:8834:16)\n    at Object.parseExprAtom (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:10176:20)\n    at Object.parseExprAtom (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:4648:20)\n    at Object.parseExprSubscripts (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9688:23)\n    at Object.parseMaybeUnary (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9668:21)\n    at Object.parseExprOps (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9538:23)\n    at Object.parseMaybeConditional (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9511:23)\n    at Object.parseMaybeAssign (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9466:21)\n    at Object.parseExpression (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9418:23)\n    at Object.parseStatementContent (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11339:23)\n    at Object.parseStatement (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11210:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11785:25)\n    at Object.parseBlockBody (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11771:10)\n    at Object.parseBlock (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11755:10)\n    at Object.parseFunctionBody (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:10758:24)\n    at Object.parseArrowExpression (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:10727:10)\n    at Object.parseParenAndDistinguishExpression (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:10341:12)\n    at Object.parseExprAtom (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:10042:21)\n    at Object.parseExprAtom (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:4648:20)\n    at Object.parseExprSubscripts (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9688:23)\n    at Object.parseMaybeUnary (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9668:21)\n    at Object.parseExprOps (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9538:23)\n    at Object.parseMaybeConditional (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9511:23)\n    at Object.parseMaybeAssign (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:9466:21)\n    at Object.parseVar (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11869:26)\n    at Object.parseVarStatement (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11678:10)\n    at Object.parseStatementContent (/Users/bettina/Desktop/LIFO_Overflow/lifo_overflow/node_modules/@babel/parser/lib/index.js:11277:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionAuthRoute", function() { return QuestionAuthRoute; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var QuestionAuth = function QuestionAuth(_ref) {
+  var Component = _ref.component,
+      path = _ref.path,
+      loggedIn = _ref.loggedIn,
+      exact = _ref.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+        to: {
+          pathname: "/login",
+          search: "?question"
+        }
+      });
+    }
+  });
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+var QuestionAuthRoute = Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, null)(QuestionAuth));
 
 /***/ }),
 
