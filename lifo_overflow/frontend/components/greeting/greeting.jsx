@@ -14,13 +14,13 @@ class Greeting extends React.Component {
     }
     render() {
         
-        const leftDropDown = (!this.props.currentUser ? (
+        const leftDropDown = (!this.props.currentUser.id ? (
             <li id="gear-dropdown-btn" className="zero-padding align-center justify-center">
                 <i className="fa fa-bars fa-lg"></i>
             </li>
         ) : (<></>));
-
-        const otherMenuList = (!this.props.currentUser ? (
+        debugger
+        const otherMenuList = (!this.props.currentUser.id ? (
             <>
             <li>
                 <a href="#" className="menu-button">Customers</a>
@@ -31,7 +31,7 @@ class Greeting extends React.Component {
             </>
         ) : (<></>));
 
-        const greeting = (this.props.currentUser ? (
+        const greeting = (this.props.currentUser.id ? (
             <nav className="logged grid align-center full-height">
                 <div className="function">
                     <a href="#" className="user-code">

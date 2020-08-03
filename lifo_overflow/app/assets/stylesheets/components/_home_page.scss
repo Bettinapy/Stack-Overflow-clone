@@ -1,0 +1,37 @@
+.main-bg-container{
+    height: 496px;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    padding-top: 50px; 
+    background: image-url("home_bg1.gif");
+    overflow: hidden;
+    background-color: #ffcf10;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.hp-header{
+    font-family: 'Roboto Slab', serif;
+    width: 90% !important;
+    text-align: center !important;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 128px;
+    word-spacing: 0.1px;
+    padding-left: 55px;
+}
+
+.hp-header-addition{
+    font-size: 21px;
+    width: 90% !important;
+    text-align: center !important;
+    max-width: 420px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+

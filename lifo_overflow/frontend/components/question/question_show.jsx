@@ -19,22 +19,24 @@ class QuestionShow extends React.Component{
 
     handleDelete(e){
         e.preventDefault();
-       
-        this.props.deleteQuestion(this.props.match.params.questionId)
-            .then(() => {
-               
-                return (this.props.history.push('/'))});
+        const choice = confirm("Delete this post?");
+        if (choice === true){
+            this.props.deleteQuestion(this.props.match.params.questionId)
+                .then(() => {
+                   
+                    return (this.props.history.push('/'))});
+        }
         
     }
     render(){
-        
-        const userAuth = (this.props.loggedIn ? (
-            <div className="user-auth">
+        debugger
+        const userAuth = (this.props.currentUserId === this.props.user.id ? (
+            <>
                 <button><Link to={`/questions/${this.props.match.params.questionId}/edit`} className="small-link">edit</Link></button>
                 <button onClick={this.handleDelete}><a className="small-link">delete</a></button>
-            </div>
+            </>
         ):(<></>))
-        
+        debugger
         return(
             <div className="question-show-container" key={this.props.question}>
                 <div className="question-show-box">
@@ -51,7 +53,9 @@ class QuestionShow extends React.Component{
                             </div>
                         </div>
                         <div className="question-user-container grid">
-                            {userAuth}
+                            <div className="user-auth">
+                                {userAuth}
+                            </div>
                             <div className="user-info-box">
                                 <div className="question-time-box">
                                     asked {this.props.question.created_at}

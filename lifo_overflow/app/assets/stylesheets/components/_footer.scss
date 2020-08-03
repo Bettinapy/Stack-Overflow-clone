@@ -1,0 +1,34 @@
+.lifo-footer-container{
+    width: 100%;
+    padding: 32px 12px 12px 12px;
+    flex-flow: row wrap;
+    background-color: #242729;
+    
+}
+
+.footer-logo-container{
+    margin-right: 20px;
+}
+
+.footer-logo-container img{
+    width: 30px;
+    height: 30px;
+}
+
+.footer-nav {
+    padding: 0 12px 24px 0;
+}
+
+.footer-nav-title a{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: #bbc0c4;
+    margin-top: 0px
+}
+
+.footer-nav-item{
+    color: #848d95;
+    padding: 4px 0;
+}

@@ -8,8 +8,10 @@ import EditQuestionFormContainer from './question/edit_question_form_container';
 import {Route, Switch} from 'react-router-dom';
 import {AuthRoute} from '../utils/route_util';
 import { QuestionAuthRoute } from '../utils/question_route_util';
-import QuestionShowContainer from '../components/question/question_show_container'
-import QuestionListContinaer from '../components/question/question_list_container'
+import QuestionShowContainer from '../components/question/question_show_container';
+import QuestionListContinaer from '../components/question/question_list_container';
+import HomePage from './home_page';
+
 const App = () => (
     <div id="content" className="grid grid-center">
    
@@ -23,6 +25,7 @@ const App = () => (
         <Route exact path="/questions" component={QuestionListContinaer} />
         <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <QuestionAuthRoute exact path="/questions/:questionId/edit" component={EditQuestionFormContainer} />
+        <Route exact path="/" component={HomePage} />
     </Switch>
     </div>
 );
