@@ -7,12 +7,11 @@ export const fetchAnswers = (questionId) => {
     })
 }
 
-export const fetchAnswer = (questionId, answerId) => {
+export const fetchAnswer = (answerId) => {
     
     return $.ajax({
         method: 'GET',
-        url: `/api/questions/${questionId}/answers/${answerId}`,
-        data: {answer:{question_id: questionId}}
+        url: `/api/answers/${answerId}`
     })
 }
 //answer here should contain questionId

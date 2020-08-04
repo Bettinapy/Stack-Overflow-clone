@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SideMenu from '../side_menu';
+
 
 class AnswerForm extends React.Component {
     constructor(props) {
@@ -39,10 +41,13 @@ class AnswerForm extends React.Component {
     render() {
         debugger
         const createAnswerTitle = (this.props.formType === 'Create Answer' ? (
-            <div className="question-form-header-container">
-                <h1 className="question-form-header">Ask a public question</h1>
+            <div className="answer-form-header-container">
+                <h2>Your Answer</h2>
             </div>
-        ) : (<></>))
+        ) : (
+            <div className="answer-form-header-container">
+                <h2>Answer</h2>
+            </div>))
         
         const systemErrors = (this.props.errors.invalid ? (
             <div className="system-error-message-box">
@@ -63,18 +68,29 @@ class AnswerForm extends React.Component {
         ) : (
                 <>
                     <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Save Edits</button>
-                    <Link className="cancel-link" to={`/questions/${this.props.question.id}`}>Cancel</Link>
+                    <Link className="cancel-link" to={`/questions/${this.props.answer.question_id}`}>Cancel</Link>
                 </>
             ))
+        
+        const editContainer = (this.props.formType === 'Update Answer' ? (
+            'edit-answer-container grid'
+        ):(''));
+
+        const editFormat = (this.props.formType === 'Update Answer' ? (
+            <SideMenu />
+        ):(''))
+
+        const editFormContainer = (this.props.formType === 'Update Answer' ? (
+            'edit-form-container'
+        ):(''))
 
         return (
-            <div>
-                <form>
+            <div className={`${editContainer}`} >
+                {editFormat}
+
+                <form className={`${editFormContainer}`}>
+                    {createAnswerTitle}
                 <div className={`question-form-col grid ${hasBodyError}`}>
-                    <label className="q-label" htmlFor="body">
-                        Body
-                            <p class="q-label-description">Include all the information someone would need to answer your question</p>
-                    </label>
                     <textarea id="q-body" onClick={this.handleInput.bind(this, "q-body")} className="q-input q-input-textarea input-default" type="text" value={this.state.body} onChange={this.handleChange('body')} />
                     {bodyErrors}
                 </div>

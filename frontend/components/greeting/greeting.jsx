@@ -50,7 +50,7 @@ class Greeting extends React.Component {
                             </li>
                             <li>
                                 <Link id="menu-lifo" to="/questions" onClick={this.handleMenu.bind(this, "menu-lifo")} className="list-item-format item-format-lifo grid">
-                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <i className="fa fa-globe" aria-hidden="true"></i>
                                     <span>LIFO Overflow</span>
                                 </Link>
                             </li>
@@ -121,10 +121,10 @@ class Greeting extends React.Component {
             <nav className="right-nav full-height grid">
                 <ul className="grid full-height align-center">
                     <li>
-                        <button className="session-btn-light button-default"><a href="#/login">Log in</a></button>
+                        <button><a href="#/login" className="session-btn-light button-default">Log in</a></button>
                     </li>
                     <li>
-                        <button className="session-btn-heavy button-default"><a href="#/signup" className="session-color">Sign up</a></button>
+                            <button><a href="#/signup" className="session-btn-heavy button-default session-color">Sign up</a></button>
                     </li>
                 </ul>
             </nav>
@@ -155,10 +155,9 @@ class Greeting extends React.Component {
                             <input onClick={this.handleSearch.bind(this)} id="search-input" autoComplete="off" className="search-bar input-default" name="search" type="text" placeholder="Search…" />
                             <i className="fa fa-search input-search" aria-hidden="true"></i>
                             <div id="nav-search-hints" className="nav-search-box">
-                                <div class="search-hints-box grid align-center">
-                    
-                                    <button className="small-btn session-btn-light button-default">
-                                        <Link to="/questions/ask">Ask a question</Link>
+                                <div className="search-hints-box grid align-center">                    
+                                    <button >
+                                        <Link className="small-btn session-btn-light button-default" to="/questions/ask">Ask a question</Link>
                                     </button>
                                 </div>
                             </div>

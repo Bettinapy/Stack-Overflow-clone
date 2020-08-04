@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
 import CreateAnswerFormContainer from '../answers/create_answer_form_container';
-import AnswerShowContainer from '../answers/answer_show_container';
 import AnswerItem from '../answers/answer_item';
 
 class QuestionShow extends React.Component{
@@ -14,7 +13,6 @@ class QuestionShow extends React.Component{
     
     componentDidMount(){
         this.props.requestQuestion(this.props.match.params.questionId);
-        // this.setState({ title: this.props.question.title });
     }
 
     componentWillUnmount() {
@@ -28,12 +26,12 @@ class QuestionShow extends React.Component{
             this.props.deleteQuestion(this.props.match.params.questionId)
                 .then(() => {
                    
-                    return (this.props.history.push('/'))});
+                    return (this.props.history.push('/questions'))});
         }
         
     }
     render(){
-        debugger
+        
         const userAuth = (this.props.currentUserId === this.props.question.author_id ? (
             <>
                 <button><Link to={`/questions/${this.props.match.params.questionId}/edit`} className="small-link">edit</Link></button>
@@ -41,10 +39,16 @@ class QuestionShow extends React.Component{
             </>
         ):(<></>));
         
-        debugger
+        
         const userInfo = (typeof this.props.users[this.props.question.author_id] !== 'undefined' ? (
             this.props.users[this.props.question.author_id].display_name
         ):(''))
+        
+        const answersHeader = (this.props.answers.length !==0 ?(
+            <div className="answers-header">
+                <h2>{this.props.answers.length} Answers</h2>
+            </div>
+        ):(<></>))
 
         const answers = (this.props.answers.length !== 0 ? (
             this.props.answers.map(answer => {
@@ -88,10 +92,10 @@ class QuestionShow extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <ul>
+                    <ul className="answers">
+                        {answersHeader}
                         {answers}
                     </ul>
-                    {/* <AnswerShowContainer /> */}
                 </div>
                 <CreateAnswerFormContainer />
             </div>

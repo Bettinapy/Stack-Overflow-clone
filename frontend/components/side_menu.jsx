@@ -22,7 +22,7 @@ class SideMenu extends React.Component{
                             </li>
                             <li>
                                 <Link id="menu-lifo" to="/questions" onClick={this.handleMenu.bind(this, "menu-lifo")} className="list-item-format item-format-lifo grid menu-item-effect">
-                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <i className="fa fa-globe" aria-hidden="true"></i>
                                     <span>LIFO Overflow</span>
                                 </Link>
                             </li>

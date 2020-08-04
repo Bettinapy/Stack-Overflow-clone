@@ -3,19 +3,23 @@ import { connect } from 'react-redux';
 import AnswerForm from './answer_form';
 import { requestAnswer, updateAnswer } from '../../actions/answer_actions';
 import { clearErrors } from '../../actions/session_actions';
+import { withRouter, Redirect } from "react-router";
 
 const mapStateToProps = (state, ownProps) => {
     debugger
+    const editAnswer = state.entities.answers[ownProps.match.params.answerId];
+    // const questionId = editAnswer.question_id;
     return {
-        answer: state.entities.answers[ownProps.match.params.answerId],
-        errors: state.errors.session.session_error || { title: '', body: '' },
+        answer: editAnswer,
+        // question: state.entities.questions[questionId],
+        errors: state.errors.session.session_error || { body: '' },
         formType: 'Update Answer'
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        requestAnswer: (questionId, answerId) => dispatch(requestAnswer(questionId, answerId)),
+        requestAnswer: (answerId) => dispatch(requestAnswer(answerId)),
         submitAnswer: (answer) => dispatch(updateAnswer(answer)),
         clearErrors: () => dispatch(clearErrors())
     }

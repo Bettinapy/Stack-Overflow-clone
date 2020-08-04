@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import QuestionShow from './question_show';
 import { requestQuestion, deleteQuestion } from '../../actions/question_actions';
 import { clearErrors } from '../../actions/session_actions';
-
+import {deleteAnswer} from '../../actions/answer_actions';
 
 
 const mapStateToProps = (state, ownProps) => {

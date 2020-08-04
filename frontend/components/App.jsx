@@ -11,6 +11,8 @@ import { QuestionAuthRoute } from '../utils/question_route_util';
 import QuestionShowContainer from '../components/question/question_show_container';
 import QuestionListContinaer from '../components/question/question_list_container';
 import HomePage from './home_page';
+import EditAnswerFormContainer from './answers/edit_answer_form_container';
+
 
 const App = () => (
     <div id="content" className="grid grid-center">
@@ -25,6 +27,7 @@ const App = () => (
         <Route exact path="/questions" component={QuestionListContinaer} />
         <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <QuestionAuthRoute exact path="/questions/:questionId/edit" component={EditQuestionFormContainer} />
+        <QuestionAuthRoute exact path="/answers/:answerId/edit" component={EditAnswerFormContainer} />
         <Route exact path="/" component={HomePage} />
     </Switch>
     </div>

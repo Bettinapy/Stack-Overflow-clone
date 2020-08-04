@@ -43,11 +43,11 @@ export const requestAnswers = (questionId) => {
             })
     }
 }
-export const requestAnswer = (questionId, answerId) => {
+export const requestAnswer = (answerId) => {
 
     return dispatch => {
 
-        return AnswerAPIUtil.fetchAnswer(questionId, answerId)
+        return AnswerAPIUtil.fetchAnswer(answerId)
             .then((payload) => dispatch(receiveAnswer(payload)))
     }
 }

@@ -68,7 +68,7 @@ class QuestionForm extends React.Component{
                         <div className={`question-form-col grid ${hasTitleError}`}>
                         <label className="q-label" htmlFor="title">
                                 Title
-                            <p class="q-label-description">Be specific and imagine you’re asking a question to another person</p>
+                            <p className="q-label-description">Be specific and imagine you’re asking a question to another person</p>
                         </label>
                         <input id="q-title" onClick={this.handleInput.bind(this,"q-title")} className="q-input input-default" placeholder="e.g. How to reset the state of a Redux store?" type="text" value={this.state.title} onChange={this.handleChange('title')}/>
                         {titleErrors}
@@ -76,7 +76,7 @@ class QuestionForm extends React.Component{
                     <div className={`question-form-col grid ${hasBodyError}`}>
                         <label className="q-label" htmlFor="body">
                                 Body
-                            <p class="q-label-description">Include all the information someone would need to answer your question</p>
+                            <p className="q-label-description">Include all the information someone would need to answer your question</p>
                         </label>
                             <textarea id="q-body" onClick={this.handleInput.bind(this,"q-body")} className="q-input q-input-textarea input-default" type="text" value={this.state.body} onChange={this.handleChange('body')}/>
                         {bodyErrors}
