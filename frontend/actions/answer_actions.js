@@ -6,8 +6,8 @@ export const RECEIVE_ANSWER = "RECEIVE_ANSWER";
 export const REMOVE_ANSWER = "REMOVE_ANSWER";
 
 
-export const receiveAnswers = ({ anwers, users, question }) => {
-
+export const receiveAnswers = ({ answers, users, question }) => {
+    debugger
     return {
         type: RECEIVE_ANSWERS,
         answers,
@@ -34,10 +34,13 @@ export const removeAnswer = (answerId) => {
 }
 
 export const requestAnswers = (questionId) => {
-
+    debugger
     return dispatch => {
         return AnswerAPIUtil.fetchAnswers(questionId)
-            .then((payload) => dispatch(receiveAnswers(payload)))
+            .then((payload) => {
+                debugger
+                return dispatch(receiveAnswers(payload))
+            })
     }
 }
 export const requestAnswer = (questionId, answerId) => {
@@ -49,6 +52,7 @@ export const requestAnswer = (questionId, answerId) => {
     }
 }
 export const createAnswer = (answer) => {
+    debugger
     return dispatch => {
         return AnswerAPIUtil.createAnswer(answer)
             .then((payload) => dispatch(receiveAnswer(payload)),

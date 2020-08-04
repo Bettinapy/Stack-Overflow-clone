@@ -1,8 +1,9 @@
 .side-menu-container{
     width: 190px;
     background-color: white;
-    position: sticky;
+    position: fixed;
     padding-top: 24px;
+    height: 100%;
 }
 
 .side-menu-top{

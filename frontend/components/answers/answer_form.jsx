@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class AnswerForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.question;
+        this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -14,6 +14,7 @@ class AnswerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         this.props.submitAnswer(this.state)
             .then((action) => {
                 debugger
@@ -54,7 +55,7 @@ class AnswerForm extends React.Component {
         ) : (""));
 
         const submitBtn = (this.props.formType === 'Create Answer' ? (
-            <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Post your question</button>
+            <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Post Your Answer</button>
         ) : (
                 <>
                     <button className="button session-btn-heavy button-default" onClick={this.handleSubmit}>Save Edits</button>

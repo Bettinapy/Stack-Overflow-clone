@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     const question = state.entities.questions[ownProps.match.params.questionId];
     const user = (question ? state.entities.users[question.author_id] : { id: 0, display_name: '' });
     const currentUserId = (Boolean(state.session.id) ? state.session.id : -1)
-
+    debugger
     return {
         question: question || {title: '', body: '', created_at: ''},
         currentUserId: currentUserId,

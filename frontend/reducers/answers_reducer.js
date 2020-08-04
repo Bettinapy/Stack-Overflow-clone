@@ -4,7 +4,8 @@ import {
     REMOVE_ANSWER
 } from '../actions/answer_actions';
 
-const QuestionsReducer = (state = {}, action) => {
+const AnswersReducer = (state = {}, action) => {
+    debugger
     Object.freeze(state);
     let newState = {};
     switch (action.type) {
@@ -24,4 +25,4 @@ const QuestionsReducer = (state = {}, action) => {
     }
 }
 
-export default QuestionsReducer;
+export default AnswersReducer;

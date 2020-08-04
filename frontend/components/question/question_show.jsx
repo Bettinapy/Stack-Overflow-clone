@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
 import CreateAnswerFormContainer from '../answers/create_answer_form_container';
+import AnswerShowContainer from '../answers/answer_show_container';
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -31,13 +32,13 @@ class QuestionShow extends React.Component{
         
     }
     render(){
-  
+        debugger
         const userAuth = (this.props.currentUserId === this.props.user.id ? (
             <>
                 <button><Link to={`/questions/${this.props.match.params.questionId}/edit`} className="small-link">edit</Link></button>
                 <button onClick={this.handleDelete}><a className="small-link">delete</a></button>
             </>
-        ):(<></>))
+        ):(<></>));
        
         return(
             <div className="whole-container grid">
@@ -71,6 +72,7 @@ class QuestionShow extends React.Component{
                             </div>
                         </div>
                     </div>
+                    <AnswerShowContainer />
                 </div>
                 <CreateAnswerFormContainer />
             </div>

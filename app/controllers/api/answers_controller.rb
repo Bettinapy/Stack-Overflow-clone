@@ -2,14 +2,11 @@ class Api::AnswersController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :ensure_logged_in, only: [:create, :destroy, :update]
     def index
-        debugger
         @answers = Answer.all.includes(:user).select{|a| a.question_id = params[:answer][:question_id]}
     end
     
-    def create 
-        
+    def create         
         @answer = current_user.answers.new(answer_params)
-        debugger
         if @answer.save 
             
             render :show, include: [:question, :user]

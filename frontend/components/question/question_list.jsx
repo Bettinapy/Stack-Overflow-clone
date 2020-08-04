@@ -1,5 +1,4 @@
 import React from 'react';
-import QuestionListItem from './question_list_item';
 import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
 
