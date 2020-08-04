@@ -5,7 +5,7 @@ import { clearErrors } from '../../actions/session_actions';
 import { withRouter, Redirect } from "react-router";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+   
     const answer = (typeof state.entities.answers.id === 'undefined' ? (
                 !Boolean(state.session.id) ? (
             { body: '', author_id: 0, question_id: ownProps.match.params.questionId }

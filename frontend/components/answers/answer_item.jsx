@@ -14,7 +14,7 @@ class AnswerItem extends React.Component {
         if (choice === true) {
             this.props.deleteAnswer(this.props.answer.question_id, this.props.answer.id)
                 // .then(() => {
-                //     debugger
+                //    
                 //     return (this.props.history.push(`/questions/${this.props.match.params.questionId}`))
                 // });
         }

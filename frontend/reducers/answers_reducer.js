@@ -7,7 +7,7 @@ import {
 import {RECEIVE_QUESTION} from '../actions/question_actions';
 
 const AnswersReducer = (state = {}, action) => {
-    debugger
+
     Object.freeze(state);
     let newState = {};
     switch (action.type) {

@@ -16,10 +16,10 @@ class AnswerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         this.props.submitAnswer(this.state)
         .then((action) => {
-            debugger
+            
             return (
                 this.props.history.replace(`/questions/${action.question.id}`))
             });
@@ -39,7 +39,7 @@ class AnswerForm extends React.Component {
     }
 
     render() {
-        debugger
+        
         const createAnswerTitle = (this.props.formType === 'Create Answer' ? (
             <div className="answer-form-header-container">
                 <h2>Your Answer</h2>

@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     const currentUserId = (Boolean(state.session.id) ? state.session.id : -1)
     const answers = Object.values(state.entities.answers)
     const users = state.entities.users
-    debugger
+  
     return {
         question: question || {title: '', body: '', created_at: '', author_id:0},
         currentUserId: currentUserId,

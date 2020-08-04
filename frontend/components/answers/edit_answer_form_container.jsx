@@ -6,7 +6,7 @@ import { clearErrors } from '../../actions/session_actions';
 import { withRouter, Redirect } from "react-router";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+   
     const editAnswer = state.entities.answers[ownProps.match.params.answerId];
     // const questionId = editAnswer.question_id;
     return {
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
 class EditAnswerForm extends React.Component {
 
     componentDidMount() {
-        debugger
+       
         return (this.props.requestAnswer(this.props.match.params.answerId));
     }
     render() {

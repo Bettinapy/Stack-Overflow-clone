@@ -8,7 +8,7 @@ class QuestionList extends React.Component {
     }
 
     render() {
-        debugger
+    
         // const userInfo = (typeof this.props.users[this.props.question.author_id] !== 'undefined' ? (
         //     this.props.users[this.props.question.author_id].display_name
         // ) : (''));

@@ -1,5 +1,5 @@
 export const fetchAnswers = (questionId) => {
-    debugger
+
     return $.ajax({
         method: 'GET',
         url: `/api/questions/${questionId}/answers`,
@@ -16,7 +16,7 @@ export const fetchAnswer = (answerId) => {
 }
 //answer here should contain questionId
 export const createAnswer = (answer) => {
-    debugger
+
     return $.ajax({
         method: 'POST',
         url: `/api/questions/${answer.question_id}/answers/`,
