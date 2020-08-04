@@ -4,11 +4,15 @@ import {
     REMOVE_ANSWER
 } from '../actions/answer_actions';
 
+import {RECEIVE_QUESTION} from '../actions/question_actions';
+
 const AnswersReducer = (state = {}, action) => {
     debugger
     Object.freeze(state);
     let newState = {};
     switch (action.type) {
+        case RECEIVE_QUESTION:
+            return action.answers;
         case RECEIVE_ANSWERS:
             return action.answers;
         case RECEIVE_ANSWER:

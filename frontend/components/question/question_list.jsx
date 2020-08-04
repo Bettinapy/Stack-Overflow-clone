@@ -8,6 +8,10 @@ class QuestionList extends React.Component {
     }
 
     render() {
+        debugger
+        // const userInfo = (typeof this.props.users[this.props.question.author_id] !== 'undefined' ? (
+        //     this.props.users[this.props.question.author_id].display_name
+        // ) : (''));
 
         const questionItems = (this.props.questions.length !== 0 ? (this.props.questions.map(question => (
             <li className="question-info-box grid" key={question.id}>

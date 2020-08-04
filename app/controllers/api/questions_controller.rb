@@ -2,7 +2,7 @@ class Api::QuestionsController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :ensure_logged_in, only: [:create, :destroy, :update]
     def index 
-        @questions = Question.all
+        @questions = Question.all.includes(:user)
     end
 
     def create 
@@ -24,11 +24,8 @@ class Api::QuestionsController < ApplicationController
         end
     end
 
-    def show
-        
-        @question = Question.find(params[:id])
-        @user = @question.user 
-        
+    def show    
+        @question = Question.includes(:user, :answers).find(params[:id])    
     end
 
     def update

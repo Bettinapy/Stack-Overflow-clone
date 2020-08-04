@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
 import CreateAnswerFormContainer from '../answers/create_answer_form_container';
 import AnswerShowContainer from '../answers/answer_show_container';
+import AnswerItem from '../answers/answer_item';
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -33,12 +34,27 @@ class QuestionShow extends React.Component{
     }
     render(){
         debugger
-        const userAuth = (this.props.currentUserId === this.props.user.id ? (
+        const userAuth = (this.props.currentUserId === this.props.question.author_id ? (
             <>
                 <button><Link to={`/questions/${this.props.match.params.questionId}/edit`} className="small-link">edit</Link></button>
                 <button onClick={this.handleDelete}><a className="small-link">delete</a></button>
             </>
         ):(<></>));
+        
+        debugger
+        const userInfo = (typeof this.props.users[this.props.question.author_id] !== 'undefined' ? (
+            this.props.users[this.props.question.author_id].display_name
+        ):(''))
+
+        const answers = (this.props.answers.length !== 0 ? (
+            this.props.answers.map(answer => {
+                return <AnswerItem key={answer.id}
+                    currentUserId={this.props.currentUserId}
+                    deleteAnswer={this.props.deleteAnswer}
+                    answer={answer}
+                    user={this.props.users[answer.author_id]} />
+            })
+        ) : (<></>))
        
         return(
             <div className="whole-container grid">
@@ -67,12 +83,15 @@ class QuestionShow extends React.Component{
                                     asked {this.props.question.created_at}
                                 </div>
                                 <div className="author-info">
-                                    <a>{this.props.user.display_name}</a>
+                                    <a>{userInfo} </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <AnswerShowContainer />
+                    <ul>
+                        {answers}
+                    </ul>
+                    {/* <AnswerShowContainer /> */}
                 </div>
                 <CreateAnswerFormContainer />
             </div>

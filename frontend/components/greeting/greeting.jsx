@@ -20,9 +20,15 @@ class Greeting extends React.Component {
     }
 
     componentWillUnmount() {
-   
-        document.getElementById("nav-search-hints").classList.remove("show");
-        document.getElementById("gear-dropdown-m").classList.remove("show");
+        // const nav = document.getElementById("nav-search-hints");
+        // if (nav.classList.contains("show")){
+        //     nav.classList.remove("show")
+        // };
+
+        // const dropdown = document.getElementById("gear-dropdown-m");
+        // if (dropdown.classList.contains("show")){
+        //     dropdown.classList.remove("show")
+        // };
     }
 
     render() {

@@ -16,10 +16,13 @@ class AnswerForm extends React.Component {
         e.preventDefault();
         debugger
         this.props.submitAnswer(this.state)
-            .then((action) => {
-                debugger
-                return (this.props.history.push(`/questions/${action.question.id}`))
+        .then((action) => {
+            debugger
+            return (
+                this.props.history.replace(`/questions/${action.question.id}`))
             });
+        this.props.clearErrors();
+        this.setState({body:''})
     }
     handleChange(type) {
         return (e) => {
@@ -27,24 +30,25 @@ class AnswerForm extends React.Component {
         }
     }
 
+
+
     componentWillUnmount() {
         this.props.clearErrors();
     }
 
     render() {
-
+        debugger
         const createAnswerTitle = (this.props.formType === 'Create Answer' ? (
             <div className="question-form-header-container">
                 <h1 className="question-form-header">Ask a public question</h1>
             </div>
         ) : (<></>))
-        const titleErrors = (this.props.errors.title ? (
-            <p className="q-input-error-message ">{this.props.errors.title}</p>
-        ) : (<></>));
-
-        const hasTitleError = (this.props.errors.title ? (
-            "has-title-error"
-        ) : (""));
+        
+        const systemErrors = (this.props.errors.invalid ? (
+            <div className="system-error-message-box">
+                <p className="system-error-message">To answer a question, you must sign up or log in.</p> 
+            </div>
+        ):(<></>));
 
         const bodyErrors = (this.props.errors.body ? (
             <p className="q-input-error-message ">{this.props.errors.body}</p>
@@ -78,7 +82,7 @@ class AnswerForm extends React.Component {
                     {submitBtn}
                 </div>
                 </form>
-                
+                {systemErrors}
             </div>
         )
     }

@@ -1,3 +1,4 @@
+
 json.questions do
     @questions.each do |question|
         json.set! question.id do
@@ -7,7 +8,7 @@ json.questions do
 end
 
 json.users do
-    @questions.includes(:user).each do |question|
+    @questions.each do |question|
         json.set! question.author_id do
             json.partial! 'api/users/user', user: question.user
         end
