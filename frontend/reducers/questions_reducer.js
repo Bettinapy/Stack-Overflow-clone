@@ -4,6 +4,8 @@ import {
     REMOVE_QUESTION 
 } from '../actions/question_actions';
 
+import {RECEIVE_ANSWERS, RECEIVE_ANSWER, REMOVE_ANSWER} from '../actions/answer_actions';
+
 const QuestionsReducer = (state={}, action) => {
     Object.freeze(state);
     let newState = {};
@@ -11,9 +13,12 @@ const QuestionsReducer = (state={}, action) => {
         case RECEIVE_QUESTIONS:
             return action.questions;
         case RECEIVE_QUESTION:
-            newState = Object.assign({}, state, { [action.question.id]: action.question })
-          
+            newState = Object.assign({}, state, { [action.question.id]: action.question })          
             return newState;
+        case RECEIVE_ANSWER:
+            newState = Object.assign({}, state, { [action.question.id]: action.question }) 
+        case RECEIVE_ANSWERS:
+            newState = Object.assign({}, state, { [action.question.id]: action.question }) 
         case REMOVE_QUESTION:
             newState = Object.assign({},state)
             delete newState[action.questionId];

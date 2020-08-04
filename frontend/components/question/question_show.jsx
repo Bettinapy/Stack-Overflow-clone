@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
+import CreateAnswerFormContainer from '../answers/create_answer_form_container';
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -71,6 +72,7 @@ class QuestionShow extends React.Component{
                         </div>
                     </div>
                 </div>
+                <CreateAnswerFormContainer />
             </div>
             </div>
         )

@@ -48,6 +48,10 @@ en:
               blank: "is missing"
             body:
               blank: "is missing"
+        body:
+          attributes:
+            body:
+              blank: "is missing"
         user:
           attributes:
             display_name:

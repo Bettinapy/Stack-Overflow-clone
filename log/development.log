@@ -22925,3 +22925,1043 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 188ms (Views: 175.8ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for ::1 at 2020-08-03 17:31:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (25.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "X2I62zT4g3ay4dd1ARK9zw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 199ms (Views: 168.4ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/questions" for ::1 at 2020-08-03 17:31:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/questions"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-08-03 17:31:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "X2I62zT4g3ay4dd1ARK9zw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 121ms (Views: 116.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-08-03 17:31:20 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (2.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:2
+  Rendered api/questions/_question.json.jbuilder (2.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/questions/index.json.jbuilder (69.5ms)
+Completed 200 OK in 104ms (Views: 83.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-08-03 17:31:27 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:2
+  Rendered api/questions/_question.json.jbuilder (0.8ms)
+  Rendered api/questions/_question.json.jbuilder (0.7ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (1.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (50.7ms)
+Completed 200 OK in 75ms (Views: 64.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-08-03 17:31:30 -0400
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:2
+  Rendered api/questions/_question.json.jbuilder (0.8ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.7ms)
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (41.0ms)
+Completed 200 OK in 67ms (Views: 61.1ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (142.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5847787395255219015)[0m
+  ↳ bin/rails:9
+  [1m[35m (27.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAnswers (20200803220738)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1387.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" bigserial primary key, "body" character varying NOT NULL, "author_id" integer NOT NULL, "question_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200803220738_create_answers.rb:3
+  [1m[35m (49.6ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_author_id" ON "answers"  ("author_id")[0m
+  ↳ db/migrate/20200803220738_create_answers.rb:10
+  [1m[35m (82.0ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_question_id" ON "answers"  ("question_id")[0m
+  ↳ db/migrate/20200803220738_create_answers.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200803220738"]]
+  ↳ bin/rails:9
+  [1m[35m (45.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (48.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5847787395255219015)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/api/questions" for ::1 at 2020-08-03 18:39:15 -0400
+  [1m[35m (36.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bettina/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (35.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:2
+  Rendered api/questions/_question.json.jbuilder (2.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[36mCACHE Question Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (509.1ms)
+Completed 200 OK in 785ms (Views: 532.4ms | ActiveRecord: 192.6ms)
+
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:41:05 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Filter chain halted as :ensure_logged_in rendered or redirected
+Completed 401 Unauthorized in 42ms (Views: 1.3ms | ActiveRecord: 28.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-08-03 18:41:39 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"display_name"=>"test", "email"=>"test120@gmail.com", "password"=>"[FILTERED]"}, "answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}}
+  [1m[35m (30.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Exists (9.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test120@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KBxFsYQ9CpE_JfHWH-VtCg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (23.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 401 Unauthorized in 1611ms (Views: 0.4ms | ActiveRecord: 64.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-03 18:41:49 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"display_name"=>"test", "email"=>"test120@gmail.com", "password"=>"[FILTERED]"}, "answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test120@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (5.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test120@gmail.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (14.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["updated_at", "2020-08-03 22:41:51.202604"], ["id", 15]]
+  ↳ app/models/user.rb:51
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."author_id" = $1[0m  [["author_id", 15]]
+  ↳ app/views/api/users/show.json.jbuilder:4
+  Rendered api/users/show.json.jbuilder (84.0ms)
+Completed 200 OK in 1512ms (Views: 145.8ms | ActiveRecord: 26.7ms)
+
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:42:10 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:7
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:7
+  [1m[36mAnswer Create (37.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["question_id", 16], ["created_at", "2020-08-03 22:42:10.769987"], ["updated_at", "2020-08-03 22:42:10.769987"]]
+  ↳ app/controllers/api/answers_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/answers_controller.rb:7
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 80.5ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "author_id" violates not-null constraint
+DETAIL:  Failing row contains (1, answer body is minimum 30 words minimum 30words answer body is m..., null, 16, 2020-08-03 22:42:10.769987, 2020-08-03 22:42:10.769987).
+: INSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/api/answers_controller.rb:7:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:44:14 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (7.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers" INNER JOIN "questions" ON "answers"."question_id" = "questions"."id" WHERE "questions"."author_id" = $1[0m  [["author_id", 15]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (7.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (45.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (45.0ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["question_id", 16], ["created_at", "2020-08-03 22:46:03.679177"], ["updated_at", "2020-08-03 22:46:03.679177"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (95.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+Completed 500 Internal Server Error in 109215ms (ActiveRecord: 547.2ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "author_id" violates not-null constraint
+DETAIL:  Failing row contains (2, answer body is minimum 30 words minimum 30words answer body is m..., null, 16, 2020-08-03 22:46:03.679177, 2020-08-03 22:46:03.679177).
+: INSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/api/answers_controller.rb:8:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:46:10 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (47.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" INNER JOIN "questions" ON "answers"."question_id" = "questions"."id" WHERE "questions"."author_id" = $1[0m  [["author_id", 15]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (35.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (14.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (22.8ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["question_id", 16], ["created_at", "2020-08-03 22:49:09.181850"], ["updated_at", "2020-08-03 22:49:09.181850"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+Completed 500 Internal Server Error in 177473ms (ActiveRecord: 446.9ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "author_id" violates not-null constraint
+DETAIL:  Failing row contains (3, answer body is minimum 30 words minimum 30words answer body is m..., null, 16, 2020-08-03 22:49:09.18185, 2020-08-03 22:49:09.18185).
+: INSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id":
+  app/controllers/api/answers_controller.rb:8:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:49:14 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."author_id" = $1[0m  [["author_id", 15]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (94.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (42.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (49.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (52.1ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:49:30.351836"], ["updated_at", "2020-08-03 22:49:30.351836"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (64.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+Completed 500 Internal Server Error in 15617ms (ActiveRecord: 622.3ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/answers/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/bettina/Desktop/LIFO_Overflow/app/views"
+:
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:52:32 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (217.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (48.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (61.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (25.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (8.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:52:34.554560"], ["updated_at", "2020-08-03 22:52:34.554560"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (5780.5ms)
+  Rendered api/answers/show.json.jbuilder (5793.4ms)
+Completed 500 Internal Server Error in 7859ms (ActiveRecord: 363.7ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d5c6e1b80>:0x00007f8d5c74ace8>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:2:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122559130180'
+  app/views/api/answers/show.json.jbuilder:1:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122559130180'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:54:19 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (39.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (41.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (7.5ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:54:21.596005"], ["updated_at", "2020-08-03 22:54:21.596005"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2995.2ms)
+  Rendered api/answers/show.json.jbuilder (21642.7ms)
+Completed 500 Internal Server Error in 23575ms (ActiveRecord: 113.2ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d5c6e1b80>:0x00007f8d630455b8>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122614169680'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122614169680'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:56:35 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (124.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (58.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (7.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (58.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (3.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:56:40.910163"], ["updated_at", "2020-08-03 22:56:40.910163"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (491.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2279.4ms)
+  Rendered api/answers/show.json.jbuilder (4470.1ms)
+Completed 500 Internal Server Error in 9282ms (ActiveRecord: 1039.8ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d613cdde0>:0x00007f8d613cee20>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122599245280'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122599245280'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:58:07 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (67.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (61.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (69.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (79.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (63.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:58:09.856824"], ["updated_at", "2020-08-03 22:58:09.856824"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2925.2ms)
+  Rendered api/answers/show.json.jbuilder (3808.7ms)
+Completed 500 Internal Server Error in 6267ms (ActiveRecord: 381.2ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d613cdde0>:0x00007f8d61175160>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122592432240'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122592432240'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:58:32 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (36.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (71.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (58.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (43.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (1.0ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:58:34.510563"], ["updated_at", "2020-08-03 22:58:34.510563"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2065.9ms)
+  Rendered api/answers/show.json.jbuilder (12004.8ms)
+Completed 500 Internal Server Error in 14268ms (ActiveRecord: 211.3ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d613cdde0>:0x00007f8d5f669600>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122583834980'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122583834980'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 18:59:14 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (32.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (48.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (47.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (144.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (81.0ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 22:59:17.023376"], ["updated_at", "2020-08-03 22:59:17.023376"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (100.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2570.8ms)
+  Rendered api/answers/show.json.jbuilder (4342.8ms)
+Completed 500 Internal Server Error in 6684ms (ActiveRecord: 454.2ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d613cdde0>:0x00007f8d62336de0>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122607323760'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122607323760'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 19:00:10 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (99.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (86.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (4.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (0.7ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 23:00:14.962524"], ["updated_at", "2020-08-03 23:00:14.962524"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (5559.5ms)
+  Rendered api/answers/show.json.jbuilder (5584.4ms)
+Completed 500 Internal Server Error in 10261ms (ActiveRecord: 192.6ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `question' for #<#<Class:0x00007f8d613cdde0>:0x00007f8d58f4a0f0>:
+  app/views/api/answers/_answer.json.jbuilder:1:in `view template'
+  app/views/api/answers/show.json.jbuilder:3:in `block in _app_views_api_answers_show_json_jbuilder___1627528427856722629_70122529768140'
+  app/views/api/answers/show.json.jbuilder:2:in `_app_views_api_answers_show_json_jbuilder___1627528427856722629_70122529768140'
+  app/controllers/api/answers_controller.rb:10:in `create'
+
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 19:02:58 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (44.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (34.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (30.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (59.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (3.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "answer body is minimum 30 words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 23:03:00.715681"], ["updated_at", "2020-08-03 23:03:00.715681"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (79.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (1.2ms)
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/questions/_question.json.jbuilder (844.7ms)
+  Rendered api/answers/show.json.jbuilder (1825.1ms)
+Completed 200 OK in 4496ms (Views: 1848.9ms | ActiveRecord: 251.3ms)
+
+
+Started GET "/api/questions/16/answers/12" for ::1 at 2020-08-03 19:03:30 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"answer"=>{"body"=>"answer body is minimum 30 words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16", "id"=>"12"}
+  [1m[36mAnswer Load (1.8ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:26
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:27
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (0.9ms)
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  [1m[36mQuestion Load (27.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/answers/show.json.jbuilder:12
+  Rendered api/questions/_question.json.jbuilder (684.4ms)
+  Rendered api/answers/show.json.jbuilder (5243.1ms)
+Completed 200 OK in 5317ms (Views: 5234.2ms | ActiveRecord: 30.9ms)
+
+
+Started PATCH "/api/questions/16/answers/12" for ::1 at 2020-08-03 19:04:03 -0400
+Processing by Api::AnswersController#update as JSON
+  Parameters: {"answer"=>{"body"=>"words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16", "id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (11.9ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:36
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:36
+  [1m[36mUser Load (39.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:36
+  [1m[36mAnswer Update (5.0ms)[0m  [1m[33mUPDATE "answers" SET "body" = $1, "updated_at" = $2 WHERE "answers"."id" = $3[0m  [["body", "words minimum 30words answer body is minimum 30 words"], ["updated_at", "2020-08-03 23:04:04.018274"], ["id", 12]]
+  ↳ app/controllers/api/answers_controller.rb:36
+  [1m[35m (129.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:36
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/questions/_question.json.jbuilder (952.5ms)
+  Rendered api/answers/show.json.jbuilder (4501.8ms)
+Completed 200 OK in 4730ms (Views: 4526.0ms | ActiveRecord: 187.8ms)
+
+
+Started DELETE "/api/questions/16/answers/12" for ::1 at 2020-08-03 19:04:16 -0400
+Processing by Api::AnswersController#destroy as JSON
+  Parameters: {"answer"=>{"body"=>"words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16", "id"=>"12"}
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (78.7ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:54
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:55
+  [1m[36mAnswer Destroy (4.4ms)[0m  [1m[31mDELETE FROM "answers" WHERE "answers"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/api/answers_controller.rb:55
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:55
+Completed 200 OK in 112ms (Views: 0.3ms | ActiveRecord: 105.1ms)
+
+
+Started GET "/api/answers" for ::1 at 2020-08-03 19:07:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/answers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:07:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/questions/16/answers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/questions/16/answers/12" for ::1 at 2020-08-03 19:07:54 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/questions/16/answers/12"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/questions/16/answers" for ::1 at 2020-08-03 19:08:16 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"words minimum 30words answer body is minimum 30 words", "question_id"=>"16"}, "question_id"=>"16"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9WAQsyCPF2NajOjAOEJfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mQuestion Load (32.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[36mAnswer Create (3.0ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "words minimum 30words answer body is minimum 30 words"], ["author_id", 15], ["question_id", 16], ["created_at", "2020-08-03 23:08:23.406334"], ["updated_at", "2020-08-03 23:08:23.406334"]]
+  ↳ app/controllers/api/answers_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:8
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (1.2ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/questions/_question.json.jbuilder (0.9ms)
+  Rendered api/answers/show.json.jbuilder (13.0ms)
+Completed 200 OK in 6840ms (Views: 30.5ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/api/questions/16/answers/12" for ::1 at 2020-08-03 19:08:43 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"question_id"=>"16", "id"=>"12"}
+  [1m[36mAnswer Load (88.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:26
+Completed 404 Not Found in 92ms (ActiveRecord: 88.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Answer with 'id'=12:
+  app/controllers/api/answers_controller.rb:26:in `show'
+
+Started POST "/__better_errors/0340b1ac3e25b6f4/variables" for ::1 at 2020-08-03 19:08:44 -0400
+Started GET "/api/questions/16/answers/13" for ::1 at 2020-08-03 19:08:49 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"question_id"=>"16", "id"=>"13"}
+  [1m[36mAnswer Load (13.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:26
+  [1m[36mUser Load (30.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:27
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (2.7ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  [1m[36mQuestion Load (45.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/answers/show.json.jbuilder:12
+  Rendered api/questions/_question.json.jbuilder (0.8ms)
+  Rendered api/answers/show.json.jbuilder (92.0ms)
+Completed 200 OK in 176ms (Views: 72.7ms | ActiveRecord: 89.5ms)
+
+
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:08:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/questions/16/answers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mQuestion Load (42.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mQuestion Load (36.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:23:02 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (2.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:5
+Completed 500 Internal Server Error in 1064ms (ActiveRecord: 53.1ms)
+
+
+
+NameError - undefined local variable or method `answer' for #<Api::AnswersController:0x00007f8d5df2d360>:
+  app/controllers/api/answers_controller.rb:5:in `block in index'
+  app/controllers/api/answers_controller.rb:5:in `index'
+
+Started POST "/__better_errors/69debfff6844a678/variables" for ::1 at 2020-08-03 19:23:05 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:23:46 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (2.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+Completed 500 Internal Server Error in 133850ms (ActiveRecord: 56.5ms)
+
+
+
+NameError - undefined local variable or method `answer' for #<Api::AnswersController:0x00007f8d5851d7a8>:
+  app/controllers/api/answers_controller.rb:6:in `block in index'
+  app/controllers/api/answers_controller.rb:6:in `index'
+
+Started POST "/__better_errors/aa8a86fce16a3101/variables" for ::1 at 2020-08-03 19:26:01 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:26:03 -0400
+
+SyntaxError - syntax error, unexpected tSTRING_BEG, expecting ')'
+...require(:answer).permit(:body='', :question_id)
+...                              ^:
+  app/controllers/api/answers_controller.rb:65:in `'
+
+Started POST "/__better_errors/8d940da0e7f4c5cf/variables" for ::1 at 2020-08-03 19:26:04 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:27:31 -0400
+
+SyntaxError - syntax error, unexpected ')', expecting =>
+....permit(body: '', :question_id)
+...                              ^:
+  app/controllers/api/answers_controller.rb:65:in `'
+
+Started POST "/__better_errors/71d5ce489209f85d/variables" for ::1 at 2020-08-03 19:27:31 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:30:25 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (2.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+Completed 500 Internal Server Error in 79436ms (ActiveRecord: 85.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/answers_controller.rb:6:in `block in index'
+  app/controllers/api/answers_controller.rb:6:in `index'
+
+Started POST "/__better_errors/3b09251102834dd8/variables" for ::1 at 2020-08-03 19:31:46 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:31:50 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:32:25 -0400
+Completed 400 Bad Request in 34518ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: answer:
+  app/controllers/api/answers_controller.rb:66:in `answer_params'
+  app/controllers/api/answers_controller.rb:6:in `index'
+
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (31.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+  Rendering api/answers/index.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (1.2ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (4.9ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.6ms)
+  Rendered api/answers/index.json.jbuilder (74.1ms)
+Completed 500 Internal Server Error in 2881ms (ActiveRecord: 105.3ms)
+
+
+
+ActionView::Template::Error - undefined method `includes' for #<Array:0x00007f8d585a7480>
+Did you mean?  include?:
+  app/views/api/answers/index.json.jbuilder:10:in `view template'
+
+Started POST "/__better_errors/e117f5b83a76fc39/variables" for ::1 at 2020-08-03 19:32:29 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:33:33 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (7.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+  Rendering api/answers/index.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (1.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (29.8ms)
+  Rendered api/answers/_answer.json.jbuilder (0.2ms)
+  Rendered api/answers/_answer.json.jbuilder (4.2ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/index.json.jbuilder (235.4ms)
+Completed 500 Internal Server Error in 5029ms (ActiveRecord: 187.8ms)
+
+
+
+ActionView::Template::Error - undefined method `include' for #<Array:0x00007f8d5c362fb8>
+Did you mean?  include?:
+  app/views/api/answers/index.json.jbuilder:10:in `view template'
+
+Started POST "/__better_errors/970e4c3b97bebb12/variables" for ::1 at 2020-08-03 19:33:39 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:34:07 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+  Rendering api/answers/index.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (21.6ms)
+  Rendered api/answers/_answer.json.jbuilder (0.5ms)
+  Rendered api/answers/_answer.json.jbuilder (0.4ms)
+  Rendered api/answers/_answer.json.jbuilder (11.4ms)
+  Rendered api/answers/_answer.json.jbuilder (0.5ms)
+  Rendered api/answers/_answer.json.jbuilder (0.7ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/index.json.jbuilder (49696.9ms)
+Completed 500 Internal Server Error in 54574ms (ActiveRecord: 0.8ms)
+
+
+
+ActionView::Template::Error - undefined method `includes' for #<Array:0x00007f8d5c5692a8>
+Did you mean?  include?:
+  app/views/api/answers/index.json.jbuilder:10:in `view template'
+
+Started POST "/__better_errors/02d92fb193afd53e/variables" for ::1 at 2020-08-03 19:35:02 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:35:05 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+  Rendering api/answers/index.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (1.0ms)
+  Rendered api/answers/_answer.json.jbuilder (0.5ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.2ms)
+  Rendered api/answers/_answer.json.jbuilder (4.4ms)
+  Rendered api/answers/_answer.json.jbuilder (8.7ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:12
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/answers/index.json.jbuilder (3526.1ms)
+Completed 500 Internal Server Error in 7901ms (ActiveRecord: 41.5ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `answer' for #<#<Class:0x00007f8d5d82dfb0>:0x00007f8d5da9ec18>
+Did you mean?  @answers:
+  app/views/api/answers/index.json.jbuilder:18:in `view template'
+
+Started POST "/__better_errors/fbff1c958c8bcb99/variables" for ::1 at 2020-08-03 19:35:14 -0400
+Started GET "/api/questions/16/answers" for ::1 at 2020-08-03 19:37:19 -0400
+Processing by Api::AnswersController#index as JSON
+  Parameters: {"question_id"=>"16"}
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:6
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/api/answers_controller.rb:6
+  Rendering api/answers/index.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (0.9ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.9ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.2ms)
+  Rendered api/answers/_answer.json.jbuilder (0.3ms)
+  Rendered api/answers/_answer.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mQuestion Load (1.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/answers/index.json.jbuilder:19
+  Rendered api/questions/_question.json.jbuilder (1.0ms)
+  Rendered api/answers/index.json.jbuilder (9788.5ms)
+Completed 200 OK in 12914ms (Views: 9758.2ms | ActiveRecord: 132.5ms)
+
+
+Started GET "/api/questions/16/answers/4" for ::1 at 2020-08-03 21:00:18 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"question_id"=>"16", "id"=>"4"}
+  [1m[36mAnswer Load (100.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:31
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:32
+  Rendering api/answers/show.json.jbuilder
+  Rendered api/answers/_answer.json.jbuilder (4.4ms)
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[36mQuestion Load (4.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/answers/show.json.jbuilder:12
+  Rendered api/questions/_question.json.jbuilder (2.3ms)
+  Rendered api/answers/show.json.jbuilder (121.0ms)
+Completed 200 OK in 394ms (Views: 152.3ms | ActiveRecord: 121.4ms)
+
+
