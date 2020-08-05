@@ -33,7 +33,7 @@ class Greeting extends React.Component {
 
 
     handleSearchSubmit(e){
-        debugger
+
         e.preventDefault();
         this.props.history.replace({
             pathname: `/search`,

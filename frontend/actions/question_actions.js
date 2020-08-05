@@ -33,14 +33,14 @@ export const removeQuestion = (questionId) => {
 }
 
 export const removeQuestions = () => {
-    debugger
+   
     return{
         type: REMOVE_QUESTIONS
     }
 }
 
 export const requestQuestions = (search) => {
-    debugger
+   
     return dispatch => {
         return QuestionAPIUtil.fetchQuestions(search)
             .then((payload) => dispatch(receiveQuestions(payload)),

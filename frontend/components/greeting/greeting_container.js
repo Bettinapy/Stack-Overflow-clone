@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     const search = (typeof queryString.parse(ownProps.location.search).q !== 'undefined' ? (
         queryString.parse(ownProps.location.search).q
     ):(''))
-    debugger
+  
     return {
         currentUser: state.session,
         search: search

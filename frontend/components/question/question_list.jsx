@@ -4,12 +4,12 @@ import SideMenu from '../side_menu';
 
 class QuestionList extends React.Component {
     componentDidMount() {
-        debugger
+
         this.props.requestQuestions(this.props.search);
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+
         if(prevProps.location.search !== this.props.location.search){
             this.props.clearErrors();
             this.props.requestQuestions(this.props.search);
@@ -21,7 +21,7 @@ class QuestionList extends React.Component {
     }
 
     render() {
-        debugger
+
         // const userInfo = (typeof this.props.users[this.props.question.author_id] !== 'undefined' ? (
         //     this.props.users[this.props.question.author_id].display_name
         // ) : (''));
@@ -55,7 +55,7 @@ class QuestionList extends React.Component {
         const questionTitle = (this.props.search.length !== 0 ? (
             'Search Results'
         ):('All Questions'))
-            debugger
+    
         const searchErrors = (typeof this.props.errors.search !== 'undefined' ? (
             <div className="search-no-result-box grid align-center">
                 <i className="fas fa-search fa-8x"></i>
