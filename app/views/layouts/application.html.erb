@@ -18,20 +18,20 @@
       //handle window click
       window.onclick = function(event) {
           if ((!event.target.matches('.search-bar')) && (!event.target.matches('.search-hints-box')) && (!event.target.matches('.q-input'))) {
-            var dropdowns = document.getElementsByClassName("nav-search-box");
-            var inputs = document.getElementsByClassName("input-default");
+            let dropdowns = document.getElementsByClassName("nav-search-box");
+            let inputs = document.getElementsByClassName("input-default");
             
-            var j;
+            let j;
             for (j = 0; j < inputs.length; j++) {
-              var inputBorder = inputs[j];
+              let inputBorder = inputs[j];
               if (inputBorder.classList.contains('input-border')) {
                 inputBorder.classList.remove('input-border');
               }
             }
             
-            var i;
+            let i;
             for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
+              let openDropdown = dropdowns[i];
               if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
               }

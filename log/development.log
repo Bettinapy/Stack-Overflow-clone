@@ -34207,3 +34207,131 @@ Processing by Api::QuestionsController#index as JSON
 Completed 200 OK in 108ms (Views: 32.3ms | ActiveRecord: 72.0ms)
 
 
+Started GET "/" for ::1 at 2020-08-05 00:39:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TSziShYCpwj9LcAu66WVgA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered api/users/_user.json.jbuilder (4.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 1516ms (Views: 1499.9ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-08-05 00:40:08 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TSziShYCpwj9LcAu66WVgA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "yuanzai@gmail.com"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (25.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vbDrF51yDik8TI6CnMmMbg"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (5.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vbDrF51yDik8TI6CnMmMbg"], ["updated_at", "2020-08-05 04:40:08.545520"], ["id", 21]]
+  ↳ app/models/user.rb:51
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Completed 200 OK in 97ms (Views: 0.4ms | ActiveRecord: 73.8ms)
+
+
+Started GET "/api/questions?search=react" for ::1 at 2020-08-05 00:40:12 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>"react"}
+  [1m[36mQuestion Load (27.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%react%' or LOWER(body) LIKE '%react%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+Completed 404 Not Found in 35ms (Views: 0.8ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/api/questions?search=redux" for ::1 at 2020-08-05 00:40:18 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>"redux"}
+  [1m[36mQuestion Load (30.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%redux%' or LOWER(body) LIKE '%redux%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 20]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (2.2ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (23.2ms)
+Completed 200 OK in 85ms (Views: 46.9ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/api/questions?search=erere" for ::1 at 2020-08-05 00:40:23 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>"erere"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%erere%' or LOWER(body) LIKE '%erere%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+Completed 404 Not Found in 6ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/questions?search=sdsd" for ::1 at 2020-08-05 00:40:25 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>"sdsd"}
+  [1m[36mQuestion Load (24.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%sdsd%' or LOWER(body) LIKE '%sdsd%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 7], ["id", 20]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.0ms)
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (59.9ms)
+Completed 200 OK in 117ms (Views: 81.9ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/api/questions?search=sd" for ::1 at 2020-08-05 00:40:27 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>"sd"}
+  [1m[36mQuestion Load (28.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%sd%' or LOWER(body) LIKE '%sd%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 7], ["id", 16], ["id", 20]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (2.5ms)
+  Rendered api/questions/_question.json.jbuilder (1.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (78.6ms)
+Completed 200 OK in 142ms (Views: 105.1ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/api/questions/29" for ::1 at 2020-08-05 00:40:33 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"29"}
+  [1m[36mQuestion Load (27.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:33
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  ↳ app/controllers/api/questions_controller.rb:33
+  [1m[36mAnswer Load (12.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/controllers/api/questions_controller.rb:33
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.3ms)
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered api/questions/show.json.jbuilder (10.0ms)
+Completed 200 OK in 87ms (Views: 28.2ms | ActiveRecord: 40.2ms)
+
+
+Started POST "/api/questions/29/answers/" for ::1 at 2020-08-05 00:40:36 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"sfd", "author_id"=>"0", "question_id"=>"29"}, "question_id"=>"29"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Filter chain halted as :ensure_logged_in rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 0.6ms | ActiveRecord: 2.3ms)
+
+
