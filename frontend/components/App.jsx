@@ -23,8 +23,10 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         
-        <QuestionAuthRoute exact path="/questions/ask" component={CreateQuestionFormContainer} />
         <Route exact path="/questions" component={QuestionListContinaer} />
+        <Route exact path='/search' component={QuestionListContinaer} />
+
+        <QuestionAuthRoute exact path="/questions/ask" component={CreateQuestionFormContainer} />
         <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <QuestionAuthRoute exact path="/questions/:questionId/edit" component={EditQuestionFormContainer} />
         <QuestionAuthRoute exact path="/answers/:answerId/edit" component={EditAnswerFormContainer} />

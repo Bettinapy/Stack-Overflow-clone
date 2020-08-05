@@ -9,4 +9,12 @@ class Question < ApplicationRecord
     has_many :answers,
         class_name: :Answer,
         foreign_key: :question_id
+    def self.search(token='')
+        if token
+            token = token.downcase
+            self.where("LOWER(title) LIKE ? or LOWER(body) LIKE ?", "%#{token}%", "%#{token}%")
+        else
+            self.all
+        end
+    end
 end

@@ -21,7 +21,7 @@ export const logoutCurrentUser = () => {
 }
 
 export const receiveErrors = (errors) => {
-    
+    debugger
     return {
         type: RECEIVE_ERRORS,
         errors

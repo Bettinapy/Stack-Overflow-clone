@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            search: this.props.search
+        };
+        this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    }
+
     handleToggle(id){
          
         document.getElementById(id).classList.toggle("show")
@@ -19,6 +27,19 @@ class Greeting extends React.Component {
         document.getElementById(id).classList.add("menu-item-effect");
     }
 
+    handleSearchInput(event){
+        return(this.setState({search: event.target.value}))
+    }
+
+
+    handleSearchSubmit(e){
+        debugger
+        e.preventDefault();
+        this.props.history.replace({
+            pathname: `/search`,
+            search: `?q=${this.state.search}`
+        })
+    }
     componentWillUnmount() {
         // const nav = document.getElementById("nav-search-hints");
         // if (nav.classList.contains("show")){
@@ -152,7 +173,12 @@ class Greeting extends React.Component {
                             </ul>
                         </nav>
                         <div className="search-nav">
-                            <input onClick={this.handleSearch.bind(this)} id="search-input" autoComplete="off" className="search-bar input-default" name="search" type="text" placeholder="Search…" />
+                        <form id="search" onSubmit={this.handleSearchSubmit} >    
+                            <input type="text" onClick={this.handleSearch.bind(this)} 
+                                   value={this.state.search} 
+                                   onChange={this.handleSearchInput.bind(this)}
+                                   id="search-input" autoComplete="off" 
+                                   className="search-bar input-default" name="search"  placeholder="Search…" />
                             <i className="fa fa-search input-search" aria-hidden="true"></i>
                             <div id="nav-search-hints" className="nav-search-box">
                                 <div className="search-hints-box grid align-center">                    
@@ -161,6 +187,7 @@ class Greeting extends React.Component {
                                     </button>
                                 </div>
                             </div>
+                        </form>
                         </div>
                         {greeting}
                         </div>

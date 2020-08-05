@@ -1,7 +1,8 @@
 import {
     RECEIVE_QUESTIONS, 
     RECEIVE_QUESTION, 
-    REMOVE_QUESTION 
+    REMOVE_QUESTION,
+    REMOVE_QUESTIONS  
 } from '../actions/question_actions';
 
 import {RECEIVE_ANSWERS, RECEIVE_ANSWER, REMOVE_ANSWER} from '../actions/answer_actions';
@@ -23,6 +24,8 @@ const QuestionsReducer = (state={}, action) => {
             newState = Object.assign({},state)
             delete newState[action.questionId];
             return newState;
+        case REMOVE_QUESTIONS:
+            return {};
         default:
             return state;
 

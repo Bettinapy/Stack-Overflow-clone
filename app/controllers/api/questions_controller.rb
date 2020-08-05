@@ -2,7 +2,12 @@ class Api::QuestionsController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :ensure_logged_in, only: [:create, :destroy, :update]
     def index 
-        @questions = Question.all.includes(:user)
+        @questions = Question.includes(:user).search(params[:search])
+        if @questions.present?
+            render :index 
+        else   
+            render json: {search: [params[:search]]}, status: 404
+        end
     end
 
     def create 

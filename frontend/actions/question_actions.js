@@ -4,7 +4,7 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
-
+export const REMOVE_QUESTIONS = "REMOVE_QUESTIONS";
 
 export const receiveQuestions = ({questions, users}) => {
    
@@ -32,11 +32,24 @@ export const removeQuestion = (questionId) => {
     }
 }
 
-export const requestQuestions = () => {
-    
+export const removeQuestions = () => {
+    debugger
+    return{
+        type: REMOVE_QUESTIONS
+    }
+}
+
+export const requestQuestions = (search) => {
+    debugger
     return dispatch => {
-        return QuestionAPIUtil.fetchQuestions()
-            .then((payload) => dispatch(receiveQuestions(payload)))
+        return QuestionAPIUtil.fetchQuestions(search)
+            .then((payload) => dispatch(receiveQuestions(payload)),
+                (response) => Promise.all([
+                    dispatch(removeQuestions()),
+                    dispatch(receiveErrors(response.responseJSON))
+
+                ])
+                  )
     }
 }
 export const requestQuestion = (questionId) => {
@@ -51,7 +64,7 @@ export const createQuestion = (question) => {
     return dispatch => {
         return QuestionAPIUtil.createQuestion(question)
             .then((question) => dispatch(receiveQuestion(question)),
-                  (response) => dispatch(receiveErrors(response.responseJSON))
+                (response) => dispatch(receiveErrors(response.responseJSON))
                   )
     }
 }

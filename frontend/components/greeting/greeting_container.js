@@ -1,13 +1,19 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
-const mapStateToProps = (state, ownProps) => {
+import {withRouter} from 'react-router';
 
+const mapStateToProps = (state, ownProps) => {
     // const userId = state.session.id;
     // const currentUser = state.entities.users[userId];
-  
+    const queryString = require('query-string');
+    const search = (typeof queryString.parse(ownProps.location.search).q !== 'undefined' ? (
+        queryString.parse(ownProps.location.search).q
+    ):(''))
+    debugger
     return {
         currentUser: state.session,
+        search: search
     }
 };
 
@@ -18,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Greeting));
