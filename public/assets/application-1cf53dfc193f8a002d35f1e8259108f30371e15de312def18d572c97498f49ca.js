@@ -42062,7 +42062,7 @@ function warnAboutUpdateOnUnmountedFiberInDEV(fiber) {
 
 var beginWork$1;
 
-{
+{ 
   var dummyFiber = null;
 
   beginWork$1 = function (current, unitOfWork, expirationTime) {
