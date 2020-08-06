@@ -11,7 +11,7 @@ class Greeting extends React.Component {
     }
 
     handleToggle(id){
-         debugger
+    
         document.getElementById(id).classList.toggle("show")
     }
 
@@ -53,7 +53,7 @@ class Greeting extends React.Component {
     }
 
     render() {
-        debugger
+
         const leftDropDown = (!this.props.currentUser.id ? (this.props.location.pathname === '/' ? (
             <>
                 <li onClick={this.handleToggle.bind(this, "gear-dropdown-m")} id="gear-dropdown-btn" className="zero-padding align-center justify-center">

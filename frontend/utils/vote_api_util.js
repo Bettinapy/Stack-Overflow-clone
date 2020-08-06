@@ -1,5 +1,5 @@
 export const questionUpVote = (questionId) => {
-    debugger
+  
     return $.ajax({
         method: 'POST',
         url: `/api/questions/${questionId}/upvote`,
@@ -8,7 +8,7 @@ export const questionUpVote = (questionId) => {
 }
 
 export const questionDownVote = (questionId) => {
-    debugger
+  
     return $.ajax({
         method: 'POST',
         url: `/api/questions/${questionId}/downvote`,
@@ -17,7 +17,7 @@ export const questionDownVote = (questionId) => {
 }
 
 export const answerUpVote = (questionId, answerId) => {
-    debugger
+  
     return $.ajax({
         method: 'POST',
         url: `/api/questions/${questionId}/answers/${answerId}/upvote`,
@@ -26,7 +26,7 @@ export const answerUpVote = (questionId, answerId) => {
 }
 
 export const answerDownVote = (questionId, answerId) => {
-    debugger
+  
     return $.ajax({
         method: 'POST',
         url: `/api/questions/${questionId}/answers/${answerId}/downvote`,

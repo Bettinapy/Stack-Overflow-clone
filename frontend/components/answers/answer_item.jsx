@@ -64,7 +64,7 @@ class AnswerItem extends React.Component {
             'down-vote-btn-' + this.props.answer.id
         ) : (''))
 
-        debugger
+     
         const prev_up_vote_class = (typeof this.props.answer.upvoterIds !== 'undefined' ? (
             this.props.answer.upvoterIds.includes(this.props.currentUserId) ? (
                 "vote-icon-effect"

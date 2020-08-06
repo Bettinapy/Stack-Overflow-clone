@@ -35,7 +35,7 @@ class VoteItem extends React.Component {
     }
 
     render(){
-        debugger
+    
         const prev_up_vote_class = (typeof this.props.question.upvoterIds !== 'undefined' ? (
             this.props.question.upvoterIds.includes(this.props.currentUserId) ? (
                 "vote-icon-effect"
