@@ -1,0 +1,1487 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* PHASE 0: Reset */
+/* line 3, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+html, body, header, nav, h1, a,
+ul, ol, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 21, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+ul, li, ol {
+  list-style-type: none;
+}
+
+/* line 26, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 32, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 46, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 53, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*Filter styles*/
+/* line 2, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.saturate {
+  filter: saturate(3) !important;
+}
+
+/* line 3, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* line 4, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.contrast {
+  filter: contrast(160%) !important;
+}
+
+/* line 5, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.brightness {
+  filter: brightness(0.25) !important;
+}
+
+/* line 6, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.blur {
+  filter: blur(3px) !important;
+}
+
+/* line 7, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.invert {
+  filter: invert(100%) !important;
+}
+
+/* line 8, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.sepia {
+  filter: sepia(100%) !important;
+}
+
+/* line 9, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.huerotate {
+  filter: hue-rotate(180deg) !important;
+}
+
+/* line 10, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/color.scss */
+.rss.opacity {
+  filter: opacity(50%) !important;
+}
+
+/* line 10, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/icon.scss */
+[class*="favicon-"] {
+  display: inline-block;
+  background: url(/assets/favicons-d2acb71750daca2f12a10be625f42849783c8f1bb382bb793c0285e106fb39c6.png);
+  background-size: 16px 6858px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.zero-padding {
+  padding: 0 !important;
+}
+
+/* line 5, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.full-height {
+  height: 100% !important;
+}
+
+/* line 9, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.full-width {
+  width: 100% !important;
+}
+
+/* line 13, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.flex-all-auto {
+  flex: 1 auto !important;
+}
+
+/* line 17, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.zero-shrink {
+  flex-shrink: 0;
+}
+
+/* line 21, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.align-center {
+  align-items: center !important;
+}
+
+/* line 25, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.justify-center {
+  justify-content: center !important;
+}
+
+/* line 29, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/* line 33, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.grid {
+  display: flex;
+}
+
+/* line 37, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.grid-center {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* line 42, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.auto-margin {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* line 48, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.form-shadow {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 20px 48px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* line 52, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.bg-white {
+  background-color: #fff !important;
+}
+
+/* line 56, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.overflow-x-auto {
+  overflow-x: auto !important;
+}
+
+/* line 62, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.button-default {
+  position: relative;
+  display: inline-block;
+  padding: .8em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.15384615;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #0077cc;
+}
+
+/* line 80, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.session-btn-light {
+  color: #39739d;
+  background-color: #e1ecf4;
+  border-color: #7aa7c7;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
+  margin-right: 3px;
+}
+
+/* line 88, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.session-btn-light:hover {
+  background-color: #b3d3ea;
+}
+
+/* line 92, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.session-btn-heavy {
+  color: #fff;
+  background-color: #0095ff;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+/* line 98, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.session-btn-heavy:hover {
+  background-color: #0077cc;
+}
+
+/* line 102, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.annotation {
+  color: #6a737c;
+  font-size: 13px !important;
+}
+
+/* line 107, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+.input-border {
+  border-color: #6cbbf7 !important;
+  box-shadow: 0 0 0 4px #0095ff26 !important;
+}
+
+/* line 112, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+#root {
+  max-width: 100%;
+  justify-content: center;
+  margin: 0;
+  background-color: #eff0f1;
+  display: flex;
+  height: 100%;
+}
+
+/* line 123, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+#content {
+  width: 100%;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  box-sizing: border-box;
+}
+
+/* line 136, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+[id*="down-vote-btn-"]:hover + .vote-hint {
+  display: block;
+}
+
+/* line 140, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+[id*="up-vote-btn-"]:hover + .vote-hint {
+  display: block;
+}
+
+/* line 145, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+a {
+  color: #0077cc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 151, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+html {
+  height: 100%;
+}
+
+/* line 155, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+body {
+  font-size: 13px;
+  min-width: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: none;
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: auto;
+  box-sizing: border-box;
+  padding-top: 50px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+/* line 172, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+header {
+  display: block;
+}
+
+/* line 176, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+h1, h2, h3 {
+  line-height: 1.3;
+  margin: 0 0 1em;
+}
+
+/* line 181, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+h2 {
+  font-size: 18px;
+}
+
+/* line 185, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+svg {
+  width: 26;
+  height: 26;
+}
+
+/* line 190, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 194, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/base/layout.scss */
+b {
+  font-weight: bold;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_form.scss */
+.edit-answer-container {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+/* line 7, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_form.scss */
+.system-error-message-box {
+  margin-top: 20px;
+  background-color: #c02d2e;
+  color: #fdf3f4;
+}
+
+/* line 13, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_form.scss */
+.system-error-message {
+  padding: 12px;
+}
+
+/* line 17, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_form.scss */
+.answer-form-header-container {
+  padding-top: 20px;
+}
+
+/* line 21, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_form.scss */
+.edit-form-container {
+  background-color: white;
+  width: 100%;
+  padding: 24px;
+  height: 100%;
+  border-left: 1px solid #d6d9dc;
+  margin-left: 190px;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_answer_item.scss */
+.show-body-box {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.lifo-footer-container {
+  width: 100%;
+  padding: 32px 12px 12px 12px;
+  flex-flow: row wrap;
+  background-color: #242729;
+  z-index: 500;
+}
+
+/* line 9, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.footer-logo-container {
+  margin-right: 20px;
+}
+
+/* line 13, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.footer-logo-container img {
+  width: 30px;
+  height: 30px;
+}
+
+/* line 18, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.footer-nav {
+  padding: 0 12px 24px 0;
+}
+
+/* line 22, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.footer-nav-title a {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: #bbc0c4;
+  margin-top: 0px;
+}
+
+/* line 31, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_footer.scss */
+.footer-nav-item {
+  color: #848d95;
+  padding: 4px 0;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.gear-dropdown-menu-container {
+  top: 47px;
+  left: 0px;
+  background-color: white;
+  font-size: 12px;
+  box-sizing: border-box;
+  border: 1px solid #e4e6e8;
+  position: absolute;
+  width: 240px;
+  padding-top: 24px;
+  display: none;
+}
+
+/* line 14, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.gear-dropdown-menu-container ul {
+  display: block;
+}
+
+/* line 18, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.gear-dropdown-menu-top {
+  margin-bottom: 8px;
+}
+
+/* line 22, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.menu-home {
+  width: 100%;
+}
+
+/* line 26, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.item-format {
+  font-size: 13px;
+  display: block;
+  line-height: 1.8;
+  padding: 4px;
+  padding-left: 8px;
+}
+
+/* line 34, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.menu-item-effect {
+  font-weight: bold;
+  background-color: #eff0f1;
+  border-right: 3px solid #f48024;
+  color: black !important;
+}
+
+/* line 42, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.menu-title {
+  color: #6a737c;
+  font-size: 11px;
+  margin-top: 16px;
+  margin-left: 8px;
+  margin-bottom: 4px;
+  text-transform: uppercase !important;
+}
+
+/* line 51, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.list-item-format {
+  color: #535a60;
+}
+
+/* line 55, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.item-format-lifo {
+  padding: 8px 6px 8px 8px;
+}
+
+/* line 59, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+#menu-lifo .fa-globe {
+  color: #848d95;
+  margin-right: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+/* line 66, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.item-format-general {
+  padding-left: 30px;
+}
+
+/* line 70, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_gear_dropdown.scss */
+.gear-dropdown-menu-bottom a:hover {
+  color: black;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_home_page.scss */
+.main-bg-container {
+  height: 496px;
+  width: 100%;
+  top: 0;
+  position: relative;
+  padding-top: 50px;
+  background: url(/assets/home_bg1-396dbc468cd13384e9a151ae3128c840565ecc5fa1624d5e458e3b75bec6fce0.gif);
+  overflow: hidden;
+  background-color: #ffcf10;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+/* line 14, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_home_page.scss */
+.hp-header {
+  font-family: 'Roboto Slab', serif;
+  width: 90% !important;
+  text-align: center !important;
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 128px;
+  word-spacing: 0.1px;
+  padding-left: 55px;
+}
+
+/* line 28, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_home_page.scss */
+.hp-header-addition {
+  font-size: 21px;
+  width: 90% !important;
+  text-align: center !important;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.main-nav {
+  position: fixed;
+  min-width: auto;
+  box-shadow: 0 1px 0 rgba(12, 13, 14, 0.15);
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fafafb;
+  box-sizing: border-box;
+  border-top: 3px solid #f48024;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  height: 50px;
+  z-index: 100;
+}
+
+/* line 16, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.nav-container {
+  max-width: 80.2307692rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+}
+
+/* line 23, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav {
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* line 28, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* line 35, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.middle-nav {
+  height: 100%;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* line 41, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.middle-nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* line 48, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.right-nav > ul {
+  overflow-x: auto !important;
+  padding-left: 4px;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+/* line 55, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+#gear-dropdown-btn {
+  display: flex;
+  height: 100%;
+  width: 44px;
+  flex-shrink: 0;
+  color: #848d95;
+  cursor: pointer;
+}
+
+/* line 64, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.logo {
+  padding: 0 8px;
+  box-sizing: content-box;
+  height: 100%;
+  flex: 1 0 auto;
+  width: 150px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  margin-top: -4px;
+}
+
+/* line 77, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.lifo-logo {
+  background: url(/assets/lifooverflow-logo-face6ad6b6a5088317ec4a531d75199a7261bbdf02fc8b47a7daf03af72c5d9c.png);
+}
+
+/* line 81, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav > ul > li:hover {
+  background-color: #e4e6e8;
+}
+
+/* line 86, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.selected-bg {
+  background-color: #f48024 !important;
+  color: white !important;
+}
+
+/* line 91, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.menu-button {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 1000px;
+  white-space: nowrap;
+  margin: 2px;
+  font-size: 13px;
+  color: #535a60;
+}
+
+/* line 101, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.menu-button:hover {
+  background-color: #e4e6e8;
+}
+
+/* line 105, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.search-nav {
+  flex-shrink: 2000;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* line 113, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.search-bar {
+  border-color: #bbc0c4;
+  background-color: white;
+  color: #3c4146;
+  padding-left: 32px;
+  width: 100%;
+  margin: 0;
+  padding-top: 0.6em;
+  padding-right: 0.7em;
+  padding-bottom: 0.6em;
+  border: 1px solid #bbc0c4;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.15384615;
+}
+
+/* line 130, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.input-search {
+  right: auto;
+  left: 20px;
+  color: #bbc0c4;
+  position: absolute;
+  top: 50%;
+  vertical-align: bottom;
+  margin-top: -9px;
+  width: 18;
+  height: 18;
+}
+
+/* line 143, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.session-color {
+  color: #fff;
+}
+
+/* line 147, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.logged .function {
+  height: 100%;
+  display: inline-block;
+}
+
+/* line 153, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.user-code {
+  padding: 0 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 100%;
+  font-size: 12px;
+  color: #3c4146;
+  white-space: nowrap;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+/* line 166, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.fa-qrcode {
+  flex-shrink: 0;
+  vertical-align: middle;
+  margin: 0 auto;
+  color: #6DF099;
+}
+
+/* line 173, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropdown-container {
+  height: 100%;
+}
+
+/* line 177, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropdown {
+  height: 100%;
+  color: #848d95;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* line 188, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropdown:hover {
+  color: #242729;
+  background-color: #d6d9dc;
+  text-decoration: none;
+}
+
+/* line 194, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropdown .fa-bars {
+  color: #848d95;
+  vertical-align: middle;
+}
+
+/* line 200, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropbtn {
+  position: absolute;
+  display: none;
+  top: 47px;
+  right: 0px;
+  max-width: 800px;
+  width: 325px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 80px;
+  max-height: 80px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif !important;
+  color: #3c4146;
+  font-size: 12px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 6000;
+  text-align: left;
+  border-left: 1px solid #e4e6e8;
+  border-right: 1px solid #e4e6e8;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+/* line 223, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropbtn .dropdown-header {
+  background-color: #eff0f1;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+}
+
+/* line 235, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.dropdown-header h3 {
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif !important;
+  color: #6a737c;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+/* line 246, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.top-dropbtn .dropdown-content {
+  width: 100%;
+  max-height: 300px;
+  position: relative;
+  background-color: #f4f8fb !important;
+}
+
+/* line 253, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.dropdown-content li:first-child {
+  padding-top: 2px;
+}
+
+/* line 257, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.lifo-local li {
+  border: none;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-bottom: 1px solid #eff0f1;
+  margin-bottom: 0;
+  list-style: none;
+  margin-left: 0;
+  line-height: 1.3;
+}
+
+/* line 268, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.lifo-local li:hover {
+  background-color: #d1e5f1;
+}
+
+/* line 272, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.dropdown-content li > * {
+  padding: 8px;
+}
+
+/* line 276, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.lifo-local .lifo-local-link {
+  font-weight: bold;
+}
+
+/* line 280, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.lifo-local .lifo-local-link:hover {
+  color: #0095ff;
+}
+
+/* line 284, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.site-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  flex: none;
+}
+
+/* line 291, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+div.favicon {
+  display: inline-block;
+}
+
+/* line 295, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.favicon-stackoverflow {
+  background-position: 0 -5994px;
+}
+
+/* line 299, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.additional-functions {
+  color: #848d95;
+  white-space: nowrap;
+}
+
+/* line 304, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.additional-functions a:hover {
+  color: #0095ff;
+}
+
+/* line 308, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.additional-functions a {
+  margin-left: 10px;
+}
+
+/* line 312, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.nav-search-box {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  font-size: 13px;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  margin-top: 35px;
+  display: none;
+}
+
+/* line 326, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.search-hints-box {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #d6d9dc;
+  background-color: white;
+}
+
+/* line 333, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.small-btn {
+  font-size: 11px;
+  padding: 6.6px;
+}
+
+/* line 338, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_main_nav.scss */
+.show {
+  display: block;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-form-container {
+  width: 100%;
+  padding: 24px;
+}
+
+/* line 11, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-form-header {
+  font-size: 27px;
+}
+
+/* line 15, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-form-box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #d6d9dc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+/* line 23, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-form-col {
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+/* line 28, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.q-label {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* line 35, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.q-label-description {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 2px;
+}
+
+/* line 41, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.q-input {
+  padding: 8px 9px;
+  border: 1px solid #bbc0c4;
+  font-size: 13px;
+}
+
+/* line 47, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.q-input-textarea {
+  padding: 10px;
+  min-height: 200px;
+  line-height: 1.3;
+  font-size: 14px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* line 56, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-btn-container {
+  margin-top: 32px;
+}
+
+/* line 62, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.q-input-error-message {
+  color: #d1383d !important;
+  padding: 2px;
+  font-size: 12px;
+}
+
+/* line 68, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.has-title-error .q-input,
+.has-body-error .q-input {
+  border-color: #de535e;
+}
+
+/* line 73, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.cancel-link {
+  padding: 10px;
+  margin-left: 8px;
+  border-radius: 3px;
+}
+
+/* line 78, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_form.scss */
+.question-btn-container .cancel-link:hover {
+  background-color: #e1ecf4;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list-container {
+  width: 100%;
+  background-color: white;
+  padding: 24px;
+  height: 100%;
+  border-left: 1px solid #d6d9dc;
+  margin-left: 190px;
+}
+
+/* line 10, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list-header-box {
+  flex-direction: row nowrap;
+  justify-content: space-between;
+}
+
+/* line 16, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list-btn-container {
+  margin-left: 12px;
+}
+
+/* line 20, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list-info-box {
+  margin-bottom: 12px;
+}
+
+/* line 24, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-number-box {
+  margin-right: 12px;
+  font-size: 17px;
+}
+
+/* line 29, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list {
+  margin-bottom: 20px;
+  border-top: 1px solid #e4e6e8;
+}
+
+/* line 34, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-info-box {
+  padding-left: 8px;
+  padding: 12px 8px;
+  overflow: hidden;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+/* line 41, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-statstics {
+  margin-right: 16px;
+  width: 58px;
+  color: #6a737c;
+  font-size: 11px;
+}
+
+/* line 48, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.qs-votes-container {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* line 53, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.qs-answers-container {
+  padding: 7px 0 5px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* line 59, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.qs-number {
+  font-size: 20px;
+}
+
+/* line 63, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-info {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 68, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-list h3 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 7.5px;
+}
+
+/* line 75, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-blurb {
+  word-wrap: break-word;
+  word-break: break-word;
+  padding-bottom: 5px;
+}
+
+/* line 82, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_list.scss */
+.question-user-info-box {
+  margin: 4px;
+  border-radius: 3px;
+  width: 200px;
+  padding: 5px 6px 7px 7px;
+  background-color: white;
+  float: right;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.whole-container {
+  width: 100%;
+  margin-top: 0;
+  height: 100%;
+  background: none;
+}
+
+/* line 8, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-show-container {
+  width: 100%;
+  background-color: white;
+  padding: 24px;
+  height: 100%;
+  border-left: 1px solid #d6d9dc;
+  margin-left: 190px;
+}
+
+/* line 17, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-show-header-box {
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+/* line 23, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-show-btn-container {
+  margin-left: 12px;
+}
+
+/* line 27, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.q-button {
+  color: white;
+}
+
+/* line 31, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.show-body-box {
+  margin-top: 15px;
+}
+
+/* line 35, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-body-container {
+  padding-right: 16px;
+}
+
+/* line 39, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-body {
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+/* line 45, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-user-container {
+  padding-top: 4px;
+  margin-top: 16px;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+}
+
+/* line 52, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.user-auth {
+  margin: 4px;
+  margin-left: 0;
+}
+
+/* line 57, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.small-link {
+  padding: 0 1px;
+  margin-right: 6px;
+  color: #848d95;
+  font-size: 13px;
+}
+
+/* line 64, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.small-link:hover {
+  color: black;
+}
+
+/* line 68, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.user-info-box {
+  margin: 4px;
+  border-radius: 3px;
+  background-color: #e1ecf4;
+  width: 200px;
+  padding: 5px 6px 7px 7px;
+}
+
+/* line 76, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-time-box {
+  margin-top: 1px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #6a737c;
+}
+
+/* line 83, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.answers {
+  padding-top: 10px;
+}
+
+/* line 88, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.answers-header {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+/* line 94, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_question_show.scss */
+.question-detail-container {
+  width: 100%;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_search.scss */
+.search-no-result-box {
+  line-height: 18px;
+  padding: 24px;
+  flex-direction: column !important;
+}
+
+/* line 7, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_search.scss */
+.search-no-result-box > .fa-search {
+  color: #bbc0c4;
+}
+
+/* line 11, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_search.scss */
+.search-no-result-msg {
+  font-size: 17px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* line 17, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_search.scss */
+.sub-msg {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* line 4, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.intro-container {
+  margin-right: 48px;
+  max-width: 410px !important;
+  font-size: 15px;
+}
+
+/* line 10, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.intro-header {
+  margin-bottom: 32px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+/* line 17, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.join-container {
+  margin-bottom: 24px;
+}
+
+/* line 21, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.intro-icon-container {
+  margin-right: 8px;
+}
+
+/* line 25, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.intro-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* line 30, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.icon-color-blue {
+  filter: invert(41%) sepia(73%) saturate(2754%) hue-rotate(184deg) brightness(102%) contrast(106%);
+}
+
+/* line 34, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.session-container {
+  max-width: 50rem;
+  padding: 24px;
+}
+
+/* line 39, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.small-logo-container {
+  margin-bottom: 24px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* line 45, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.small-logo {
+  width: 36px;
+  height: 40px;
+}
+
+/* line 50, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.form-container {
+  max-width: 316px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* line 59, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.session-form {
+  flex-direction: column;
+}
+
+/* line 63, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.session-col {
+  flex-direction: column;
+  margin: 6px;
+}
+
+/* line 68, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.s-label {
+  padding: 0 2px;
+  color: #0c0d0e;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* line 77, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.s-input {
+  width: 100%;
+  margin: 0;
+  padding: .6em .7em;
+  border: 1px solid #bbc0c4;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #0c0d0e;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.15384615;
+}
+
+/* line 90, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.s-input-error-message {
+  color: #d1383d;
+  padding: 2px;
+  font-size: 12px;
+}
+
+/* line 96, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.main-session-button-container {
+  margin: 6px;
+}
+
+/* line 100, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.main-session-button {
+  width: 100%;
+  margin: 2px;
+}
+
+/* line 105, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.password-hint {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+/* line 110, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.has-dname-error .s-input,
+.has-email-error .s-input,
+.has-password-error .s-input {
+  border-color: #de535e;
+}
+
+/* line 116, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.q-warning-msg {
+  background-color: #fdf7e3;
+  margin: 24px;
+  padding: 32px;
+  max-width: 640px;
+  border: 1px solid #ddb624;
+  color: #242729;
+  text-align: center;
+}
+
+/* line 126, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_session_form.scss */
+.main-warning-msg {
+  margin-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_side_menu.scss */
+.side-menu-container {
+  width: 190px;
+  background-color: white;
+  position: fixed;
+  padding-top: 24px;
+  height: 100%;
+}
+
+/* line 1, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-item-container {
+  padding-right: 16px;
+  position: relative;
+}
+
+/* line 6, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-item-box {
+  flex-direction: column;
+  color: #bbc0c4;
+}
+
+/* line 11, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-btn {
+  margin: 2px;
+}
+
+/* line 16, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-btn > .fa {
+  height: 32px;
+  width: 32px;
+}
+
+/* line 21, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-points {
+  font-size: 21px;
+}
+
+/* line 24, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-box {
+  position: relative;
+}
+
+/* line 27, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-hint {
+  position: absolute;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #d6d9dc;
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  width: 210px;
+  margin-left: 35px;
+  margin-top: -45px;
+  display: none;
+}
+
+/* line 41, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+#up-vote-btn:hover + .vote-hint {
+  display: block;
+}
+
+/* line 45, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+#down-vote-btn:hover + .vote-hint {
+  display: block;
+}
+
+/* line 49, /Users/bettina/Desktop/LIFO_Overflow/app/assets/stylesheets/components/_vote_item.scss */
+.vote-icon-effect {
+  color: #f48024;
+}
