@@ -11,7 +11,7 @@ class Greeting extends React.Component {
     }
 
     handleToggle(id){
-         
+         debugger
         document.getElementById(id).classList.toggle("show")
     }
 
@@ -53,39 +53,40 @@ class Greeting extends React.Component {
     }
 
     render() {
-   
-        const leftDropDown = (!this.props.currentUser.id ? (
+        debugger
+        const leftDropDown = (!this.props.currentUser.id ? (this.props.location.pathname === '/' ? (
             <>
                 <li onClick={this.handleToggle.bind(this, "gear-dropdown-m")} id="gear-dropdown-btn" className="zero-padding align-center justify-center">
-                <i className="fa fa-bars fa-lg"></i>
-            </li>
-            <div id="gear-dropdown-m" className="gear-dropdown-menu-container">
-                <ul className="gear-dropdown-menu-top">
-                    <li className="menu-home">
+                    <i className="fa fa-bars fa-lg"></i>
+                </li>
+                <div id="gear-dropdown-m" className="gear-dropdown-menu-container">
+                    <ul className="gear-dropdown-menu-top">
+                        <li className="menu-home">
                             <Link id="menu-home" to="/" onClick={this.handleMenu.bind(this, "menu-home")} className="item-format list-item-format menu-item-effect">Home</Link>
-                    </li>
-                    <li>
-                        <ul className="gear-dropdown-menu-bottom">
-                            <li className="menu-title">
+                        </li>
+                        <li>
+                            <ul className="gear-dropdown-menu-bottom">
+                                <li className="menu-title">
                                     Public
                             </li>
-                            <li>
-                                <Link id="menu-lifo" to="/questions" onClick={this.handleMenu.bind(this, "menu-lifo")} className="list-item-format item-format-lifo grid">
-                                    <i className="fa fa-globe" aria-hidden="true"></i>
-                                    <span>LIFO Overflow</span>
+                                <li>
+                                    <Link id="menu-lifo" to="/questions" onClick={this.handleMenu.bind(this, "menu-lifo")} className="list-item-format item-format-lifo grid">
+                                        <i className="fa fa-globe" aria-hidden="true"></i>
+                                        <span>LIFO Overflow</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link id="menu-general" to="" onClick={this.handleMenu.bind(this, "menu-general")} className="list-item-format item-format-general grid">
+                                        Users
                                 </Link>
-                            </li>
-                            <li>
-                                <Link id="menu-general" to="" onClick={this.handleMenu.bind(this, "menu-general")} className="list-item-format item-format-general grid">
-                                    Users
-                                </Link>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </>
-        ) : (<></>));
+        ) : (<></>)
+        )  : (<></>));
       
         const otherMenuList = (!this.props.currentUser.id ? (
             <>
@@ -166,7 +167,7 @@ class Greeting extends React.Component {
                         <nav className="middle-nav">
                             <ul className="full-height">
                                 <li>
-                                    <a href="#" className="menu-button">Products</a>
+                                    <a href="#/questions" className="menu-button">Questions</a>
                                 </li>
                               {otherMenuList}
                                 

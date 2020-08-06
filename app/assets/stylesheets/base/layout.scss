@@ -133,6 +133,15 @@
     
 }
 
+[id*="down-vote-btn-"]:hover + .vote-hint{
+    display: block;
+}
+
+[id*="up-vote-btn-"]:hover + .vote-hint{
+    display: block;
+}
+
+
 a {
     color: #0077cc;
     text-decoration: none;

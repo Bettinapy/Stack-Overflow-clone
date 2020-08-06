@@ -3,20 +3,20 @@ class Api::VotesController < ApplicationController
     before_action :ensure_logged_in, only: [:upvote, :downvote]
 
     def upvote
-        debugger
+       
         update_vote(1)
 
     end 
 
     def downvote
-        debugger
+       
         update_vote(-1)
        
     end
 
     private
     def update_vote(new_value)
-        debugger
+       
         if params[:answer_id].present?
             @answer = Answer.find(params[:answer_id])
             @vote = @answer.votes.where(user_id: current_user.id).first

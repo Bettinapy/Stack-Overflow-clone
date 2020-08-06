@@ -4,6 +4,7 @@ json.questions do
         json.set! question.id do
             json.partial! "question", question: question
             json.votes question.points
+            json.answers question.answers.count
         end
     end
 end

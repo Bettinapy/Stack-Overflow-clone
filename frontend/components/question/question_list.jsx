@@ -28,6 +28,16 @@ class QuestionList extends React.Component {
 
         const questionItems = (this.props.questions.length !== 0 ? (this.props.questions.map(question => (
             <li className="question-info-box grid" key={question.id}>
+                <div className="question-statstics">
+                    <div className="qs-votes-container">
+                        <span className="qs-number">{question.votes}</span>
+                        <div>votes</div>
+                    </div>
+                    <div className="qs-answers-container">
+                        <span className="qs-number">{question.answers}</span>
+                        <div>answers</div>
+                    </div>
+                </div>
                 <div className="question-info">
                     <h3><Link to={`/questions/${question.id}`}>{question.title}</Link></h3>
                     <div className="question-blurb">

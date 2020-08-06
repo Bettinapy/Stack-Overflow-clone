@@ -38,6 +38,28 @@
     border-bottom: 1px solid #e4e6e8; 
 }
 
+.question-statstics{
+    margin-right: 16px;
+    width: 58px;
+    color: #6a737c;
+    font-size: 11px;
+}
+
+.qs-votes-container{
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.qs-answers-container{
+    padding: 7px 0 5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.qs-number{
+    font-size: 20px;
+}
+
 .question-info{
     overflow: hidden;
     width: 100%;

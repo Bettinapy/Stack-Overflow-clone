@@ -66,7 +66,7 @@ class VoteItem extends React.Component {
                         <button id="down-vote-btn" className="vote-btn" onClick={this.handleDownVote.bind(this)} className={`vote-btn ${prev_down_vote_class}`}>
                             <i className="fa fa-caret-down vote-icon fa-4x" aria-hidden="true"></i>
                         </button>
-                        <div class="down-vote-hint vote-hint">
+                        <div className="down-vote-hint vote-hint">
                             This question does not show any research effort; it is unclear or not useful
                         </div>
                     </div>

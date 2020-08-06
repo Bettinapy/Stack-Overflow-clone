@@ -17,7 +17,11 @@
       window.icon_up_and_down= "<%= image_url('up_and_down.png') %>";
       //handle window click
       window.onclick = function(event) {
-          if ((!event.target.matches('.search-bar')) && (!event.target.matches('.search-hints-box')) && (!event.target.matches('.q-input'))) {
+          if ((!event.target.matches('.search-bar')) 
+              && (!event.target.matches('.search-hints-box')) 
+              && (!event.target.matches('.q-input'))
+              && (!event.target.matches('.fa-bars'))
+              && (!event.target.matches('.gear-dropdown-menu-top')) ) {
             let dropdowns = document.getElementsByClassName("nav-search-box");
             let inputs = document.getElementsByClassName("input-default");
             
@@ -27,8 +31,7 @@
               if (inputBorder.classList.contains('input-border')) {
                 inputBorder.classList.remove('input-border');
               }
-            }
-            
+            }            
             let i;
             for (i = 0; i < dropdowns.length; i++) {
               let openDropdown = dropdowns[i];
@@ -36,9 +39,24 @@
                 openDropdown.classList.remove('show');
               }
             }
-          }
-        }
+            debugger
+            let rightDropdown = document.getElementById("toggle-dropbtn");
+            if (rightDropdown){
+              if(rightDropdown.classList.contains('show')){
+                rightDropdown.classList.remove('show')
+              }
+            }
 
+            let leftDropdown = document.getElementById("gear-dropdown-m");
+            if (leftDropdown){
+              if(leftDropdown.classList.contains('show')){
+                leftDropdown.classList.remove('show')
+              }
+            }
+
+          } 
+        }
+     
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
