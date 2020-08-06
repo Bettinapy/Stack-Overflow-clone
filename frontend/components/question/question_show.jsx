@@ -4,7 +4,7 @@ import SideMenu from '../side_menu';
 import CreateAnswerFormContainer from '../answers/create_answer_form_container';
 import AnswerItem from '../answers/answer_item';
 import VoteItem from '../vote_item';
-
+import Footer from '../footer';
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -65,6 +65,7 @@ class QuestionShow extends React.Component{
         ) : (<></>))
        
         return(
+            <div className="whole-box">
             <div className="whole-container grid">
             <SideMenu />
             <div className="question-show-container" key={this.props.question}>
@@ -112,6 +113,8 @@ class QuestionShow extends React.Component{
                 </div>
                 <CreateAnswerFormContainer />
             </div>
+            </div>
+                <Footer />
             </div>
         )
     }

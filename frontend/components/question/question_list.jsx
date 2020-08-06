@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
-
+import Footer from '../footer';
 class QuestionList extends React.Component {
     componentDidMount() {
 
@@ -77,6 +77,7 @@ class QuestionList extends React.Component {
             </div>
         ):(<></>))
         return (
+            <div className="whole-box">
             <div className="whole-container grid">
                 <SideMenu />
             <div className="question-list-container">
@@ -99,6 +100,8 @@ class QuestionList extends React.Component {
                     {searchErrors}
                 </div>
             </div>
+            </div>
+            <Footer />
             </div>
         );
     }

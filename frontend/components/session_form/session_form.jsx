@@ -120,8 +120,6 @@ class SessionForm extends React.Component {
                 </div>
                 <div className="annotation">
                     Use the power of LIFO Overflow inside your organization.
-                    <br/>
-                    Try a <a href="#" target="_blank">free trial of LIFO Overflow for Teams</a>.   
                 </div>
             </div>
         ) : (<> </>))

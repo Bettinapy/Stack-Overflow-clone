@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
+
+
       window.sprites= "<%= image_url('sprites.svg') %>";
       window.lifooverflow= "<%= image_url('lifooverflow-logo.png') %>";
       window.small_lifo= "<%= image_url('small_lifo_logo.png') %>";
@@ -15,6 +17,15 @@
       window.icon_question= "<%= image_url('question.png') %>";
       window.icon_tag= "<%= image_url('tag.png') %>";
       window.icon_up_and_down= "<%= image_url('up_and_down.png') %>";
+      window.guide_question = "<%= image_url('001-question.png') %>"
+      window.guide_faq = "<%= image_url('002-faq.png') %>"
+      window.guide_like = "<%= image_url('003-like.png') %>"
+      window.guide_tag = "<%= image_url('004-tag.png') %>"
+      window.guide_check = "<%= image_url('005-check.png') %>"
+      window.guide_star = "<%= image_url('006-star.png') %>"
+      window.guide_bg = "<%= asset_url('home-bg2.mp4') %>"
+      
+      
       //handle window click
       window.onclick = function(event) {
           if ((!event.target.matches('.search-bar')) 
@@ -64,6 +75,7 @@
 
   <body>
     <%= yield %>
+    <!--
     <footer class="lifo-footer-container grid">
       <div class="footer-logo-container">
         <a href="/"><img src="<%= image_url('small_lifo_logo.png') %>" /></a>
@@ -72,6 +84,8 @@
         <h5 class="footer-nav-title"><a href="/">LIFO Overflow</a></h5>
         <a class="footer-nav-item" href="/#/questions">Questions</a>
       </div>
+      <div class="footer-claim" >Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
+    -->
   </body>
 </html>

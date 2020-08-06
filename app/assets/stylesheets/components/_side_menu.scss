@@ -1,9 +1,10 @@
 .side-menu-container{
     width: 190px;
     background-color: white;
-    // position: fixed;
+    position: static;
     padding-top: 24px;
-    height: 100%;
+    // height: 100%;
+    overflow-y: auto;
 }
 
 .side-menu-top{
