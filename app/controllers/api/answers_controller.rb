@@ -2,14 +2,14 @@ class Api::AnswersController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :ensure_logged_in, only: [:create, :destroy, :update]
     def index
-        @answers = Answer.all.includes(:user).select{|a| a.question_id = params[:answer][:question_id]}
+        @answers = Answer.all.includes(:user, :votes).select{|a| a.question_id = params[:answer][:question_id]}
     end
     
     def create         
         @answer = current_user.answers.new(answer_params)
         if @answer.save 
             
-            render :show, include: [:question, :user]
+            render :show, include: [:question, :user, :votes]
         else
             errors ={}
             @answer.errors.each do |attribute, message|
@@ -25,7 +25,7 @@ class Api::AnswersController < ApplicationController
 
     def show
         
-        @answer = Answer.find(params[:id])
+        @answer = Answer.includes(:user, :question, :votes).find(params[:id])
         @user = @answer.user 
         
     end
@@ -36,7 +36,7 @@ class Api::AnswersController < ApplicationController
         if @answer
             
             if @answer.update(answer_params)
-                render :show
+                render :show, include: [:question, :user, :votes]
             else
                 errors ={}
                 @answer.errors.each do |attribute, message|

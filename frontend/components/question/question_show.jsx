@@ -57,6 +57,8 @@ class QuestionShow extends React.Component{
                 return <AnswerItem key={answer.id}
                     currentUserId={this.props.currentUserId}
                     deleteAnswer={this.props.deleteAnswer}
+                    upVoteAnswer={this.props.upVoteAnswer}
+                    downVoteAnswer={this.props.downVoteAnswer}
                     answer={answer}
                     user={this.props.users[answer.author_id]} />
             })
@@ -81,6 +83,7 @@ class QuestionShow extends React.Component{
                          upVoteQuestion={this.props.upVoteQuestion}
                          downVoteQuestion={this.props.downVoteQuestion}
                          currentUserId={this.props.currentUserId} />
+
                         <div className="question-detail-container">
                             <div className="question-body-container">
                                 <div className="question-body">

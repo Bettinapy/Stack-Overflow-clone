@@ -1,4 +1,6 @@
 import * as AnswerAPIUtil from '../utils/answer_api_util';
+import * as VoteAPIUtil from '../utils/vote_api_util';
+
 import { receiveErrors } from './session_actions';
 
 export const RECEIVE_ANSWERS = "RECEIVE_ANSWERS";
@@ -72,5 +74,19 @@ export const deleteAnswer = (questionId, answerId) => {
     return dispatch => {
         return AnswerAPIUtil.deleteAnswer(questionId, answerId)
             .then(() => dispatch(removeAnswer(answerId)))
+    }
+}
+
+export const upVoteAnswer = (questionId, answerId) => {
+    return dispatch => {
+        return VoteAPIUtil.answerUpVote(questionId, answerId)
+            .then((payload) => dispatch(receiveAnswer(payload)))
+    }
+}
+
+export const downVoteAnswer = (questionId, answerId) => {
+    return dispatch => {
+        return VoteAPIUtil.answerDownVote(questionId, answerId)
+            .then((payload) => dispatch(receiveAnswer(payload)))
     }
 }

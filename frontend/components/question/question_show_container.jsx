@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import QuestionShow from './question_show';
 import { requestQuestion, deleteQuestion, upVoteQuestion, downVoteQuestion } from '../../actions/question_actions';
 import { clearErrors } from '../../actions/session_actions';
-import {deleteAnswer} from '../../actions/answer_actions';
+import {deleteAnswer, upVoteAnswer, downVoteAnswer} from '../../actions/answer_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -29,6 +29,8 @@ const mapDispatchToProps = (dispatch) => {
         clearErrors: () => dispatch(clearErrors()),
         upVoteQuestion: (questionId) => dispatch(upVoteQuestion(questionId)),
         downVoteQuestion: (questionId) => dispatch(downVoteQuestion(questionId)),
+        upVoteAnswer: (questionId, answerId) => dispatch(upVoteAnswer(questionId, answerId)),
+        downVoteAnswer: (questionId, answerId) => dispatch(downVoteAnswer(questionId, answerId)),
     }
 }
 
