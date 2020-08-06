@@ -3,6 +3,7 @@ json.questions do
     @questions.each do |question|
         json.set! question.id do
             json.partial! "question", question: question
+            json.votes question.points
         end
     end
 end

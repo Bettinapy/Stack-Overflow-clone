@@ -8,7 +8,11 @@ class Question < ApplicationRecord
 
     has_many :answers,
         class_name: :Answer,
-        foreign_key: :question_id
+        foreign_key: :question_id,
+        dependent: :destroy
+
+    has_many :votes, as: :voteable, dependent: :destroy
+
     def self.search(token='')
         if token
             token = token.downcase
@@ -16,5 +20,17 @@ class Question < ApplicationRecord
         else
             self.all
         end
+    end
+
+    def up_votes
+        votes.where(value: 1).count
+    end
+
+    def down_votes
+        votes.where(value: -1).count
+    end
+
+    def points
+        votes.sum(:value)
     end
 end

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionShow from './question_show';
-import { requestQuestion, deleteQuestion } from '../../actions/question_actions';
+import { requestQuestion, deleteQuestion, upVoteQuestion, downVoteQuestion } from '../../actions/question_actions';
 import { clearErrors } from '../../actions/session_actions';
 import {deleteAnswer} from '../../actions/answer_actions';
 
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     const users = state.entities.users
   
     return {
-        question: question || {title: '', body: '', created_at: '', author_id:0},
+        question: question || {title: '', body: '', created_at: '', author_id: 0, votes: 0, upvoterIds:[], downvoterIds:[] },
         currentUserId: currentUserId,
         users: users || {},
         answers: answers || []
@@ -26,7 +26,9 @@ const mapDispatchToProps = (dispatch) => {
         requestQuestion: (questionId) => dispatch(requestQuestion(questionId)),
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         deleteAnswer: (questionId, answerId) => dispatch(deleteAnswer(questionId, answerId)),
-        clearErrors: () => dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors()),
+        upVoteQuestion: (questionId) => dispatch(upVoteQuestion(questionId)),
+        downVoteQuestion: (questionId) => dispatch(downVoteQuestion(questionId)),
     }
 }
 

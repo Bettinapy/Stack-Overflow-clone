@@ -1,4 +1,5 @@
 import * as QuestionAPIUtil from '../utils/question_api_util';
+import * as VoteAPIUtil from '../utils/vote_api_util';
 import { receiveErrors } from './session_actions';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
@@ -16,7 +17,7 @@ export const receiveQuestions = ({questions, users}) => {
 }
 
 export const receiveQuestion = ({question, answers={}, users}) => {
-  
+  debugger
     return {
         type: RECEIVE_QUESTION,
         question,
@@ -80,5 +81,19 @@ export const deleteQuestion = (questionId) => {
     return dispatch => {
         return QuestionAPIUtil.deleteQuestion(questionId)
             .then((question) => dispatch(removeQuestion(question.id)))
+    }
+}
+
+export const upVoteQuestion = (questionId) => {
+    return dispatch => {
+        return VoteAPIUtil.questionUpVote(questionId)
+            .then((payload) => dispatch(receiveQuestion(payload)))
+    }
+}
+
+export const downVoteQuestion = (questionId) => {
+    return dispatch => {
+        return VoteAPIUtil.questionDownVote(questionId)
+            .then((payload) => dispatch(receiveQuestion(payload)))
     }
 }

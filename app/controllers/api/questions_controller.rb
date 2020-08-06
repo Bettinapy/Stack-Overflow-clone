@@ -2,7 +2,7 @@ class Api::QuestionsController < ApplicationController
     skip_before_action :verify_authenticity_token
     before_action :ensure_logged_in, only: [:create, :destroy, :update]
     def index 
-        @questions = Question.includes(:user).search(params[:search])
+        @questions = Question.includes(:user, :votes).search(params[:search])
         if @questions.present?
             render :index 
         else   
@@ -10,8 +10,7 @@ class Api::QuestionsController < ApplicationController
         end
     end
 
-    def create 
-        
+    def create         
         @question = current_user.questions.new(question_params)
         if @question.save 
             
@@ -30,7 +29,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show    
-        @question = Question.includes(:user, :answers).find(params[:id])    
+        @question = Question.includes(:user, :answers, :votes).find(params[:id])    
     end
 
     def update

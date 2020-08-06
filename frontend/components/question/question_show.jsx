@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SideMenu from '../side_menu';
 import CreateAnswerFormContainer from '../answers/create_answer_form_container';
 import AnswerItem from '../answers/answer_item';
+import VoteItem from '../vote_item';
+
 
 class QuestionShow extends React.Component{
     constructor(props){
@@ -72,22 +74,30 @@ class QuestionShow extends React.Component{
                             <button className="session-btn-heavy button-default"><Link to="/questions/ask" className="q-button">Ask Question</Link></button>
                         </div>
                     </div>
-                    <div className="show-body-box">
-                        <div className="question-body-container">
-                            <div className="question-body">
-                                <p>{this.props.question.body}</p>
-                            </div>
-                        </div>
-                        <div className="question-user-container grid">
-                            <div className="user-auth">
-                                {userAuth}
-                            </div>
-                            <div className="user-info-box">
-                                <div className="question-time-box">
-                                    asked {this.props.question.created_at}
+                    <div className="show-body-box grid">
+
+                        <VoteItem 
+                         question={this.props.question}
+                         upVoteQuestion={this.props.upVoteQuestion}
+                         downVoteQuestion={this.props.downVoteQuestion}
+                         currentUserId={this.props.currentUserId} />
+                        <div className="question-detail-container">
+                            <div className="question-body-container">
+                                <div className="question-body">
+                                    <p>{this.props.question.body}</p>
                                 </div>
-                                <div className="author-info">
-                                    <a>{userInfo} </a>
+                            </div>
+                            <div className="question-user-container grid">
+                                <div className="user-auth">
+                                    {userAuth}
+                                </div>
+                                <div className="user-info-box">
+                                    <div className="question-time-box">
+                                        asked {this.props.question.created_at}
+                                    </div>
+                                    <div className="author-info">
+                                        <a>{userInfo} </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

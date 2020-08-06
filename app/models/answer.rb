@@ -7,4 +7,18 @@ class Answer < ApplicationRecord
     belongs_to :user,
         class_name: :User,
         foreign_key: :author_id
+
+    has_many :votes, as: :voteable, dependent: :destroy
+
+    def up_votes
+        votes.where(value: 1).count
+    end
+
+    def up_votes
+        votes.where(value: -1).count
+    end
+
+    def points
+        votes.sum(:value)
+    end
 end

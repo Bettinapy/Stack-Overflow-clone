@@ -3,7 +3,7 @@ export const fetchQuestions = (search) => {
         method: 'GET',
         url: '/api/questions',
         data: {search}
-    })
+    }) 
 }
 export const fetchQuestion = (questionId) => {
 
