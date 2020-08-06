@@ -51109,3 +51109,1484 @@ Processing by Api::QuestionsController#index as JSON
 Completed 200 OK in 901ms (Views: 200.4ms | ActiveRecord: 575.7ms)
 
 
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 09:45:39 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (67.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (71.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (18.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.5ms)
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (16.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (19.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (16.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (19.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (5.8ms)
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (16.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (13.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (18.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (20.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (17.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (22.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (646.2ms)
+Completed 200 OK in 852ms (Views: 335.9ms | ActiveRecord: 498.1ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 09:46:09 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (20.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (14.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (70.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.8ms)
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.7ms)
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (18.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (16.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (17.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (20.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (20.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/questions/index.json.jbuilder (668.0ms)
+Completed 200 OK in 819ms (Views: 443.5ms | ActiveRecord: 352.1ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:22:42 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (16.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (24.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (4.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.6ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (18.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (321.2ms)
+Completed 200 OK in 478ms (Views: 221.3ms | ActiveRecord: 165.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-06 10:37:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered static_pages/root.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 1671ms (Views: 1654.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:37:29 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (2.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (33.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (5.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.9ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (30.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (36.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (36.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (31.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (36.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (359.8ms)
+Completed 200 OK in 438ms (Views: 148.3ms | ActiveRecord: 275.1ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:52:24 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (3.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (37.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (3.6ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.1ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (37.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (38.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (37.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (35.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (80.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (22.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (41.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (30.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (32.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (33.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (21.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (37.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (717.8ms)
+Completed 200 OK in 806ms (Views: 276.8ms | ActiveRecord: 516.4ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:52:41 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (22.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (24.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (65.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.1ms)
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (1.1ms)
+  [1m[35m (15.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (21.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (75.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (63.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (38.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.8ms)
+  [1m[35m (39.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (16.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (855.3ms)
+Completed 200 OK in 1004ms (Views: 356.5ms | ActiveRecord: 637.6ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:55:10 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (91.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (7.9ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (10.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.5ms)
+  [1m[35m (30.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (31.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (30.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (34.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (32.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (343.1ms)
+Completed 200 OK in 476ms (Views: 178.3ms | ActiveRecord: 284.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-06 10:56:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered static_pages/root.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 604ms (Views: 591.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:56:35 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (40.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (1.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.7ms)
+  [1m[35m (17.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (29.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (32.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (37.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (25.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (339.1ms)
+Completed 200 OK in 407ms (Views: 160.8ms | ActiveRecord: 238.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-06 10:57:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered static_pages/root.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 583ms (Views: 563.9ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-06 10:57:22 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"display_name"=>"", "email"=>"yuanzai@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yuanzai@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (32.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "yuanzai@gmail.com"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (40.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["updated_at", "2020-08-06 14:57:22.870981"], ["id", 21]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."author_id" = $1[0m  [["author_id", 21]]
+  ↳ app/views/api/users/show.json.jbuilder:4
+  Rendered api/questions/_question.json.jbuilder (1.5ms)
+  Rendered api/users/show.json.jbuilder (38.7ms)
+Completed 200 OK in 637ms (Views: 56.1ms | ActiveRecord: 78.4ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:57:23 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (26.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (1.0ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (25.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (27.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (30.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (24.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (319.9ms)
+Completed 200 OK in 380ms (Views: 195.2ms | ActiveRecord: 170.6ms)
+
+
+Started GET "/api/questions/16" for ::1 at 2020-08-06 10:57:26 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"16"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Question"], ["voteable_id", 16]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:3
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (29.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (40.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (10.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (26.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (38.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (6.5ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (26.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (36.2ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (7.6ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (28.2ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (42.0ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (7.2ms)
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (38.3ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (28.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (48.9ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (15.3ms)
+  [1m[35m (20.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (28.2ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (9.2ms)
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (76.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:27
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/show.json.jbuilder (580.0ms)
+Completed 200 OK in 703ms (Views: 268.0ms | ActiveRecord: 376.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-06 10:58:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 633ms (Views: 626.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/questions/16" for ::1 at 2020-08-06 10:58:30 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"16"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Question"], ["voteable_id", 16]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.5ms)
+  [1m[35m (130.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:3
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 4], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (12.5ms)
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 5], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (42.9ms)
+  [1m[35m (89.3ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 6], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (105.4ms)
+  [1m[35m (21.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 7], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (29.3ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 8], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (10.4ms)
+  [1m[35m (31.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 9], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (40.2ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 10], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (40.7ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 11], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (11.7ms)
+  [1m[35m (27.0ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 13], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (79.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 14], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (12.3ms)
+  [1m[35m (28.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 15], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (45.5ms)
+  [1m[35m (27.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (38.9ms)
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (43.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (33.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 18], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (90.5ms)
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mUser Load (27.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:27
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/show.json.jbuilder (886.1ms)
+Completed 200 OK in 925ms (Views: 279.0ms | ActiveRecord: 630.0ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:58:41 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (186.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.9ms)
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (42.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (27.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (21.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (29.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (29.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (25.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/index.json.jbuilder (403.1ms)
+Completed 200 OK in 630ms (Views: 185.5ms | ActiveRecord: 434.5ms)
+
+
+Started GET "/api/questions/17" for ::1 at 2020-08-06 10:58:43 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mVote Load (3.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Question"], ["voteable_id", 17]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (1.8ms)
+  [1m[35m (14.1ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:3
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (23.4ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (32.4ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (7.6ms)
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (26.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:27
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/questions/show.json.jbuilder (130.2ms)
+Completed 200 OK in 163ms (Views: 74.5ms | ActiveRecord: 76.5ms)
+
+
+Started POST "/api/questions/17/answers/" for ::1 at 2020-08-06 10:58:49 -0400
+Processing by Api::AnswersController#create as JSON
+  Parameters: {"answer"=>{"body"=>"dsfdsfsfsdfsdfsdfsdfdsfsdfsdfsdfdsfdsdsdsf", "author_id"=>"21", "question_id"=>"17"}, "question_id"=>"17"}
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Unpermitted parameter: :author_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:10
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:10
+  [1m[36mAnswer Create (199.0ms)[0m  [1m[32mINSERT INTO "answers" ("body", "author_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "dsfdsfsfsdfsdfsdfsdfdsfsdfsdfsdfdsfdsdsdsf"], ["author_id", 21], ["question_id", 17], ["created_at", "2020-08-06 14:58:49.372104"], ["updated_at", "2020-08-06 14:58:49.372104"]]
+  ↳ app/controllers/api/answers_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:10
+  Rendering api/answers/show.json.jbuilder
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (18.3ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/questions/_question.json.jbuilder (1.3ms)
+  Rendered api/answers/show.json.jbuilder (27.5ms)
+Completed 200 OK in 278ms (Views: 35.6ms | ActiveRecord: 226.0ms)
+
+
+Started GET "/api/answers/25" for ::1 at 2020-08-06 10:58:51 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mUser Load (90.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mVote Load (33.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Answer"], ["voteable_id", 25]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  Rendering api/answers/show.json.jbuilder
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (28.4ms)
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  Rendered api/answers/show.json.jbuilder (40.0ms)
+Completed 200 OK in 201ms (Views: 33.5ms | ActiveRecord: 148.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-06 10:59:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 709ms (Views: 696.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/answers/25" for ::1 at 2020-08-06 10:59:35 -0400
+Processing by Api::AnswersController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mAnswer Load (2.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Answer"], ["voteable_id", 25]]
+  ↳ app/controllers/api/answers_controller.rb:28
+  Rendering api/answers/show.json.jbuilder
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (21.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (42.8ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/questions/_question.json.jbuilder (1.0ms)
+  Rendered api/answers/show.json.jbuilder (67.2ms)
+Completed 200 OK in 113ms (Views: 66.5ms | ActiveRecord: 28.2ms)
+
+
+Started PATCH "/api/questions/17/answers/25" for ::1 at 2020-08-06 10:59:41 -0400
+Processing by Api::AnswersController#update as JSON
+  Parameters: {"answer"=>{"id"=>"25", "body"=>"dsfdsfsfsdfsdfsdfsdfdsfsdfsdfsdfdsfdsdsd", "author_id"=>"21", "question_id"=>"17", "created_at"=>"2020-08-06T14:58:49.372Z", "votes"=>"0"}, "question_id"=>"17", "id"=>"25"}
+  [1m[36mUser Load (26.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zslWZg8CapRPSXdB7s3rJA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mAnswer Load (1.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:35
+Unpermitted parameters: :id, :author_id, :created_at, :votes
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/answers_controller.rb:38
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:38
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/answers_controller.rb:38
+  [1m[36mAnswer Update (0.9ms)[0m  [1m[33mUPDATE "answers" SET "body" = $1, "updated_at" = $2 WHERE "answers"."id" = $3[0m  [["body", "dsfdsfsfsdfsdfsdfsdfdsfsdfsdfsdfdsfdsdsd"], ["updated_at", "2020-08-06 14:59:41.468644"], ["id", 25]]
+  ↳ app/controllers/api/answers_controller.rb:38
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/answers_controller.rb:38
+  Rendering api/answers/show.json.jbuilder
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (25.5ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/questions/_question.json.jbuilder (1.0ms)
+  Rendered api/answers/show.json.jbuilder (33.2ms)
+Completed 200 OK in 93ms (Views: 25.6ms | ActiveRecord: 53.0ms)
+
+
+Started GET "/api/questions/17" for ::1 at 2020-08-06 10:59:41 -0400
+Processing by Api::QuestionsController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mQuestion Load (81.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" = $2[0m  [["voteable_type", "Question"], ["voteable_id", 17]]
+  ↳ app/controllers/api/questions_controller.rb:32
+  Rendering api/questions/show.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:3
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/views/api/questions/show.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (40.5ms)
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (28.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (48.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = 1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT votes.user_id FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND (votes.value = -1)[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/views/api/answers/_answer.json.jbuilder:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Answer"]]
+  ↳ app/models/answer.rb:22
+  Rendered api/answers/_answer.json.jbuilder (7.2ms)
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (23.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:22
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/questions/show.json.jbuilder:27
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered api/questions/show.json.jbuilder (183.6ms)
+Completed 200 OK in 298ms (Views: 94.3ms | ActiveRecord: 188.9ms)
+
+
+Started GET "/api/questions?search=" for ::1 at 2020-08-06 10:59:56 -0400
+Processing by Api::QuestionsController#index as JSON
+  Parameters: {"search"=>""}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE (LOWER(title) LIKE '%%' or LOWER(body) LIKE '%%')[0m
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4)[0m  [["id", 7], ["id", 16], ["id", 20], ["id", 21]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."voteable_type" = $1 AND "votes"."voteable_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)[0m  [["voteable_type", "Question"], ["voteable_id", 16], ["voteable_id", 17], ["voteable_id", 20], ["voteable_id", 21], ["voteable_id", 22], ["voteable_id", 23], ["voteable_id", 24], ["voteable_id", 25], ["voteable_id", 28], ["voteable_id", 29], ["voteable_id", 30]]
+  ↳ app/controllers/api/questions_controller.rb:6
+  Rendering api/questions/index.json.jbuilder
+  Rendered api/questions/_question.json.jbuilder (0.6ms)
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 16], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 16]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 17], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 17]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 20], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 20]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 21], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (27.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 21]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 22], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 22]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 23], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 23]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.3ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 24], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 24]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 25], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 25]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 28], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 28]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 29], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 29]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/questions/_question.json.jbuilder (0.2ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 30], ["voteable_type", "Question"]]
+  ↳ app/models/question.rb:34
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 30]]
+  ↳ app/views/api/questions/index.json.jbuilder:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/questions/index.json.jbuilder (202.4ms)
+Completed 200 OK in 232ms (Views: 119.8ms | ActiveRecord: 103.0ms)
+
+
