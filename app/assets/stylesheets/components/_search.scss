@@ -1,0 +1,20 @@
+.search-no-result-box{
+    line-height: 18px;
+    padding: 24px;
+    flex-direction: column !important;
+}
+
+.search-no-result-box > .fa-search{
+    color: #bbc0c4
+}
+
+.search-no-result-msg{
+    font-size: 17px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.sub-msg{
+    font-size: 13px;
+    margin-top: 4px;
+}

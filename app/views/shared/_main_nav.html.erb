@@ -1,0 +1,46 @@
+<header class="main-nav">
+<div class="nav-container align-center full-height">
+    <nav class="left-nav full-height">
+
+        <ul class="full-height">
+            <li id="gear-dropdown-btn" class= "zero-padding align-center justify-center">
+                <i class="fa fa-bars"></i>
+                <%= render partial: 'shared/gear_dropdown' %>
+            </li>
+            <li>
+                <a href="#" class="logo"><img src='assets/lifooverflow-logo.png' alt="lifooverflow_logo"></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="middle-nav">
+        <ul class="full-height">
+            <li>
+                <a href="#" class="menu-button">Products</a>
+            </li>
+            <li>
+                <a href="#" class="menu-button">Customers</a>
+            </li>
+            <li>
+                <a href="#" class="menu-button">Use cases</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="search-nav">
+        <div class="ps-relative">
+            <input class="search-bar" name="q" type="text" placeholder="Search…">
+            <i class="fa fa-search input-search" aria-hidden="true"></i>
+        </div>
+        
+    </div>
+    <nav class="right-nav full-height grid">
+        <ul class="grid full-height align-center">
+            <li>
+                <button class="session-btn-light button-default py8"><a href="#/login">Log in</a></button>
+            </li>
+            <li>
+                <button class="session-btn-heavy button-default py8"><a href="#/signup" class="session-color">Sign up</a></button>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</header>

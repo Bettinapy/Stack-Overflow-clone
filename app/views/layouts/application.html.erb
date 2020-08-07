@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LifoOverflow</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+
+
+      window.sprites= "<%= image_url('sprites.svg') %>";
+      window.lifooverflow= "<%= image_url('lifooverflow-logo.png') %>";
+      window.small_lifo= "<%= image_url('small_lifo_logo.png') %>";
+      window.icon_trophy= "<%= image_url('trophy.png') %>";
+      window.icon_question= "<%= image_url('question.png') %>";
+      window.icon_tag= "<%= image_url('tag.png') %>";
+      window.icon_up_and_down= "<%= image_url('up_and_down.png') %>";
+      window.guide_question = "<%= image_url('001-question.png') %>";
+      window.guide_faq = "<%= image_url('002-faq.png') %>";
+      window.guide_like = "<%= image_url('003-like.png') %>";
+      window.guide_tag = "<%= image_url('004-tag.png') %>";
+      window.guide_check = "<%= image_url('005-check.png') %>";
+      window.guide_star = "<%= image_url('006-star.png') %>";
+      window.guide_bg = "<%= asset_url('home-bg2.mp4') %>";
+      window.headshot= "<%= image_url('headshot-dog.png') %>";
+      
+      //handle window click
+      window.onclick = function(event) {
+          if ((!event.target.matches('.search-bar')) 
+              && (!event.target.matches('.search-hints-box')) 
+              && (!event.target.matches('.q-input'))
+              && (!event.target.matches('.fa-bars'))
+              && (!event.target.matches('.gear-dropdown-menu-top')) ) {
+            let dropdowns = document.getElementsByClassName("nav-search-box");
+            let inputs = document.getElementsByClassName("input-default");
+            
+            let j;
+            for (j = 0; j < inputs.length; j++) {
+              let inputBorder = inputs[j];
+              if (inputBorder.classList.contains('input-border')) {
+                inputBorder.classList.remove('input-border');
+              }
+            }            
+            let i;
+            for (i = 0; i < dropdowns.length; i++) {
+              let openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+            
+            let rightDropdown = document.getElementById("toggle-dropbtn");
+            if (rightDropdown){
+              if(rightDropdown.classList.contains('show')){
+                rightDropdown.classList.remove('show')
+              }
+            }
+
+            let leftDropdown = document.getElementById("gear-dropdown-m");
+            if (leftDropdown){
+              if(leftDropdown.classList.contains('show')){
+                leftDropdown.classList.remove('show')
+              }
+            }
+
+          } 
+        }
+     
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

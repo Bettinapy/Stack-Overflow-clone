@@ -1,0 +1,97 @@
+.hp-bg{
+    width: 100%;
+    background-color: white;
+}
+
+.main-bg-container{
+    height: 496px;
+    width: 100%;
+    top: 0;
+    position: relative;
+    padding-top: 50px; 
+    background: image-url("home_bg1.gif");
+    overflow: hidden;
+    background-color: #ffcf10 !important;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.hp-header{
+    font-family: 'Roboto Slab', serif;
+    width: 90% !important;
+    text-align: center !important;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 128px;
+    word-spacing: 0.1px;
+    padding-left: 55px;
+}
+
+.hp-header-addition{
+    font-size: 21px;
+    width: 90% !important;
+    text-align: center !important;
+    max-width: 420px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.bg2-container{
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hp-sub-header{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    width: 90%;
+    text-align: center;
+    font-size: 34px;
+}
+
+.bg2-guide{
+    margin-top: 48px !important;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.bg2-guide-label{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    padding: 12px;
+    font-size: 17px;
+}
+
+.guide-img{
+    margin-right: 8px;
+}
+
+.guide-img > img {
+    height: 46px;
+    width: 46px;
+}
+
+.bg2-labels{
+    flex-direction: column;
+}
+
+.bg2-video{
+    width: 420px;
+    height: 300px;
+    text-align: center;
+}
+
+.bg2-video > video{
+    width: 420px;
+    height: auto;
+    overflow-y:hidden;
+}

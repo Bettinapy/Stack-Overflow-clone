@@ -1,0 +1,18 @@
+// [class*="icon-"] {
+//   display: inline-block;
+//   background: image-url("sprites.svg");
+//   background-size: 189px 530px;
+//   background-repeat: no-repeat;
+//   vertical-align: bottom;
+  
+// }
+
+[class*="favicon-"] {
+  display: inline-block;
+  background: image-url("favicons.png");
+  background-size: 16px 6858px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  
+}
+
