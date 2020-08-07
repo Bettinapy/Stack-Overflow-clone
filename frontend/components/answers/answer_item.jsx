@@ -5,7 +5,7 @@ class AnswerItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.answer;
-        this.handleDelete = this.handleDelete.bind(this);
+        this.handleDelete = this.handleDelete.bind(this); 
     }
 
     handleUpVote(e) {
