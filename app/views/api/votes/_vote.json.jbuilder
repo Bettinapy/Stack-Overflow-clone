@@ -1,1 +1,0 @@
-json.extract! vote, :id, :user_id, :value, :voteable
