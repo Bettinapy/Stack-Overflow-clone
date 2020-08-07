@@ -12,7 +12,7 @@ import QuestionShowContainer from '../components/question/question_show_containe
 import QuestionListContinaer from '../components/question/question_list_container';
 import HomePage from './home_page';
 import EditAnswerFormContainer from './answers/edit_answer_form_container';
-
+import UserProfileContainer from './user/user_profile_container';
 
 const App = () => (
     <div id="content" className="grid grid-center">
@@ -23,6 +23,8 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         
+        <QuestionAuthRoute exact path="/users/:userId" component={UserProfileContainer} />
+
         <Route exact path="/questions" component={QuestionListContinaer} />
         <Route exact path='/search' component={QuestionListContinaer} />
 

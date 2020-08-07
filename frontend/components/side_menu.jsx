@@ -26,11 +26,11 @@ class SideMenu extends React.Component{
                                     <span>LIFO Overflow</span>
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link id="menu-general" to="" onClick={this.handleMenu.bind(this, "menu-general")} className="list-item-format item-format-general grid">
                                     Users
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </li>
                 </ul>

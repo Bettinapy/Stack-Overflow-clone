@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
     skip_before_action :verify_authenticity_token
+    before_action :ensure_logged_in, only: [:show]
+
     def index
         @users = User.all 
     end
@@ -22,6 +24,10 @@ class Api::UsersController < ApplicationController
             
             render json: errors, status: 401
         end
+    end
+
+    def show
+        @user = User.includes(:answers, :questions).find(params[:id]) 
     end
 
     def user_params

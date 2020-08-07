@@ -7,7 +7,6 @@ import {deleteAnswer, upVoteAnswer, downVoteAnswer} from '../../actions/answer_a
 
 const mapStateToProps = (state, ownProps) => {
     const question = state.entities.questions[ownProps.match.params.questionId];
-    // const user = (question ? state.entities.users[question.author_id] : { id: 0, display_name: '' });
     const currentUserId = (Boolean(state.session.id) ? state.session.id : -1)
     const answers = Object.values(state.entities.answers)
     const users = state.entities.users

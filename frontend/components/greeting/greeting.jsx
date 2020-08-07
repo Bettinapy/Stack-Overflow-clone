@@ -31,6 +31,11 @@ class Greeting extends React.Component {
         return(this.setState({search: event.target.value}))
     }
 
+    hanldeDemo(e){
+        e.preventDefault();
+        const user = { email: "demo@lifooverflow.com", password: "password123" }
+        this.props.login(user).then(() => this.props.history.replace('/'), () => { });
+    }
 
     handleSearchSubmit(e){
 
@@ -39,17 +44,6 @@ class Greeting extends React.Component {
             pathname: `/search`,
             search: `?q=${this.state.search}`
         })
-    }
-    componentWillUnmount() {
-        // const nav = document.getElementById("nav-search-hints");
-        // if (nav.classList.contains("show")){
-        //     nav.classList.remove("show")
-        // };
-
-        // const dropdown = document.getElementById("gear-dropdown-m");
-        // if (dropdown.classList.contains("show")){
-        //     dropdown.classList.remove("show")
-        // };
     }
 
     render() {
@@ -75,11 +69,11 @@ class Greeting extends React.Component {
                                         <span>LIFO Overflow</span>
                                     </Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link id="menu-general" to="" onClick={this.handleMenu.bind(this, "menu-general")} className="list-item-format item-format-general grid">
                                         Users
-                                </Link>
-                                </li>
+                                    </Link>
+                                </li> */}
                             </ul>
                         </li>
                     </ul>
@@ -91,10 +85,10 @@ class Greeting extends React.Component {
         const otherMenuList = (!this.props.currentUser.id ? (
             <>
             <li>
-                <a href="#" className="menu-button">Customers</a>
+                <a onClick={this.hanldeDemo.bind(this)} className="menu-button">Demo login</a>
             </li>
             <li>
-                <a href="#" className="menu-button">Use cases</a>
+                <a href="https://github.com/Bettinapy/LIFO-Overflow" target="_blank" className="menu-button">My GitHub</a>
             </li>
             </>
         ) : (<></>));
@@ -102,7 +96,7 @@ class Greeting extends React.Component {
         const greeting = (this.props.currentUser.id ? (
             <nav className="logged grid align-center full-height">
                 <div className="function">
-                    <a href="#" className="user-code">
+                    <a href={`#/users/${this.props.currentUser.id}`} className="user-code">
                         <i className="fa fa-qrcode fa-2x" aria-hidden="true"></i>                    
                     </a>
                 </div>
@@ -128,8 +122,7 @@ class Greeting extends React.Component {
                                         </a>
                                     </div>
                                     <div className="additional-functions">
-                                        <a href="">help</a>
-                                        <a href="">chat</a>
+                                        <Link to="/questions" >questions</Link>
                                         <a onClick={this.props.logout}>log out</a>
                                     </div>
 
