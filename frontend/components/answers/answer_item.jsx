@@ -12,32 +12,32 @@ class AnswerItem extends React.Component {
         e.preventDefault();
         const downVoteBtn = document.getElementById('down-vote-btn-'+this.props.answer.id)
         if (downVoteBtn.classList.contains("vote-icon-effect")) {
-            alert('Please cancel your down-vote first!')
-        } else {
+            downVoteBtn.classList.remove("vote-icon-effect")
+        } 
 
-            if (this.props.currentUserId !== -1) {
-                document.getElementById('up-vote-btn-' + this.props.answer.id).classList.toggle("vote-icon-effect");
-                this.props.upVoteAnswer(this.props.answer.question_id, this.props.answer.id)
-            } else {
-                alert('You must log in or sign up to vote!')
-            }
+        if (this.props.currentUserId !== -1) {
+            document.getElementById('up-vote-btn-' + this.props.answer.id).classList.toggle("vote-icon-effect");
+            this.props.upVoteAnswer(this.props.answer.question_id, this.props.answer.id)
+        } else {
+            alert('You must log in or sign up to vote!')
         }
+        
     }
 
     handleDownVote(e) {
         e.preventDefault();
         const upVoteBtn = document.getElementById('up-vote-btn-' + this.props.answer.id)
         if (upVoteBtn.classList.contains("vote-icon-effect")) {
-            alert('Please cancel your up-vote first!')
-        } else {
+            upVoteBtn.classList.remove("vote-icon-effect")
+        } 
 
-            if (this.props.currentUserId !== -1) {
-                document.getElementById('down-vote-btn-' + this.props.answer.id).classList.toggle("vote-icon-effect");
-                this.props.downVoteAnswer(this.props.answer.question_id, this.props.answer.id)
-            } else {
-                alert('You must log in or sign up to vote!')
-            }
+        if (this.props.currentUserId !== -1) {
+            document.getElementById('down-vote-btn-' + this.props.answer.id).classList.toggle("vote-icon-effect");
+            this.props.downVoteAnswer(this.props.answer.question_id, this.props.answer.id)
+        } else {
+            alert('You must log in or sign up to vote!')
         }
+        
     }
 
     handleDelete(e) {

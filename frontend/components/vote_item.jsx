@@ -6,32 +6,34 @@ class VoteItem extends React.Component {
         e.preventDefault();
         const downVoteBtn = document.getElementById("down-vote-btn")
         if (downVoteBtn.classList.contains("vote-icon-effect")){
-            alert('Please cancel your down-vote first!')
-        }else{
-
-            if(this.props.currentUserId !== -1){
-                document.getElementById("up-vote-btn").classList.toggle("vote-icon-effect");
-                this.props.upVoteQuestion(this.props.question.id)
-            }else{
-                alert('You must log in or sign up to vote!')
-            }
+            downVoteBtn.classList.remove("vote-icon-effect")
+            //alert('Please cancel your down-vote first!')
+       
         }
+        if(this.props.currentUserId !== -1){
+            document.getElementById("up-vote-btn").classList.toggle("vote-icon-effect");
+            this.props.upVoteQuestion(this.props.question.id)
+        }else{
+            alert('You must log in or sign up to vote!')
+        }
+        
     }
 
     handleDownVote(e) {
         e.preventDefault();
         const upVoteBtn = document.getElementById("up-vote-btn")
         if (upVoteBtn.classList.contains("vote-icon-effect")) {
-            alert('Please cancel your up-vote first!')
-        }else{
-
-            if (this.props.currentUserId !== -1) {
-                document.getElementById("down-vote-btn").classList.toggle("vote-icon-effect");
-                this.props.downVoteQuestion(this.props.question.id)
-            } else {
-                alert('You must log in or sign up to vote!')
-            }
+            upVoteBtn.classList.remove("vote-icon-effect")
+            //alert('Please cancel your up-vote first!')
         }
+
+        if (this.props.currentUserId !== -1) {
+            document.getElementById("down-vote-btn").classList.toggle("vote-icon-effect");
+            this.props.downVoteQuestion(this.props.question.id)
+        } else {
+            alert('You must log in or sign up to vote!')
+        }
+        
     }
 
     render(){
