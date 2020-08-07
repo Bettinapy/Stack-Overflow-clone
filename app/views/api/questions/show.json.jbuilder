@@ -1,8 +1,5 @@
 json.question do
     json.partial! "./api/questions/question", question: @question
-    json.upvoterIds @question.votes.where('votes.value = 1').pluck('votes.user_id')
-    json.downvoterIds @question.votes.where('votes.value = -1').pluck('votes.user_id')
-    json.votes @question.points
 end
 
 json.answers do 

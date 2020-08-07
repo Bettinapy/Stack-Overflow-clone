@@ -47,7 +47,7 @@ class VoteItem extends React.Component {
                 "vote-icon-effect"
             ) : ("")
         ) : (""))
-
+        debugger
         return(
             <div className="vote-item-container">
                 <div className="vote-item-box grid align-center">
