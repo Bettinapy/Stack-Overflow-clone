@@ -116,7 +116,7 @@ class AnswerItem extends React.Component {
                         </div>
                         <div className="user-info-box">
                             <div className="question-time-box">
-                                asked {this.props.answer.created_at}
+                                answered {this.props.answer.created_at}
                             </div>
                             <div className="author-info">
                                 <a>{this.props.user.display_name}</a>
