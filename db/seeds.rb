@@ -18,4 +18,7 @@ user3 = User.create!({"display_name":"No-face", "email":"test3@gmail.com", "pass
 q1 = Question.create!({"title":"What are cookies? Why we use cookies?", "body":"I'm confused aboutt he usage of cookies, does anyone have any idea?", "author_id":user1.id})
 q2 = Question.create!({"title":"What is session cookie? Any idea?", "body":"I'm confused aboutt he usage of session cookies, does anyone have any idea?", "author_id":user2.id})
 q3 = Question.create!({"title":"What is cross site request forgery?", "body":"I'm confused aboutt he usage of CSRF, does anyone have any idea?", "author_id":user3.id})
+q4 = Question.create!({"title":"How to solve binary search question?", "body":"I'm confused about solving binary search, does anyone have any idea?", "author_id":user1.id})
+q5 = Question.create!({"title":"What is session cookie? Any idea?", "body":"I'm confused aboutt he usage of session cookies, does anyone have any idea?", "author_id":user2.id})
+q6 = Question.create!({"title":"What is cross site request forgery?", "body":"I'm confused aboutt he usage of CSRF, does anyone have any idea?", "author_id":user3.id})
 
