@@ -18,9 +18,13 @@ Both of the title and body have validation restrictions.
 ![](https://github.com/Bettinapy/LIFO-Overflow/blob/master/readme_image/lifo-question.gif)
 
 ### Votes
-Users can upvote and downvote both questions and answers. Polymorphic-association method is applied here to achieve this goal.
+Users can upvote and downvote both questions and answers. 
+
+Polymorphic-association method is applied here to achieve this goal.
 ![](https://github.com/Bettinapy/LIFO-Overflow/blob/master/readme_image/lifo-vote.gif)
 
 ### User Authentication
-On user's profile page, all answers and questions are listed. Only logged-in users can have access to this page and manage their questions and answers.
+On user's profile page, all answers and questions are listed. 
+
+Only logged-in users can have access to this page and manage their questions and answers.
 ![](https://github.com/Bettinapy/LIFO-Overflow/blob/master/readme_image/lifo-user.gif)
