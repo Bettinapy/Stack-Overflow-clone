@@ -36,3 +36,4 @@ q17 = Question.create!({"title":"When do we use left join / right join in SQL?",
 q18 = Question.create!({"title":"How to seed a database using the Rails command?", "body":"How to seed a database using the Rails command?", "author_id":user1.id})
 q19 = Question.create!({"title":"Running rake db:seed isn't loading from seeds.rb", "body":"I'm trying to seed a set of football teams and football positions, and rails is strangely simply not doing it.", "author_id":user1.id})
 q20 = Question.create!({"title":"What is the best way to seed a database in Rails?", "body":"I have a rake task that populates some initial data in my rails app. For example, countries, states, mobile carriers, etc.", "author_id":user4.id})
+q21 = Question.create!({"title":"What is the use case of MongoDB? What is non-relational database?", "body":"What is the use case of MongoDB? What is non-relational database?.", "author_id":user4.id})
