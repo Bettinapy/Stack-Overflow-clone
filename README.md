@@ -1,26 +1,10 @@
+# LIFO Overflow
 
-LIFO Overflow
-# README
+## Background
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+LIFO Overflow is a question and answer platform for developers inspired by Stack Overflow.
 
-Things you may want to cover:
+Visit: [LIFO Overflow](https://lifo-overflow.herokuapp.com/#/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features
+### Search
