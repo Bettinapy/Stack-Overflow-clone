@@ -2,7 +2,8 @@
 
 ## Background
 
-LIFO Overflow is a question and answer platform for developers inspired by Stack Overflow.
+LIFO Overflow is a question and answer platform for developers inspired by Stack Overflow. 
+LIFO stands for 'Last In First Out' :)
 
 Visit: [LIFO Overflow](https://lifo-overflow.herokuapp.com/#/)
 
